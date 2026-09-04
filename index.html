@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Premium Flight Booking</title>
+    <meta name="description"
+        content="Discover flights, compare fares, and book your next adventure with confidence with Stackly.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-ring-wrap">
+            <div class="loader-ripple"></div>
+            <div class="loader-ripple"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring-inner"></div>
+            <img class="loader-logo" src="assets/images/logo.webp" alt="Stackly">
+        </div>
+        <div class="loader-brand">STACKLY</div>
+        <div class="loader-progress-track">
+            <div class="loader-progress-bar"></div>
+        </div>
+    </div>
+    <!-- ===== END LOADER ===== -->
+
+
+    <!-- Advanced Airplane Scroll Animation Overlay -->
+    <div class="airplane-wrapper d-none d-md-block">
+        <!-- SVG Path (A subtle dotted line) -->
+        <svg id="flightPath" viewBox="0 0 100 2000" preserveAspectRatio="none">
+            <path d="M50,0 Q80,500 20,1000 T50,2000" fill="none" stroke="rgba(23, 105, 255, 0.4)" stroke-width="2"
+                stroke-dasharray="10, 15" />
+        </svg>
+
+
+        <!-- The Airplane -->
+        <svg class="scroll-airplane" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M21,16V14L13,9V3.5A1.5,1.5 0 0,0 11.5,2A1.5,1.5 0 0,0 10,3.5V9L2,14V16L10,13.5V19L8,20.5V22L11.5,21L15,22V20.5L13,19V13.5L21,16Z" />
+        </svg>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.webp" alt="Stackly Logo"
+                    style="height:38px; width:auto; object-fit:contain;">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+                    <a href="login.html" class="btn btn-premium btn-sm px-4">Login</a>
+                    <a href="signup.html" class="btn btn-premium btn-sm px-4">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero hero-home position-relative overflow-hidden">
+        <!-- Background Slideshow -->
+        <div class="hero-bg-slideshow" id="heroSlideshow">
+            <div class="hero-slide active" style="background-image: url('assets/images/hero-airplane.webp');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/hero-hotel.webp');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/hero-car.webp');"></div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">Your Journey<br><span class="wave-text">Begins Here</span></h1>
+                    <p class="hero-subtitle">Discover flights, compare fares, and book your next premium adventure with
+                        absolute confidence.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="services.html" class="btn btn-premium">Search Flights <i
+                                class="bi bi-arrow-right"></i></a>
+                        <a href="#destinations" class="btn btn-outline-premium">Explore Destinations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Booking Widget -->
+    <div class="container position-relative" style="margin-top: -60px; z-index: 10;">
+        <div class="glass-panel rounded-4 shadow-lg p-3 p-md-4 booking-widget">
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-4 border-bottom pb-3 gap-3" id="bookingTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active fw-bold px-4 rounded-pill d-flex align-items-center gap-2" id="flights-tab" data-bs-toggle="pill" data-bs-target="#flights" type="button" role="tab">
+                        <i class="bi bi-airplane-fill"></i> Flights
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link fw-bold px-4 rounded-pill d-flex align-items-center gap-2 text-muted" id="hotels-tab" data-bs-toggle="pill" data-bs-target="#hotels" type="button" role="tab">
+                        <i class="bi bi-building"></i> Hotels
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link fw-bold px-4 rounded-pill d-flex align-items-center gap-2 text-muted" id="cars-tab" data-bs-toggle="pill" data-bs-target="#cars" type="button" role="tab">
+                        <i class="bi bi-car-front-fill"></i> Cars
+                    </button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content" id="bookingTabsContent">
+                <!-- Flights Tab -->
+                <div class="tab-pane fade show active" id="flights" role="tabpanel">
+                    <form class="row g-3 align-items-end">
+                        <div class="col-md-2">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">From</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-airplane-engines"></i></span>
+                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="City or Airport">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">To</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-airplane-engines-fill"></i></span>
+                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="City or Airport">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Departure</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Return</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Passengers</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-people-fill"></i></span>
+                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="1 Adult">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
+                                <i class="bi bi-search"></i> Search
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Other tabs can remain empty for UI purposes as per request -->
+                <div class="tab-pane fade" id="hotels" role="tabpanel">
+                    <form class="row g-3 align-items-end">
+                        <div class="col-md-3">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Destination</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-geo-alt-fill"></i></span>
+                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="City, region or hotel">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Check-in</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Check-out</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row g-2">
+                                <div class="col-8">
+                                    <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Rooms & Guests</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-moon-stars-fill"></i></span>
+                                        <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="1 Room, 2 Guests">
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
+                                        <i class="bi bi-search"></i> <span class="d-none d-lg-inline">Search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="tab-pane fade" id="cars" role="tabpanel">
+                    <form class="row g-3 align-items-end">
+                        <div class="col-md-3">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Pickup Location</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-geo-alt-fill"></i></span>
+                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="City or airport">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Pickup Date</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Return Date</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row g-2">
+                                <div class="col-8">
+                                    <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Car Type</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-car-front-fill"></i></span>
+                                        <select class="form-select bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted">
+                                            <option selected>Any Type</option>
+                                            <option value="1">Economy</option>
+                                            <option value="2">SUV</option>
+                                            <option value="3">Luxury</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
+                                        <i class="bi bi-search"></i> <span class="d-none d-lg-inline">Search</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Trust Stats Section -->
+    <section class="section-padding bg-light position-relative z-index-2">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3" data-aos="fade-right" data-aos-delay="0">
+                    <h2 class="text-primary mb-2 fw-bold"><span class="counter-value" data-target="500">0</span>+</h2>
+                    <p class="text-muted fw-bold text-uppercase letter-spacing-1 mb-0">Airlines</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-left" data-aos-delay="100">
+                    <h2 class="text-primary mb-2 fw-bold"><span class="counter-value" data-target="50">0</span>k+</h2>
+                    <p class="text-muted fw-bold text-uppercase letter-spacing-1 mb-0">Hotels</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-right" data-aos-delay="200">
+                    <h2 class="text-primary mb-2 fw-bold"><span class="counter-value" data-target="150">0</span>+</h2>
+                    <p class="text-muted fw-bold text-uppercase letter-spacing-1 mb-0">Countries</p>
+                </div>
+                <div class="col-md-3" data-aos="fade-left" data-aos-delay="300">
+                    <h2 class="text-primary mb-2 fw-bold"><span class="counter-value" data-target="10">0</span>M+</h2>
+                    <p class="text-muted fw-bold text-uppercase letter-spacing-1 mb-0">Travelers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Destinations -->
+    <section id="destinations" class="section-padding position-relative z-index-2">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-right">
+                <h2 class="section-title">Popular Destinations</h2>
+                <p class="lead">Explore the most loved cities by our travelers around the world.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="0">
+                    <div class="destination-card" data-aos="flip-left">
+                        <img src="assets/images/dubai.webp" alt="Dubai">
+                        <div class="destination-content">
+                            <h3 class="text-white mb-1 fw-bold">Dubai</h3>
+                            <p class="text-white-50 mb-4 fw-medium">UAE • 120+ flights daily</p>
+                            <a href="#" class="btn btn-light btn-sm rounded-pill px-4 fw-bold text-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="destination-card" data-aos="flip-right">
+                        <img src="assets/images/paris.webp" alt="Paris">
+                        <div class="destination-content">
+                            <h3 class="text-white mb-1 fw-bold">Paris</h3>
+                            <p class="text-white-50 mb-4 fw-medium">France • 85+ flights daily</p>
+                            <a href="#" class="btn btn-light btn-sm rounded-pill px-4 fw-bold text-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="destination-card" data-aos="flip-left">
+                        <img src="assets/images/tokyo.webp" alt="Tokyo">
+                        <div class="destination-content">
+                            <h3 class="text-white mb-1 fw-bold">Tokyo</h3>
+                            <p class="text-white-50 mb-4 fw-medium">Japan • 60+ flights daily</p>
+                            <a href="#" class="btn btn-light btn-sm rounded-pill px-4 fw-bold text-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6" data-aos="fade-left" data-aos-delay="300">
+                    <div class="destination-card" data-aos="flip-right">
+                        <img src="assets/images/maldives.webp" alt="Maldives">
+                        <div class="destination-content">
+                            <h3 class="text-white mb-1 fw-bold">Maldives</h3>
+                            <p class="text-white-50 mb-4 fw-medium">Maldives • 25+ flights daily</p>
+                            <a href="#" class="btn btn-light btn-sm rounded-pill px-4 fw-bold text-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12" data-aos="fade-left" data-aos-delay="400">
+                    <div class="destination-card" data-aos="flip-left">
+                        <img src="assets/images/new-york.webp" alt="New York">
+                        <div class="destination-content">
+                            <h3 class="text-white mb-1 fw-bold">New York</h3>
+                            <p class="text-white-50 mb-4 fw-medium">USA • 200+ flights daily</p>
+                            <a href="#" class="btn btn-light btn-sm rounded-pill px-4 fw-bold text-primary">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot Deals Section -->
+    <section class="section-padding bg-light position-relative z-index-2">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-left">
+                <h2 class="section-title">Exclusive Hot Deals</h2>
+                <p class="lead">Don't miss out on these limited-time luxury offers.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-delay="0">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift" data-aos="fade-left">
+                        <span
+                            class="badge bg-danger position-absolute top-0 start-0 m-3 z-3 px-3 py-2 rounded-pill fw-bold">-30%</span>
+                        <img src="assets/images/taj-mahal.webp" class="card-img-top" alt="Taj Mahal"
+                            style="height: 220px; object-fit: cover;">
+                        <div class="card-body p-4" data-aos="fade-right">
+                            <h5 class="card-title fw-bold">Flight + Hotel: Agra</h5>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-star-fill text-gold me-1"></i>
+                                <span class="fw-bold">4.8</span>
+                                <span class="text-muted ms-2 small">(120 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-end mt-4">
+                                <div>
+                                    <span class="text-muted text-decoration-line-through d-block small">$899</span>
+                                    <h4 class="text-primary mb-0 fw-bold">$629</h4>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift" data-aos="fade-right">
+                        <span
+                            class="badge bg-danger position-absolute top-0 start-0 m-3 z-3 px-3 py-2 rounded-pill fw-bold">-25%</span>
+                        <img src="assets/images/bali.webp" class="card-img-top" alt="Bali"
+                            style="height: 220px; object-fit: cover;">
+                        <div class="card-body p-4" data-aos="fade-left">
+                            <h5 class="card-title fw-bold">Luxury Stay: Bali</h5>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-star-fill text-gold me-1"></i>
+                                <span class="fw-bold">4.9</span>
+                                <span class="text-muted ms-2 small">(340 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-end mt-4">
+                                <div>
+                                    <span class="text-muted text-decoration-line-through d-block small">$1,200</span>
+                                    <h4 class="text-primary mb-0 fw-bold">$900</h4>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift" data-aos="fade-left">
+                        <span
+                            class="badge bg-danger position-absolute top-0 start-0 m-3 z-3 px-3 py-2 rounded-pill fw-bold">-15%</span>
+                        <img src="assets/images/london.webp" class="card-img-top" alt="London"
+                            style="height: 220px; object-fit: cover;">
+                        <div class="card-body p-4" data-aos="fade-right">
+                            <h5 class="card-title fw-bold">Flight Deal: London</h5>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-star-fill text-gold me-1"></i>
+                                <span class="fw-bold">4.7</span>
+                                <span class="text-muted ms-2 small">(85 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-end mt-4">
+                                <div>
+                                    <span class="text-muted text-decoration-line-through d-block small">$550</span>
+                                    <h4 class="text-primary mb-0 fw-bold">$465</h4>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift" data-aos="fade-right">
+                        <span
+                            class="badge bg-danger position-absolute top-0 start-0 m-3 z-3 px-3 py-2 rounded-pill fw-bold">-40%</span>
+                        <img src="assets/images/singapore.webp" class="card-img-top" alt="Singapore"
+                            style="height: 220px; object-fit: cover;">
+                        <div class="card-body p-4" data-aos="fade-left">
+                            <h5 class="card-title fw-bold">Weekend: Singapore</h5>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="bi bi-star-fill text-gold me-1"></i>
+                                <span class="fw-bold">4.9</span>
+                                <span class="text-muted ms-2 small">(210 reviews)</span>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-end mt-4">
+                                <div>
+                                    <span class="text-muted text-decoration-line-through d-block small">$1,100</span>
+                                    <h4 class="text-primary mb-0 fw-bold">$660</h4>
+                                </div>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section-padding bg-dark text-white position-relative overflow-hidden z-index-2">
+        <div class="container position-relative">
+            <div class="section-header text-center" data-aos="fade-right">
+                <h2 class="section-title text-white">How It Works</h2>
+                <p class="text-white-50 lead">Book your next trip in 3 seamless steps.</p>
+            </div>
+            <div class="row text-center position-relative g-5">
+                <!-- Connecting Line (Desktop) -->
+                <div class="position-absolute top-50 start-50 translate-middle w-75 d-none d-md-block"
+                    style="height: 2px; background: rgba(255,255,255,0.1); z-index: 0; transform: translateY(-30px) !important;">
+                </div>
+
+                <div class="col-md-4 position-relative z-index-1" data-aos="fade-left" data-aos-delay="0">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-4 shadow-lg"
+                            style="width: 90px; height: 90px; font-size: 2.2rem; border: 6px solid var(--dark);">
+                            <i class="bi bi-search"></i>
+                        </div>
+                        <h4 class="text-white fw-bold">01. Search</h4>
+                        <p class="text-white-50">Find premium flights, hotels, and cars at the best global prices.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative z-index-1" data-aos="fade-right" data-aos-delay="100">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-4 shadow-lg"
+                            style="width: 90px; height: 90px; font-size: 2.2rem; border: 6px solid var(--dark);">
+                            <i class="bi bi-sliders"></i>
+                        </div>
+                        <h4 class="text-white fw-bold">02. Compare</h4>
+                        <p class="text-white-50">Filter and compare the most luxurious options for your itinerary.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 position-relative z-index-1" data-aos="fade-left" data-aos-delay="200">
+                    <div class="d-flex flex-column align-items-center">
+                        <div class="bg-blue text-white rounded-circle d-flex align-items-center justify-content-center mb-4 shadow-lg"
+                            style="width: 90px; height: 90px; font-size: 2.2rem; border: 6px solid var(--dark);">
+                            <i class="bi bi-check2-circle"></i>
+                        </div>
+                        <h4 class="text-white fw-bold">03. Book</h4>
+                        <p class="text-white-50">Securely finalize your booking and prepare for a flawless journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Hotels -->
+    <section class="section-padding bg-white position-relative z-index-2">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-right">
+                <h2 class="section-title">Featured Hotels</h2>
+                <p class="lead">Stay in absolute luxury with our top-rated global partners.</p>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="0">
+                    <div class="card border-0 shadow-md rounded-4 overflow-hidden flex-md-row h-100 hover-lift" data-aos="fade-right">
+                        <img src="assets/images/hotel-ritz.webp" class="card-img-left" alt="Hotel"
+                            style="width: 100%; max-width: 320px; object-fit: cover;">
+                        <div class="card-body p-4 p-lg-5 d-flex flex-column justify-content-center" data-aos="fade-left">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="card-title fw-bold mb-0">The Ritz-Carlton</h4>
+                                <span class="badge bg-primary rounded-pill px-3 py-2"><i
+                                        class="bi bi-shield-check me-1"></i>Verified</span>
+                            </div>
+                            <p class="text-muted fw-medium mb-4"><i
+                                    class="bi bi-geo-alt-fill text-primary me-2"></i>Dubai, UAE</p>
+                            <div class="d-flex gap-3 mb-4 text-muted small fw-medium">
+                                <span><i class="bi bi-wifi fs-6 text-primary me-1"></i> WiFi</span>
+                                <span><i class="bi bi-cup-hot fs-6 text-primary me-1"></i> Breakfast</span>
+                                <span><i class="bi bi-water fs-6 text-primary me-1"></i> Pool</span>
+                            </div>
+                            <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-3 border-top pt-4">
+                                <h3 class="text-primary fw-bold mb-0">$350<span class="fs-6 text-muted fw-medium">/night</span></h3>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold text-nowrap">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="card border-0 shadow-md rounded-4 overflow-hidden flex-md-row h-100 hover-lift" data-aos="fade-left">
+                        <img src="assets/images/hotel-shangrila.webp" class="card-img-left" alt="Hotel"
+                            style="width: 100%; max-width: 320px; object-fit: cover;">
+                        <div class="card-body p-4 p-lg-5 d-flex flex-column justify-content-center" data-aos="fade-right">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h4 class="card-title fw-bold mb-0">Shangri-La Hotel</h4>
+                                <span class="badge bg-primary rounded-pill px-3 py-2"><i
+                                        class="bi bi-shield-check me-1"></i>Verified</span>
+                            </div>
+                            <p class="text-muted fw-medium mb-4"><i
+                                    class="bi bi-geo-alt-fill text-primary me-2"></i>Paris, France</p>
+                            <div class="d-flex gap-3 mb-4 text-muted small fw-medium">
+                                <span><i class="bi bi-wifi fs-6 text-primary me-1"></i> WiFi</span>
+                                <span><i class="bi bi-person-workspace fs-6 text-primary me-1"></i> Spa</span>
+                                <span><i class="bi bi-car-front fs-6 text-primary me-1"></i> Parking</span>
+                            </div>
+                            <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-3 border-top pt-4">
+                                <h3 class="text-primary fw-bold mb-0">$420<span class="fs-6 text-muted fw-medium">/night</span></h3>
+                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold text-nowrap">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Airline Partners Marquee -->
+    <section class="py-5 bg-light overflow-hidden border-top border-bottom position-relative z-index-2">
+        <div class="container-fluid">
+            <h6 class="text-center text-muted fw-bold text-uppercase letter-spacing-2 mb-5">Trusted by 500+ Premium
+                Airlines</h6>
+            <div class="marquee-container">
+                <div class="marquee-track d-flex align-items-center gap-5">
+                    <!-- Partner Text Pills (Using clean typography instead of logos for premium feel) -->
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">EMIRATES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">QATAR AIRWAYS</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">ETIHAD</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">SINGAPORE AIRLINES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">LUFTHANSA</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">BRITISH AIRWAYS</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">AIR FRANCE</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">TURKISH AIRLINES</span>
+                    <!-- Duplicate for infinite scroll -->
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">EMIRATES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">QATAR AIRWAYS</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">ETIHAD</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">SINGAPORE AIRLINES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">LUFTHANSA</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">BRITISH AIRWAYS</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">AIR FRANCE</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">TURKISH AIRLINES</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section-padding bg-white position-relative z-index-2">
+        <div class="container">
+            <div class="section-header text-center" data-aos="fade-left">
+                <h2 class="section-title">Real Reviews from Real Travelers</h2>
+                <p class="lead">See what our elite community has to say about Stackly.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-delay="0">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift" data-aos="fade-down-right">
+                        <div class="d-flex text-gold mb-4 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic mb-5 flex-grow-1 fs-5 text-dark">"Booking my flight to Tokyo was incredibly
+                            seamless. The UI is stunning and I found the best deal in minutes. Highly recommended!"</p>
+                        <div class="d-flex align-items-center mt-auto border-top pt-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"
+                                class="rounded-circle me-3 shadow-sm" width="50" height="50">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Alex Johnson</h6>
+                                <small class="text-muted fw-medium">Business Trip</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift" data-aos="fade-up-left">
+                        <div class="d-flex text-gold mb-4 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="fst-italic mb-5 flex-grow-1 fs-5 text-dark">"I love the mobile app. Getting instant
+                            flight alerts saved me from missing a connection in Dubai. Stackly is now my go-to."</p>
+                        <div class="d-flex align-items-center mt-auto border-top pt-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"
+                                class="rounded-circle me-3 shadow-sm" width="50" height="50">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Sarah Williams</h6>
+                                <small class="text-muted fw-medium">Solo Backpacker</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12" data-aos="fade-right" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift" data-aos="fade-down-right">
+                        <div class="d-flex text-gold mb-4 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                class="bi bi-star-half"></i>
+                        </div>
+                        <p class="fst-italic mb-5 flex-grow-1 fs-5 text-dark">"The 24/7 customer support is genuinely
+                            helpful. I had to change my booking last minute and they handled it flawlessly."</p>
+                        <div class="d-flex align-items-center mt-auto border-top pt-4">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"
+                                class="rounded-circle me-3 shadow-sm" width="50" height="50">
+                            <div>
+                                <h6 class="mb-0 fw-bold">Michael Chen</h6>
+                                <small class="text-muted fw-medium">Family Vacation</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Pick CTA Banner -->
+    <section class="pb-5 bg-light">
+        <div class="container" data-aos="fade-right">
+            <div class="card border-0 rounded-4 overflow-hidden" style="background-color: #0d2a80; box-shadow: 0 10px 40px rgba(13, 42, 128, 0.2);" data-aos="fade-left">
+                <div class="row g-0">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5 p-xl-6 text-white position-relative">
+                        <!-- Subtle background decoration on the blue side -->
+                        <div class="position-absolute rounded-circle bg-white" style="width: 300px; height: 300px; opacity: 0.05; top: -100px; left: -50px;"></div>
+                        
+                        <div class="position-relative z-1">
+                            <div class="mb-4">
+                                <span class="badge border border-white border-opacity-50 text-white rounded-pill px-3 py-2 fw-bold" style="background: rgba(255,255,255,0.08); font-size: 0.75rem; letter-spacing: 1px;"><i class="bi bi-gem me-2"></i> TOP PICK</span>
+                            </div>
+                            <h2 class="fw-bold mb-3">Plan Your Next Escape</h2>
+                            <p class="mb-5 lh-lg pe-lg-4" style="opacity: 0.85; font-size: 0.95rem;">Compare fares from 450+ airlines, lock in member-only hotel rates, and build your dream itinerary in minutes — all in one place. Your next adventure is one search away.</p>
+                            <div>
+                                <a href="#" class="btn bg-white fw-bold px-4 py-3 rounded-2 text-dark shadow-sm d-inline-flex align-items-center hover-lift transition-fast" style="color: #0f172a;">
+                                    Search Flights <i class="bi bi-arrow-right ms-2 fw-bold"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6" data-aos="zoom-in-down">
+                        <img src="assets/images/beach-cta.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Beautiful Beach" style="min-height: 350px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Section -->
+    <section class="section-padding bg-primary text-white overflow-hidden position-relative z-index-2">
+        <!-- Abstract shape background -->
+        <div class="position-absolute top-0 end-0 bg-white opacity-10 rounded-circle"
+            style="width: 800px; height: 800px; transform: translate(30%, -30%);"></div>
+
+        <div class="container position-relative z-index-1">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <h2 class="display-4 fw-bold mb-4 letter-spacing-n1">Take Stackly<br>Everywhere You Go</h2>
+                    <p class="lead mb-5 text-white-75" style="color: rgba(255,255,255,0.8);">Download our premium mobile
+                        app to book flights, track your journey, and get exclusive mobile-only deals.</p>
+                    <ul class="list-unstyled mb-5">
+                        <li class="mb-4 d-flex align-items-center"><i
+                                class="bi bi-check-circle-fill text-gold me-3 fs-4"></i> <span
+                                class="fs-5 fw-medium">Instant Flight Alerts</span></li>
+                        <li class="mb-4 d-flex align-items-center"><i
+                                class="bi bi-check-circle-fill text-gold me-3 fs-4"></i> <span
+                                class="fs-5 fw-medium">Mobile E-Tickets</span></li>
+                        <li class="mb-4 d-flex align-items-center"><i
+                                class="bi bi-check-circle-fill text-gold me-3 fs-4"></i> <span
+                                class="fs-5 fw-medium">24/7 Live Chat Support</span></li>
+                    </ul>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#"
+                            class="btn btn-outline-light btn-lg rounded-pill px-5 py-3 d-flex align-items-center fw-bold transition-normal hover-bg-white"><i
+                                class="bi bi-apple me-2 fs-4"></i> App Store</a>
+                        <a href="#"
+                            class="btn btn-outline-light btn-lg rounded-pill px-5 py-3 d-flex align-items-center fw-bold transition-normal hover-bg-white"><i
+                                class="bi bi-google-play me-2 fs-4"></i> Google Play</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center position-relative" data-aos="fade-left">
+                    <div class="glass-panel-dark p-4 d-inline-block rounded-5 shadow-lg"
+                        style="transform: rotate(5deg) scale(1.05);">
+                        <img src="assets/images/app-mockup1.webp" class="img-fluid rounded-4 shadow-lg" alt="App Mockup"
+                            style="max-width: 250px; border: 8px solid var(--dark);">
+                    </div>
+                    <div class="glass-panel-dark p-4 d-inline-block rounded-5 position-absolute top-50 start-0 translate-middle-y shadow-lg"
+                        style="transform: rotate(-5deg); z-index: -1;">
+                        <img src="assets/images/app-mockup2.webp" class="img-fluid rounded-4 shadow-lg" alt="App Mockup"
+                            style="max-width: 200px; border: 8px solid var(--dark);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer position-relative z-index-2" data-aos="zoom-out-up">
+        <div class="container">
+            <div class="row mb-5 pb-4 border-bottom border-secondary">
+                <div class="col-lg-4 mb-4 mb-lg-0 pe-lg-5" data-aos="fade-up" data-aos-delay="0">
+                    <a href="index.html" class="navbar-brand text-white d-inline-block mb-4 fs-3 fw-bold">
+                        <img src="assets/images/logo.webp" alt="Stackly Logo"
+                            style="height:44px; width:auto; object-fit:contain;">
+                    </a>
+                    <p class="mb-4 text-white-50 lh-lg">Your premium gateway to the world. Discover, compare, and book
+                        the best flights and luxury hotels with absolute ease.</p>
+                    <div class="d-flex mt-4">
+                        <a href="404.html" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0 mt-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <h5>Explore</h5>
+                    <a href="404.html" class="footer-link">Flights</a>
+                    <a href="404.html" class="footer-link">Hotels</a>
+                    <a href="services.html#cars" class="footer-link">Cars</a>
+                    <a href="404.html" class="footer-link">Deals</a>
+                    <a href="404.html" class="footer-link"><i class="bi bi-exclamation-triangle-fill me-1"
+                            style="color:#f59e0b;"></i>404 Page</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0 mt-lg-2" data-aos="fade-up" data-aos-delay="200">
+                    <h5>Company</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-4 col-md-4 mt-lg-2" data-aos="fade-up" data-aos-delay="300">
+                    <h5>Newsletter</h5>
+                    <p class="text-white-50 mb-4">Subscribe to receive exclusive travel deals and premium insights.</p>
+                    <form>
+                        <div class="input-group p-1 bg-white bg-opacity-10 rounded-pill">
+                            <input type="email" class="form-control bg-transparent border-0 text-white px-4"
+                                placeholder="Email Address" required>
+                            <button class="btn btn-premium rounded-pill px-4" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="newsletter-msg text-success mt-2 mb-0" style="display: none; font-size: 0.9rem;">Thank You For Subscription</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="mb-0 text-white-50 fw-medium small">&copy; 2026 Stackly. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Wait for motionpath plugin if requested, but for now we fallback to the smooth Y mapping in script.js to avoid CDN failures -->
+    <script src="js/script.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/hero-slider.js"></script>
+</body>
+
+</html>

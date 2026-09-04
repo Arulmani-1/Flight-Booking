@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Stackly Premium Flight Booking</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-ring-wrap">
+            <div class="loader-ripple"></div>
+            <div class="loader-ripple"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring-inner"></div>
+            <img class="loader-logo" src="assets/images/logo.webp" alt="Stackly">
+        </div>
+        <div class="loader-brand">STACKLY</div>
+        <div class="loader-progress-track">
+            <div class="loader-progress-bar"></div>
+        </div>
+    </div>
+    <!-- ===== END LOADER ===== -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.webp" alt="Stackly Logo" style="height:38px; width:auto; object-fit:contain;">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+                    <a href="login.html" class="btn btn-premium btn-sm px-4">Login</a>
+                    <a href="signup.html" class="btn btn-premium btn-sm px-4">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="hero" style="background-image: url('assets/images/airplane.webp'); min-height: 70vh;">
+        <div class="container text-center pt-5">
+            <h1 class="hero-title">Our Premium Services</h1>
+            <p class="hero-subtitle mx-auto">Experience seamless travel solutions tailored perfectly to your lifestyle.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-right">
+                <h6 class="text-primary fw-bold text-uppercase letter-spacing-2 mb-2">What We Offer</h6>
+                <h2 class="display-5 fw-bold mb-3 letter-spacing-n1 text-dark">World-Class Travel Solutions</h2>
+                <p class="text-muted mx-auto lead fs-6" style="max-width: 600px;">From booking your flight to securing luxury accommodation, Stackly handles every detail of your journey.</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="100">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden service-card-hover hover-lift" data-aos="fade-right">
+                        <div class="card-body p-5" data-aos="fade-left">
+                            <div class="icon-box bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                                <i class="bi bi-airplane-engines fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Global Flight Booking</h4>
+                            <p class="text-muted mb-4">Access exclusive fares across 500+ airlines. Enjoy a seamless booking experience with intuitive filters, secure payments, and instant confirmation.</p>
+                            <a href="flights.html" class="text-primary fw-bold text-decoration-none d-flex align-items-center">Explore Flights <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden service-card-hover hover-lift" data-aos="fade-left">
+                        <div class="card-body p-5" data-aos="fade-right">
+                            <div class="icon-box bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                                <i class="bi bi-building fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Luxury Hotels</h4>
+                            <p class="text-muted mb-4">Discover hand-picked premium accommodations worldwide. We partner with elite hotel groups to offer you complimentary upgrades and VIP perks.</p>
+                            <a href="#" class="text-success fw-bold text-decoration-none d-flex align-items-center">Find Hotels <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="300">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden service-card-hover hover-lift" data-aos="fade-right">
+                        <div class="card-body p-5" data-aos="fade-left">
+                            <div class="icon-box bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                                <i class="bi bi-car-front fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Premium Car Rentals</h4>
+                            <p class="text-muted mb-4">Travel in style from the moment you land. Reserve premium vehicles, chauffeur services, or private airport transfers with ease.</p>
+                            <a href="#" class="text-warning fw-bold text-decoration-none d-flex align-items-center">Book Transfer <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-delay="400">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden service-card-hover hover-lift" data-aos="fade-left">
+                        <div class="card-body p-5" data-aos="fade-right">
+                            <div class="icon-box bg-danger bg-opacity-10 text-danger rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                                <i class="bi bi-shield-check fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Travel Insurance</h4>
+                            <p class="text-muted mb-4">Fly with absolute peace of mind. Our comprehensive insurance packages cover trip cancellations, medical emergencies, and lost baggage.</p>
+                            <a href="#" class="text-danger fw-bold text-decoration-none d-flex align-items-center">View Coverage <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-left" data-aos-delay="500">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden service-card-hover hover-lift" data-aos="fade-right">
+                        <div class="card-body p-5" data-aos="fade-left">
+                            <div class="icon-box bg-info bg-opacity-10 text-info rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                                <i class="bi bi-briefcase fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3">Corporate Travel</h4>
+                            <p class="text-muted mb-4">Streamlined booking solutions for businesses. We provide dedicated account managers, expense tracking, and bulk booking discounts.</p>
+                            <a href="#" class="text-info fw-bold text-decoration-none d-flex align-items-center">Corporate Hub <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-delay="600">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden service-card-hover hover-lift bg-dark text-white position-relative" data-aos="fade-left">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-25" style="filter: blur(40px);"></div>
+                        <div class="card-body p-5 position-relative z-3" data-aos="fade-right">
+                            <div class="icon-box bg-white bg-opacity-10 text-white rounded-circle d-flex align-items-center justify-content-center mb-4" style="width: 70px; height: 70px;">
+                                <i class="bi bi-star-fill fs-2"></i>
+                            </div>
+                            <h4 class="fw-bold mb-3 text-white">VIP Club</h4>
+                            <p class="text-white-50 mb-4">Join our elite members club for 24/7 priority support, complimentary lounge access, and members-only flash sales.</p>
+                            <a href="#" class="text-white fw-bold text-decoration-none d-flex align-items-center">Join the Club <i class="bi bi-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+        <!-- Search Interface Section -->
+    <style>
+        .nav-pills .nav-link {
+            color: #334155;
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+        .nav-pills .nav-link:hover {
+            border-color: #cbd5e1;
+        }
+        .nav-pills .nav-link.active {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(37,99,235,0.2);
+        }
+        .filter-sidebar {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .filter-group {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .filter-group:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .result-card {
+            background-color: white;
+            border-radius: 1rem;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .result-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            transform: translateY(-2px);
+        }
+        .flight-timeline {
+            position: relative;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin: 0 2rem;
+        }
+        .flight-line {
+            height: 2px;
+            background-color: #cbd5e1;
+            flex: 1;
+            position: relative;
+        }
+        .flight-stop {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #64748b;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .bg-white { background-color: #f0f9ff; }
+        .text-dark-blue { color: #0f172a; }
+        .badge-premium { background-color: #fef3c7; color: #d97706; }
+    </style>
+    <section class="section-padding bg-white">
+        <div class="container">
+            
+            <div class="text-center mb-5" data-aos="fade-left">
+                <h2 class="display-6 fw-bold mb-3 text-dark-blue">Find Your Perfect Trip</h2>
+            </div>
+
+            <!-- Tabs -->
+            <ul class="nav nav-pills mb-5 justify-content-center" id="search-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active px-4 py-2 fw-bold rounded-pill mx-2" id="flights-tab" data-bs-toggle="pill" data-bs-target="#flights" type="button" role="tab"><i class="bi bi-airplane-engines me-2"></i>Flights</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link px-4 py-2 fw-bold rounded-pill mx-2" id="hotels-tab" data-bs-toggle="pill" data-bs-target="#hotels" type="button" role="tab"><i class="bi bi-building me-2"></i>Hotels</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link px-4 py-2 fw-bold rounded-pill mx-2" id="cars-tab" data-bs-toggle="pill" data-bs-target="#cars" type="button" role="tab"><i class="bi bi-car-front me-2"></i>Car Rentals</button>
+                </li>
+            </ul>
+
+            <div class="tab-content" id="search-tabs-content">
+                <!-- FLIGHTS TAB -->
+                <div class="tab-pane fade show active" id="flights" role="tabpanel">
+                    <div class="row g-4">
+                        <!-- Sidebar -->
+                        <div class="col-lg-3">
+                            <div class="filter-sidebar">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h6 class="fw-bold mb-0"><i class="bi bi-sliders me-2"></i>Filters</h6>
+                                    <a href="#" class="text-primary text-decoration-none small fw-medium">Reset all</a>
+                                </div>
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-muted text-uppercase mb-3">Price Range</h6>
+                                    <input type="range" class="form-range" min="50" max="1000" value="500">
+                                    <div class="d-flex justify-content-between small fw-medium mt-2">
+                                        <span>$50</span><span>$1,000</span>
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-muted text-uppercase mb-3">Stops</h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" checked id="stop1">
+                                        <label class="form-check-label small" for="stop1">Non-stop (184)</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="checkbox" checked id="stop2">
+                                        <label class="form-check-label small" for="stop2">1 Stop (68)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="stop3">
+                                        <label class="form-check-label small" for="stop3">2+ Stops (24)</label>
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-muted text-uppercase mb-3 d-flex justify-content-between align-items-center">Airlines <i class="bi bi-chevron-up text-primary"></i></h6>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="form-check d-flex align-items-center gap-2 m-0">
+                                            <input class="form-check-input mt-0" type="checkbox" checked>
+                                            <div class="rounded-2 text-white fw-bold d-inline-flex align-items-center justify-content-center" style="background-color: #f97316; width: 24px; height: 24px; font-size: 0.65rem;">G9</div>
+                                            <label class="form-check-label small text-dark">Air Arabia</label>
+                                        </div>
+                                        <span class="text-muted small" style="font-size: 0.7rem;">14</span>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="form-check d-flex align-items-center gap-2 m-0">
+                                            <input class="form-check-input mt-0" type="checkbox" checked>
+                                            <div class="rounded-2 text-white fw-bold d-inline-flex align-items-center justify-content-center" style="background-color: #2563eb; width: 24px; height: 24px; font-size: 0.65rem;">MS</div>
+                                            <label class="form-check-label small text-dark">EgyptAir</label>
+                                        </div>
+                                        <span class="text-muted small" style="font-size: 0.7rem;">45</span>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="form-check d-flex align-items-center gap-2 m-0">
+                                            <input class="form-check-input mt-0" type="checkbox" checked>
+                                            <div class="rounded-2 text-white fw-bold d-inline-flex align-items-center justify-content-center" style="background-color: #dc2626; width: 24px; height: 24px; font-size: 0.65rem;">FZ</div>
+                                            <label class="form-check-label small text-dark">Flydubai</label>
+                                        </div>
+                                        <span class="text-muted small" style="font-size: 0.7rem;">22</span>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="form-check d-flex align-items-center gap-2 m-0">
+                                            <input class="form-check-input mt-0" type="checkbox" checked>
+                                            <div class="rounded-2 text-white fw-bold d-inline-flex align-items-center justify-content-center" style="background-color: #b91c1c; width: 24px; height: 24px; font-size: 0.65rem;">TK</div>
+                                            <label class="form-check-label small text-dark">Turkish Airlines</label>
+                                        </div>
+                                        <span class="text-muted small" style="font-size: 0.7rem;">22</span>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="form-check d-flex align-items-center gap-2 m-0">
+                                            <input class="form-check-input mt-0" type="checkbox" checked>
+                                            <div class="rounded-2 text-white fw-bold d-inline-flex align-items-center justify-content-center" style="background-color: #7f1d1d; width: 24px; height: 24px; font-size: 0.65rem;">QR</div>
+                                            <label class="form-check-label small text-dark">Qatar Airways</label>
+                                        </div>
+                                        <span class="text-muted small" style="font-size: 0.7rem;">29</span>
+                                    </div>
+                                    
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="form-check d-flex align-items-center gap-2 m-0">
+                                            <input class="form-check-input mt-0" type="checkbox" checked>
+                                            <div class="rounded-2 text-white fw-bold d-inline-flex align-items-center justify-content-center" style="background-color: #b45309; width: 24px; height: 24px; font-size: 0.65rem;">EK</div>
+                                            <label class="form-check-label small text-dark">Emirates</label>
+                                        </div>
+                                        <span class="text-muted small" style="font-size: 0.7rem;">38</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-muted text-uppercase mb-3 d-flex justify-content-between align-items-center">Departure Time <i class="bi bi-chevron-up text-primary"></i></h6>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <div class="border border-secondary border-opacity-25 rounded-3 p-2 text-center" style="cursor: pointer;">
+                                                <div class="fs-5 mb-1">🌅</div>
+                                                <div class="fw-bold text-dark small" style="font-size: 0.75rem;">Morning</div>
+                                                <div class="text-muted" style="font-size: 0.65rem;">6AM - 12PM</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="border border-secondary border-opacity-25 rounded-3 p-2 text-center" style="cursor: pointer;">
+                                                <div class="fs-5 mb-1">☀️</div>
+                                                <div class="fw-bold text-dark small" style="font-size: 0.75rem;">Afternoon</div>
+                                                <div class="text-muted" style="font-size: 0.65rem;">12PM - 6PM</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="border border-secondary border-opacity-25 rounded-3 p-2 text-center" style="cursor: pointer;">
+                                                <div class="fs-5 mb-1">🌆</div>
+                                                <div class="fw-bold text-dark small" style="font-size: 0.75rem;">Evening</div>
+                                                <div class="text-muted" style="font-size: 0.65rem;">6PM - 10PM</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="border border-secondary border-opacity-25 rounded-3 p-2 text-center" style="cursor: pointer;">
+                                                <div class="fs-5 mb-1">🌙</div>
+                                                <div class="fw-bold text-dark small" style="font-size: 0.75rem;">Night</div>
+                                                <div class="text-muted" style="font-size: 0.65rem;">10PM - 6AM</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-muted text-uppercase mb-3 d-flex justify-content-between align-items-center">Arrival Time <i class="bi bi-chevron-up text-primary"></i></h6>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <div class="border border-secondary border-opacity-25 rounded-3 p-2 text-center" style="cursor: pointer;">
+                                                <div class="fs-5 mb-1">🌅</div>
+                                                <div class="fw-bold text-dark small" style="font-size: 0.75rem;">Morning</div>
+                                                <div class="text-muted" style="font-size: 0.65rem;">6AM - 12PM</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="border border-secondary border-opacity-25 rounded-3 p-2 text-center" style="cursor: pointer;">
+                                                <div class="fs-5 mb-1">☀️</div>
+                                                <div class="fw-bold text-dark small" style="font-size: 0.75rem;">Afternoon</div>
+                                                <div class="text-muted" style="font-size: 0.65rem;">12PM - 6PM</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="border border-secondary border-opacity-25 rounded-3 p-2 text-center" style="cursor: pointer;">
+                                                <div class="fs-5 mb-1">🌆</div>
+                                                <div class="fw-bold text-dark small" style="font-size: 0.75rem;">Evening</div>
+                                                <div class="text-muted" style="font-size: 0.65rem;">6PM - 10PM</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="border border-secondary border-opacity-25 rounded-3 p-2 text-center" style="cursor: pointer;">
+                                                <div class="fs-5 mb-1">🌙</div>
+                                                <div class="fw-bold text-dark small" style="font-size: 0.75rem;">Night</div>
+                                                <div class="text-muted" style="font-size: 0.65rem;">10PM - 6AM</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-muted text-uppercase mb-3 d-flex justify-content-between align-items-center">Baggage <i class="bi bi-chevron-up text-primary"></i></h6>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="small text-muted">Checked baggage included</span>
+                                        <div class="form-check form-switch m-0">
+                                            <input class="form-check-input" type="checkbox" role="switch" checked>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group border-bottom-0 mb-0 pb-0">
+                                    <h6 class="fw-bold small text-muted text-uppercase mb-3 d-flex justify-content-between align-items-center">Ticket Type <i class="bi bi-chevron-up text-primary"></i></h6>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <span class="small text-muted">Refundable only</span>
+                                        <div class="form-check form-switch m-0">
+                                            <input class="form-check-input" type="checkbox" role="switch">
+                                        </div>
+                                    </div>
+                                    <div class="form-check mb-0">
+                                        <input class="form-check-input" type="checkbox">
+                                        <label class="form-check-label small text-muted">Flexible dates</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Main Content -->
+                        <div class="col-lg-9">
+                            <div class="d-flex justify-content-between align-items-center bg-white p-3 rounded-4 shadow-sm border border-light mb-4">
+                                <h6 class="mb-0 fw-bold">Cairo (CAI) - Dubai (DXB)</h6>
+                                <div class="btn-group">
+                                    <button class="btn btn-dark btn-sm rounded-pill px-3">Cheapest</button>
+                                    <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-0">Fastest</button>
+                                    <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-0">Best Value</button>
+                                </div>
+                            </div>
+
+                            <!-- Flight Card 1 -->
+                            <div class="result-card p-4 mb-4 bg-white" data-aos="fade-right">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="rounded-3 text-white fw-bold d-inline-flex align-items-center justify-content-center mb-2" style="background-color: #0d6efd; width: 45px; height: 45px;">MS</div>
+                                        <div class="small fw-bold text-dark">EgyptAir</div>
+                                    </div>
+                                    <div class="col-md-7 mb-3 mb-md-0">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="text-center">
+                                                <h5 class="fw-bold mb-0 text-dark">08:00</h5>
+                                                <span class="text-muted small fw-bold">CAI</span>
+                                                <div class="text-muted" style="font-size: 0.75rem;">Cairo</div>
+                                            </div>
+                                            <div class="flight-timeline flex-column px-3" style="flex: 1;">
+                                                <div class="text-muted small fw-medium mb-1 text-center w-100">4h 30m</div>
+                                                <div class="flight-line w-100 position-relative d-flex justify-content-center align-items-center">
+                                                    <div class="bg-white px-2 text-primary z-3 position-relative d-inline-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-airplane-fill" style="transform: rotate(45deg);"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-1 text-center w-100">
+                                                    <span class="badge rounded-pill text-success bg-success bg-opacity-10 px-3 py-1">Non-stop</span>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <h5 class="fw-bold mb-0 text-dark">12:30</h5>
+                                                <span class="text-muted small fw-bold">DXB</span>
+                                                <div class="text-muted" style="font-size: 0.75rem;">Dubai</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end border-start-md border-light pl-md-4">
+                                        <div class="small text-muted mb-1 text-uppercase fw-bold" style="font-size: 0.7rem;">From</div>
+                                        <h3 class="fw-bold text-primary mb-0">$149</h3>
+                                        <p class="text-muted small mb-2">per person</p>
+                                        <div class="mb-3">
+                                            <span class="badge rounded-pill bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-1"><i class="bi bi-check-circle-fill me-1"></i> Refundable</span>
+                                        </div>
+                                        <button class="btn btn-primary rounded-pill w-100 fw-bold shadow-sm mb-2">Select <i class="bi bi-arrow-right ms-1"></i></button>
+                                        <a href="#" class="text-primary small text-decoration-none fw-medium"><i class="bi bi-chevron-down me-1"></i>Flight details</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flight Card 2 -->
+                            <div class="result-card p-4 mb-4 bg-white" data-aos="fade-left">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="rounded-3 text-white fw-bold d-inline-flex align-items-center justify-content-center mb-2" style="background-color: #dc2626; width: 45px; height: 45px;">FZ</div>
+                                        <div class="small fw-bold text-dark">Flydubai</div>
+                                    </div>
+                                    <div class="col-md-7 mb-3 mb-md-0">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="text-center">
+                                                <h5 class="fw-bold mb-0 text-dark">16:45</h5>
+                                                <span class="text-muted small fw-bold">CAI</span>
+                                                <div class="text-muted" style="font-size: 0.75rem;">Cairo</div>
+                                            </div>
+                                            <div class="flight-timeline flex-column px-3" style="flex: 1;">
+                                                <div class="text-muted small fw-medium mb-1 text-center w-100">4h 15m</div>
+                                                <div class="flight-line w-100 position-relative d-flex justify-content-center align-items-center">
+                                                    <div class="bg-white px-2 text-primary z-3 position-relative d-inline-flex align-items-center justify-content-center">
+                                                        <i class="bi bi-airplane-fill" style="transform: rotate(45deg);"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-1 text-center w-100">
+                                                    <span class="badge rounded-pill text-success bg-success bg-opacity-10 px-3 py-1">Non-stop</span>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <h5 class="fw-bold mb-0 text-dark">21:00</h5>
+                                                <span class="text-muted small fw-bold">DXB</span>
+                                                <div class="text-muted" style="font-size: 0.75rem;">Dubai</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end border-start-md border-light pl-md-4">
+                                        <div class="small text-muted mb-1 text-uppercase fw-bold" style="font-size: 0.7rem;">From</div>
+                                        <h3 class="fw-bold text-primary mb-0">$159</h3>
+                                        <p class="text-muted small mb-4">per person</p>
+                                        <button class="btn btn-primary rounded-pill w-100 fw-bold shadow-sm mb-2">Select <i class="bi bi-arrow-right ms-1"></i></button>
+                                        <a href="#" class="text-primary small text-decoration-none fw-medium"><i class="bi bi-chevron-down me-1"></i>Flight details</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flight Card 3 -->
+                            <div class="result-card p-4 mb-4" data-aos="fade-right">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="rounded-3 bg-danger bg-opacity-10 text-danger fw-bold d-inline-flex align-items-center justify-content-center mb-2" style="width: 45px; height: 45px;">TK</div>
+                                        <div class="small fw-bold">Turkish Airlines</div>
+                                    </div>
+                                    <div class="col-md-7 mb-3 mb-md-0">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="text-center">
+                                                <h5 class="fw-bold mb-0">07:00</h5>
+                                                <span class="text-muted small text-dark">CAI</span>
+                                            </div>
+                                            <div class="flight-timeline position-relative">
+                                                <div class="flight-line w-100">
+                                                    <div class="flight-stop" style="background-color: #f59e0b;"></div>
+                                                </div>
+                                                <div class="position-absolute top-0 start-50 translate-middle-x" style="margin-top: -15px;">
+                                                    <div class="bg-white rounded-circle p-1 border border-light">
+                                                        <i class="bi bi-airplane-fill text-primary" style="transform: rotate(45deg); display: inline-block;"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <h5 class="fw-bold mb-0 text-dark">18:20</h5>
+                                                <span class="text-muted small text-dark">DXB</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #fef3c7; border: 1px solid #fcd34d;">11h 20m • 1 Stop · IST</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end border-start-md border-light pl-md-4">
+                                        <div class="small text-muted mb-1 text-uppercase fw-bold">From</div>
+                                        <h3 class="fw-bold text-primary mb-0">$167</h3>
+                                        <p class="text-muted small mb-3">per person</p>
+                                        <button class="btn btn-primary rounded-pill w-100 fw-bold shadow-sm mb-2">Select <i class="bi bi-arrow-right ms-1"></i></button>
+                                        <a href="#" class="text-primary small text-decoration-none fw-medium"><i class="bi bi-chevron-down me-1"></i>Flight details</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Flight Card 4 -->
+                            <div class="result-card p-4 mb-4" data-aos="fade-left">
+                                <div class="row align-items-center">
+                                    <div class="col-md-2 text-center text-md-start mb-3 mb-md-0">
+                                        <div class="rounded-3 fw-bold d-inline-flex align-items-center justify-content-center mb-2" style="background-color: #fce7f3; color: #9f1239; width: 45px; height: 45px;">QR</div>
+                                        <div class="small fw-bold text-dark">Qatar Airways</div>
+                                    </div>
+                                    <div class="col-md-7 mb-3 mb-md-0">
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <div class="text-center">
+                                                <h5 class="fw-bold mb-0 text-dark">14:10</h5>
+                                                <span class="text-muted small text-dark">CAI</span>
+                                            </div>
+                                            <div class="flight-timeline position-relative">
+                                                <div class="flight-line w-100">
+                                                    <div class="flight-stop" style="background-color: #f59e0b;"></div>
+                                                </div>
+                                                <div class="position-absolute top-0 start-50 translate-middle-x" style="margin-top: -15px;">
+                                                    <div class="bg-white rounded-circle p-1 border border-light">
+                                                        <i class="bi bi-airplane-fill text-primary" style="transform: rotate(45deg); display: inline-block;"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <h5 class="fw-bold mb-0 text-dark">20:55</h5>
+                                                <span class="text-muted small text-dark">DXB</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-center mt-3">
+                                            <span class="badge rounded-pill px-3 py-2 text-dark" style="background-color: #fef3c7; border: 1px solid #fcd34d;">6h 45m • 1 Stop · DOH</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 text-center text-md-end border-start-md border-light pl-md-4">
+                                        <div class="small text-muted mb-1 text-uppercase fw-bold">From</div>
+                                        <h3 class="fw-bold text-primary mb-0">$185</h3>
+                                        <p class="text-muted small mb-3">per person</p>
+                                        <button class="btn btn-primary rounded-pill w-100 fw-bold shadow-sm mb-2">Select <i class="bi bi-arrow-right ms-1"></i></button>
+                                        <a href="#" class="text-primary small text-decoration-none fw-medium"><i class="bi bi-chevron-down me-1"></i>Flight details</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="d-flex justify-content-center mt-5">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination pagination-sm gap-2 mb-0">
+                                        <li class="page-item active"><a class="page-link rounded-2 border-0 fw-bold shadow-sm px-3 bg-primary text-white" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">3</a></li>
+                                        <li class="page-item"><span class="page-link border-0 bg-transparent text-muted px-2">...</span></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">6</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#"><i class="bi bi-chevron-right small"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HOTELS TAB -->
+                <div class="tab-pane fade" id="hotels" role="tabpanel">
+                    <div class="row g-4">
+                        <!-- Sidebar -->
+                        <div class="col-lg-3">
+                            <div class="filter-sidebar">
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Budget (per night) <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <input type="range" class="form-range" min="50" max="500" value="250">
+                                    <div class="d-flex justify-content-between small fw-medium mt-1">
+                                        <span class="text-muted" style="font-size: 0.7rem fw-bold;">$50</span>
+                                        <span class="text-primary fw-bold" style="font-size: 0.7rem;">$250</span>
+                                        <span class="text-muted" style="font-size: 0.7rem fw-bold;">$500</span>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Star Rating <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill px-3 active d-flex align-items-center" style="background-color: #eff6ff;"><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small"></i></button>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill px-3 active d-flex align-items-center" style="background-color: #eff6ff;"><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 bg-white d-flex align-items-center border-secondary border-opacity-25"><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small"></i></button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 bg-white d-flex align-items-center border-secondary border-opacity-25"><i class="bi bi-star-fill text-warning small me-1"></i><i class="bi bi-star-fill text-warning small"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Guest Rating <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="d-flex flex-column gap-2">
+                                        <div class="border border-primary rounded-3 p-2 px-3 d-flex justify-content-between align-items-center" style="background-color: #eff6ff;">
+                                            <span class="small fw-bold text-primary" style="font-size: 0.8rem;">Exceptional</span>
+                                            <span class="badge bg-success rounded-2 px-2 py-1">9+</span>
+                                        </div>
+                                        <div class="border border-secondary border-opacity-25 rounded-3 p-2 px-3 d-flex justify-content-between align-items-center bg-white">
+                                            <span class="small fw-bold text-dark" style="font-size: 0.8rem;">Excellent</span>
+                                            <span class="badge bg-success rounded-2 px-2 py-1">8+</span>
+                                        </div>
+                                        <div class="border border-secondary border-opacity-25 rounded-3 p-2 px-3 d-flex justify-content-between align-items-center bg-white">
+                                            <span class="small fw-bold text-dark" style="font-size: 0.8rem;">Very Good</span>
+                                            <span class="badge bg-success rounded-2 px-2 py-1">7+</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Distance from Center <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="distance" id="dist1" checked>
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="dist1">Any distance</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="distance" id="dist2">
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="dist2">Less than 1 km</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="distance" id="dist3">
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="dist3">1 - 3 km</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="distance" id="dist4">
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="dist4">3 - 5 km</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="distance" id="dist5">
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="dist5">5 km +</label>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Meal Plan <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input rounded-1" type="checkbox" checked id="meal1">
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="meal1">All Inclusive</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input rounded-1" type="checkbox" checked id="meal2">
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="meal2">Breakfast Included</label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input rounded-1" type="checkbox" checked id="meal3">
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="meal3">Room Only</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input rounded-1" type="checkbox" checked id="meal4">
+                                        <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="meal4">Half Board</label>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Amenities <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input rounded-1 mt-0 me-2" type="checkbox" checked id="amenity1">
+                                        <label class="form-check-label small text-muted d-flex align-items-center gap-2" style="font-size: 0.8rem;" for="amenity1">🏊 Pool</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input rounded-1 mt-0 me-2" type="checkbox" checked id="amenity2">
+                                        <label class="form-check-label small text-muted d-flex align-items-center gap-2" style="font-size: 0.8rem;" for="amenity2">🌐 Free WiFi</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input rounded-1 mt-0 me-2" type="checkbox" id="amenity3">
+                                        <label class="form-check-label small text-muted d-flex align-items-center gap-2" style="font-size: 0.8rem;" for="amenity3">🚗 Free Parking</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input rounded-1 mt-0 me-2" type="checkbox" id="amenity4">
+                                        <label class="form-check-label small text-muted d-flex align-items-center gap-2" style="font-size: 0.8rem;" for="amenity4">🏋️ Gym</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input rounded-1 mt-0 me-2" type="checkbox" id="amenity5">
+                                        <label class="form-check-label small text-muted d-flex align-items-center gap-2" style="font-size: 0.8rem;" for="amenity5">🍽️ Restaurant</label>
+                                    </div>
+                                    <div class="form-check mb-2 d-flex align-items-center">
+                                        <input class="form-check-input rounded-1 mt-0 me-2" type="checkbox" id="amenity6">
+                                        <label class="form-check-label small text-muted d-flex align-items-center gap-2" style="font-size: 0.8rem;" for="amenity6">💆 Spa</label>
+                                    </div>
+                                    <div class="form-check d-flex align-items-center">
+                                        <input class="form-check-input rounded-1 mt-0 me-2" type="checkbox" id="amenity7">
+                                        <label class="form-check-label small text-muted d-flex align-items-center gap-2" style="font-size: 0.8rem;" for="amenity7">♿ Accessible</label>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group border-bottom-0 pb-0 mb-0">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Property Type <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button class="btn btn-dark btn-sm rounded-pill px-3 text-white fw-medium" style="background-color: #0f172a; font-size: 0.8rem;">Hotel</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-secondary border-opacity-25 bg-white text-muted fw-medium" style="font-size: 0.8rem;">Apartment</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-secondary border-opacity-25 bg-white text-muted fw-medium" style="font-size: 0.8rem;">Resort</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-secondary border-opacity-25 bg-white text-muted fw-medium" style="font-size: 0.8rem;">Villa</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 border-secondary border-opacity-25 bg-white text-muted fw-medium" style="font-size: 0.8rem;">Hostel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="col-lg-9">
+                            <div class="d-flex justify-content-between align-items-center bg-white p-3 rounded-4 shadow-sm border border-light mb-4">
+                                <h6 class="mb-0 fw-bold">142 hotels in Cairo, Egypt</h6>
+                                <select class="form-select form-select-sm w-auto border-0 fw-medium bg-light rounded-pill px-3">
+                                    <option>Top Picks</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Guest Rating</option>
+                                </select>
+                            </div>
+
+                            <!-- Hotel Card 1 -->
+                            <div class="result-card mb-4 position-relative bg-white border border-light shadow-sm rounded-4 overflow-hidden" data-aos="fade-right">
+                                <div class="row g-0">
+                                    <div class="col-md-4 position-relative">
+                                        <button class="btn btn-light position-absolute top-0 end-0 m-3 z-3 rounded-circle p-0 shadow-sm border-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: rgba(255,255,255,0.9);">
+                                            <i class="bi bi-heart text-muted" style="font-size: 0.85rem;"></i>
+                                        </button>
+                                        <img src="assets/images/hotel-1.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Hotel" style="min-height: 250px;" onerror="this.src='assets/images/hotel-ritz.webp'">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-4 h-100 d-flex flex-column" data-aos="fade-left">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <div>
+                                                    <div class="text-warning small mb-1"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                                    <h4 class="fw-bold mb-1 text-dark">Hilton Heliopolis</h4>
+                                                    <p class="text-muted small mb-0 fw-medium"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Heliopolis, Cairo</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="d-inline-flex align-items-center bg-primary text-white rounded-2 px-2 py-1 mb-1 shadow-sm">
+                                                        <span class="fw-bold fs-5 me-2">9.0</span>
+                                                        <span class="small fw-bold text-uppercase" style="font-size: 0.65rem;">Excellent</span>
+                                                    </div>
+                                                    <div class="small text-muted fw-medium" style="font-size: 0.75rem;">3,241 reviews</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-wrap gap-2 mt-3 mb-4">
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-wifi text-primary me-1"></i>Free WiFi</span>
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-bicycle text-primary me-1"></i>Gym</span>
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-cup-hot-fill text-primary me-1"></i>Restaurant</span>
+                                            </div>
+                                            <div class="mt-auto">
+                                                <hr class="border-secondary border-opacity-25 mb-3">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <span class="text-muted small fw-bold" style="font-size: 0.7rem;">FROM</span>
+                                                        <div class="d-flex align-items-end gap-1">
+                                                            <span class="text-primary fw-bold mb-1" style="font-size: 0.9rem; line-height: 1;">$</span>
+                                                            <h3 class="fw-bold text-primary mb-0 lh-1">98</h3>
+                                                            <span class="text-muted fw-medium mb-1" style="font-size: 0.8rem;">/night</span>
+                                                        </div>
+                                                        <p class="text-muted small mb-0 fw-medium mt-1 lh-sm" style="font-size: 0.75rem;">$686 total - 7 nights<br><span style="font-size: 0.7rem;">+$69 taxes & fees</span></p>
+                                                    </div>
+                                                    <button class="btn btn-primary rounded-3 px-4 py-2 fw-bold shadow-sm" style="font-size: 0.9rem;">View Rooms</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hotel Card 2 -->
+                            <div class="result-card mb-4 position-relative bg-white border border-light shadow-sm rounded-4 overflow-hidden" data-aos="fade-right">
+                                <div class="row g-0">
+                                    <div class="col-md-4 position-relative">
+                                        <button class="btn btn-light position-absolute top-0 end-0 m-3 z-3 rounded-circle p-0 shadow-sm border-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: rgba(255,255,255,0.9);">
+                                            <i class="bi bi-heart text-muted" style="font-size: 0.85rem;"></i>
+                                        </button>
+                                        <img src="assets/images/hotel-2.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Hotel" style="min-height: 250px;" onerror="this.src='assets/images/hotel-shangrila.webp'">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-4 h-100 d-flex flex-column" data-aos="fade-left">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <div>
+                                                    <div class="text-warning small mb-1"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                                    <h4 class="fw-bold mb-1 text-dark">Le Meridien Cairo Airport</h4>
+                                                    <p class="text-muted small mb-0 fw-medium"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Cairo International Airport</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="d-inline-flex align-items-center bg-primary text-white rounded-2 px-2 py-1 mb-1 shadow-sm">
+                                                        <span class="fw-bold fs-5 me-2">8.8</span>
+                                                        <span class="small fw-bold text-uppercase" style="font-size: 0.65rem;">Very Good</span>
+                                                    </div>
+                                                    <div class="small text-muted fw-medium" style="font-size: 0.75rem;">1,056 reviews</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-wrap gap-2 mt-3 mb-4">
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-wifi text-primary me-1"></i>Free WiFi</span>
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-water text-primary me-1"></i>Pool</span>
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-p-circle text-primary me-1"></i>Free Parking</span>
+                                            </div>
+                                            <div class="mt-auto">
+                                                <hr class="border-secondary border-opacity-25 mb-3">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <span class="text-muted small fw-bold" style="font-size: 0.7rem;">FROM</span>
+                                                        <div class="d-flex align-items-end gap-1">
+                                                            <span class="text-primary fw-bold mb-1" style="font-size: 0.9rem; line-height: 1;">$</span>
+                                                            <h3 class="fw-bold text-primary mb-0 lh-1">89</h3>
+                                                            <span class="text-muted fw-medium mb-1" style="font-size: 0.8rem;">/night</span>
+                                                        </div>
+                                                        <p class="text-muted small mb-0 fw-medium mt-1 lh-sm" style="font-size: 0.75rem;">$623 total - 7 nights<br><span style="font-size: 0.7rem;">+$62 taxes & fees</span></p>
+                                                    </div>
+                                                    <button class="btn btn-primary rounded-3 px-4 py-2 fw-bold shadow-sm" style="font-size: 0.9rem;">View Rooms</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hotel Card 3 -->
+                            <div class="result-card mb-4 position-relative bg-white border border-light shadow-sm rounded-4 overflow-hidden" data-aos="fade-right">
+                                <div class="row g-0">
+                                    <div class="col-md-4 position-relative">
+                                        <button class="btn btn-light position-absolute top-0 end-0 m-3 z-3 rounded-circle p-0 shadow-sm border-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: rgba(255,255,255,0.9);">
+                                            <i class="bi bi-heart text-muted" style="font-size: 0.85rem;"></i>
+                                        </button>
+                                        <img src="assets/images/hotel-3.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Hotel" style="min-height: 250px;" onerror="this.src='assets/images/hotel-ritz.webp'">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-4 h-100 d-flex flex-column" data-aos="fade-left">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <div>
+                                                    <div class="text-warning small mb-1"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                                    <h4 class="fw-bold mb-1 text-dark">Marriott Mena House</h4>
+                                                    <p class="text-muted small mb-0 fw-medium"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Giza, Cairo</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="d-inline-flex align-items-center bg-primary text-white rounded-2 px-2 py-1 mb-1 shadow-sm">
+                                                        <span class="fw-bold fs-5 me-2">8.5</span>
+                                                        <span class="small fw-bold text-uppercase" style="font-size: 0.65rem;">Very Good</span>
+                                                    </div>
+                                                    <div class="small text-muted fw-medium" style="font-size: 0.75rem;">892 reviews</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-wrap gap-2 mt-3 mb-4">
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-wifi text-primary me-1"></i>Free WiFi</span>
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-water text-primary me-1"></i>Pool</span>
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-cup-hot text-primary me-1"></i>Breakfast Incl.</span>
+                                            </div>
+                                            <div class="mt-auto">
+                                                <hr class="border-secondary border-opacity-25 mb-3">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <span class="text-muted small fw-bold" style="font-size: 0.7rem;">FROM</span>
+                                                        <div class="d-flex align-items-end gap-1">
+                                                            <span class="text-primary fw-bold mb-1" style="font-size: 0.9rem; line-height: 1;">$</span>
+                                                            <h3 class="fw-bold text-primary mb-0 lh-1">75</h3>
+                                                            <span class="text-muted fw-medium mb-1" style="font-size: 0.8rem;">/night</span>
+                                                        </div>
+                                                        <p class="text-muted small mb-0 fw-medium mt-1 lh-sm" style="font-size: 0.75rem;">$525 total - 7 nights<br><span style="font-size: 0.7rem;">+$53 taxes & fees</span></p>
+                                                    </div>
+                                                    <button class="btn btn-primary rounded-3 px-4 py-2 fw-bold shadow-sm" style="font-size: 0.9rem;">View Rooms</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Hotel Card 4 -->
+                            <div class="result-card mb-4 position-relative bg-white border border-light shadow-sm rounded-4 overflow-hidden" data-aos="fade-right">
+                                <div class="row g-0">
+                                    <div class="col-md-4 position-relative">
+                                        <button class="btn btn-light position-absolute top-0 end-0 m-3 z-3 rounded-circle p-0 shadow-sm border-0 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; background-color: rgba(255,255,255,0.9);">
+                                            <i class="bi bi-heart text-muted" style="font-size: 0.85rem;"></i>
+                                        </button>
+                                        <img src="assets/images/hotel-4.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Hotel" style="min-height: 250px;" onerror="this.src='assets/images/hotel-shangrila.webp'">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body p-4 h-100 d-flex flex-column" data-aos="fade-left">
+                                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                                <div>
+                                                    <div class="text-warning small mb-1"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                                    <h4 class="fw-bold mb-1 text-dark">Holiday Inn Maadi</h4>
+                                                    <p class="text-muted small mb-0 fw-medium"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Maadi, Cairo</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <div class="d-inline-flex align-items-center bg-secondary bg-opacity-75 text-white rounded-2 px-2 py-1 mb-1 shadow-sm">
+                                                        <span class="fw-bold fs-5 me-2">8.1</span>
+                                                        <span class="small fw-bold text-uppercase" style="font-size: 0.65rem;">Good</span>
+                                                    </div>
+                                                    <div class="small text-muted fw-medium" style="font-size: 0.75rem;">644 reviews</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-wrap gap-2 mt-3 mb-4">
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-wifi text-primary me-1"></i>Free WiFi</span>
+                                                <span class="badge bg-white text-dark border border-secondary border-opacity-25 rounded-pill px-3 py-1 fw-medium"><i class="bi bi-bicycle text-primary me-1"></i>Gym</span>
+                                            </div>
+                                            <div class="mt-auto">
+                                                <hr class="border-secondary border-opacity-25 mb-3">
+                                                <div class="d-flex justify-content-between align-items-end">
+                                                    <div>
+                                                        <span class="text-muted small fw-bold" style="font-size: 0.7rem;">FROM</span>
+                                                        <div class="d-flex align-items-end gap-1">
+                                                            <span class="text-primary fw-bold mb-1" style="font-size: 0.9rem; line-height: 1;">$</span>
+                                                            <h3 class="fw-bold text-primary mb-0 lh-1">65</h3>
+                                                            <span class="text-muted fw-medium mb-1" style="font-size: 0.8rem;">/night</span>
+                                                        </div>
+                                                        <p class="text-muted small mb-0 fw-medium mt-1 lh-sm" style="font-size: 0.75rem;">$455 total - 7 nights<br><span style="font-size: 0.7rem;">+$46 taxes & fees</span></p>
+                                                    </div>
+                                                    <button class="btn btn-primary rounded-3 px-4 py-2 fw-bold shadow-sm" style="font-size: 0.9rem;">View Rooms</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="d-flex justify-content-center mt-5">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination pagination-sm gap-2 mb-0">
+                                        <li class="page-item active"><a class="page-link rounded-2 border-0 fw-bold shadow-sm px-3 bg-primary text-white" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">3</a></li>
+                                        <li class="page-item"><span class="page-link border-0 bg-transparent text-muted px-2">...</span></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">6</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#"><i class="bi bi-chevron-right small"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARS TAB -->
+                <div class="tab-pane fade" id="cars" role="tabpanel">
+                    <div class="row g-4">
+                        <!-- Sidebar -->
+                        <div class="col-lg-3">
+                            <div class="filter-sidebar">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h6 class="fw-bold mb-0 text-dark"><i class="bi bi-sliders me-2"></i>Filters</h6>
+                                    <a href="#" class="text-primary text-decoration-none small fw-medium">Reset all</a>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Daily Budget <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <input type="range" class="form-range" min="20" max="200" value="80">
+                                    <div class="d-flex justify-content-between small fw-medium mt-1">
+                                        <span class="text-muted" style="font-size: 0.7rem;">$20</span>
+                                        <span class="text-primary fw-bold" style="font-size: 0.7rem;">$80</span>
+                                        <span class="text-muted" style="font-size: 0.7rem;">$200</span>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Vehicle Type <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <button class="btn btn-outline-primary w-100 py-3 rounded-3 bg-primary bg-opacity-10 active border-primary d-flex flex-column align-items-center justify-content-center">
+                                                <i class="bi bi-car-front-fill fs-4 text-danger mb-1"></i>
+                                                <span class="small fw-medium" style="font-size: 0.75rem;">Economy</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-outline-secondary w-100 py-3 rounded-3 bg-white border-secondary border-opacity-25 d-flex flex-column align-items-center justify-content-center">
+                                                <i class="bi bi-car-front fs-4 text-info mb-1"></i>
+                                                <span class="small text-muted fw-medium" style="font-size: 0.75rem;">Compact</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-outline-primary w-100 py-3 rounded-3 bg-primary bg-opacity-10 active border-primary d-flex flex-column align-items-center justify-content-center">
+                                                <i class="bi bi-truck-front-fill fs-4 text-danger mb-1"></i>
+                                                <span class="small fw-medium" style="font-size: 0.75rem;">SUV</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-outline-secondary w-100 py-3 rounded-3 bg-white border-secondary border-opacity-25 d-flex flex-column align-items-center justify-content-center">
+                                                <i class="bi bi-car-front-fill fs-4 text-warning mb-1"></i>
+                                                <span class="small text-muted fw-medium" style="font-size: 0.75rem;">Luxury</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-outline-secondary w-100 py-3 rounded-3 bg-white border-secondary border-opacity-25 d-flex flex-column align-items-center justify-content-center">
+                                                <i class="bi bi-truck fs-4 text-info mb-1"></i>
+                                                <span class="small text-muted fw-medium" style="font-size: 0.75rem;">Van</span>
+                                            </button>
+                                        </div>
+                                        <div class="col-6">
+                                            <button class="btn btn-outline-secondary w-100 py-3 rounded-3 bg-white border-secondary border-opacity-25 d-flex flex-column align-items-center justify-content-center">
+                                                <i class="bi bi-car-front fs-4 text-warning mb-1"></i>
+                                                <span class="small text-muted fw-medium" style="font-size: 0.75rem;">Convertible</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Transmission <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill flex-grow-1 active bg-primary bg-opacity-10 fw-medium">Automatic</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill flex-grow-1 bg-white border-secondary border-opacity-25 text-muted fw-medium">Manual</button>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Fuel Policy <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="d-flex flex-column gap-2">
+                                        <button class="btn btn-outline-primary btn-sm rounded-3 active bg-primary bg-opacity-10 text-center py-2 fw-medium">Full-to-Full</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-3 bg-white border-secondary border-opacity-25 text-muted text-center py-2 fw-medium">Full-to-Empty</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-3 bg-white border-secondary border-opacity-25 text-muted text-center py-2 fw-medium">Inclusive</button>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Car Brand <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" checked id="brand1">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="brand1">Toyota</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" checked id="brand2">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="brand2">Hyundai</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" id="brand3">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="brand3">BMW</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" id="brand4">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="brand4">Mercedes</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" id="brand5">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="brand5">Jeep</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" id="brand6">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="brand6">Ford</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Seats <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="d-flex flex-wrap gap-2">
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 bg-white border-secondary border-opacity-25 text-muted fw-medium">2</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 bg-white border-secondary border-opacity-25 text-muted fw-medium">4</button>
+                                        <button class="btn btn-outline-primary btn-sm rounded-pill px-3 active bg-primary bg-opacity-10 text-primary fw-medium border-primary">5</button>
+                                        <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 bg-white border-secondary border-opacity-25 text-muted fw-medium">7+</button>
+                                    </div>
+                                </div>
+
+                                <div class="filter-group border-bottom-0 pb-0 mb-0">
+                                    <h6 class="fw-bold small text-dark d-flex justify-content-between align-items-center mb-3">
+                                        Extras Included <i class="bi bi-chevron-up text-muted" style="font-size: 0.75rem;"></i>
+                                    </h6>
+                                    <div class="d-flex flex-column gap-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" checked id="extra1">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="extra1">GPS Navigation</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" id="extra2">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="extra2">Child Seat</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" id="extra3">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="extra3">Additional Driver</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input rounded-1" type="checkbox" checked id="extra4">
+                                            <label class="form-check-label small text-muted" style="font-size: 0.8rem;" for="extra4">Insurance</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="col-lg-9">
+                            <div class="d-flex justify-content-between align-items-center bg-white p-3 rounded-4 shadow-sm border border-light mb-4">
+                                <h6 class="mb-0 fw-bold small"><span class="text-dark">48 vehicles</span> <span class="text-muted fw-normal">at Cairo Airport · Jun 15-22 · 7 days</span></h6>
+                                <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 bg-white border-secondary border-opacity-25 text-dark fw-medium small">Price: Low to High</button>
+                            </div>
+
+                            <div class="row g-4 mb-4">
+                                <!-- Car Card 1 -->
+                                <div class="col-md-6">
+                                    <div class="result-card h-100 bg-white border border-light" data-aos="fade-right">
+                                        <div class="position-relative">
+                                            <span class="badge position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill shadow-sm" style="background-color: #fff; color: #059669; font-weight: 700; font-size: 0.7rem; border: 1px solid #10b981;">ECONOMY</span>
+                                            <span class="badge position-absolute top-0 end-0 m-3 px-2 py-1 rounded-2 shadow-sm" style="background-color: #0f172a; color: #fff; font-weight: 600; font-size: 0.7rem; border: 1px solid #334155;">2024</span>
+                                            <img src="assets/images/car-economy.webp" class="img-fluid w-100 object-fit-cover border-bottom" style="height: 180px;" alt="Economy Car">
+                                        </div>
+                                        <div class="p-3">
+                                            <div class="d-flex flex-wrap gap-3 small fw-medium text-muted mb-2" style="font-size: 0.75rem;">
+                                                <span><i class="bi bi-people-fill text-primary me-1"></i>4 seats</span>
+                                                <span><i class="bi bi-door-closed-fill text-primary me-1"></i>4 doors</span>
+                                                <span><i class="bi bi-gear-fill text-primary me-1"></i>Manual</span>
+                                                <span><i class="bi bi-fuel-pump-fill text-primary me-1"></i>Petrol</span>
+                                            </div>
+                                            <p class="text-muted small mb-3 fw-medium" style="font-size: 0.75rem;"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Cairo International Airport</p>
+                                            
+                                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>Insurance</span>
+                                            </div>
+                                            
+                                            <hr class="border-secondary border-opacity-25 my-3">
+                                            
+                                            <div class="d-flex justify-content-between align-items-end">
+                                                <div>
+                                                    <div class="text-muted fw-bold" style="font-size: 0.7rem;">$</div>
+                                                    <h3 class="fw-bold text-primary mb-0 lh-1">25</h3>
+                                                    <p class="text-muted mb-0 fw-medium" style="font-size: 0.7rem;">$175 total · 7 days</p>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <a href="#" class="text-primary text-decoration-none fw-medium" style="font-size: 0.8rem;">Details</a>
+                                                    <button class="btn btn-primary rounded-2 px-3 fw-bold shadow-sm py-1" style="font-size: 0.85rem;">Select</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Car Card 2 -->
+                                <div class="col-md-6">
+                                    <div class="result-card h-100 bg-white border border-light" data-aos="fade-left">
+                                        <div class="position-relative">
+                                            <span class="badge position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill shadow-sm" style="background-color: #fff; color: #059669; font-weight: 700; font-size: 0.7rem; border: 1px solid #10b981;">ECONOMY</span>
+                                            <span class="badge position-absolute top-0 end-0 m-3 px-2 py-1 rounded-2 shadow-sm" style="background-color: #0f172a; color: #fff; font-weight: 600; font-size: 0.7rem; border: 1px solid #334155;">2024</span>
+                                            <img src="assets/images/car-compact.webp" class="img-fluid w-100 object-fit-cover border-bottom" style="height: 180px;" alt="Economy Car" onerror="this.src='assets/images/car-economy.webp'">
+                                        </div>
+                                        <div class="p-3">
+                                            <div class="d-flex flex-wrap gap-3 small fw-medium text-muted mb-2" style="font-size: 0.75rem;">
+                                                <span><i class="bi bi-people-fill text-primary me-1"></i>5 seats</span>
+                                                <span><i class="bi bi-door-closed-fill text-primary me-1"></i>4 doors</span>
+                                                <span><i class="bi bi-gear-fill text-primary me-1"></i>Automatic</span>
+                                                <span><i class="bi bi-fuel-pump-fill text-primary me-1"></i>Petrol</span>
+                                            </div>
+                                            <p class="text-muted small mb-3 fw-medium" style="font-size: 0.75rem;"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Cairo International Airport</p>
+                                            
+                                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>GPS</span>
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>Insurance</span>
+                                            </div>
+                                            
+                                            <hr class="border-secondary border-opacity-25 my-3">
+                                            
+                                            <div class="d-flex justify-content-between align-items-end">
+                                                <div>
+                                                    <div class="text-muted fw-bold" style="font-size: 0.7rem;">$</div>
+                                                    <h3 class="fw-bold text-primary mb-0 lh-1">35</h3>
+                                                    <p class="text-muted mb-0 fw-medium" style="font-size: 0.7rem;">$245 total · 7 days</p>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <a href="#" class="text-primary text-decoration-none fw-medium" style="font-size: 0.8rem;">Details</a>
+                                                    <button class="btn btn-primary rounded-2 px-3 fw-bold shadow-sm py-1" style="font-size: 0.85rem;">Select</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Car Card 3 -->
+                                <div class="col-md-6">
+                                    <div class="result-card h-100 bg-white border border-light" data-aos="fade-right">
+                                        <div class="position-relative">
+                                            <span class="badge position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill shadow-sm" style="background-color: #fff; color: #f59e0b; font-weight: 700; font-size: 0.7rem; border: 1px solid #fcd34d;">SUV</span>
+                                            <span class="badge position-absolute top-0 end-0 m-3 px-2 py-1 rounded-2 shadow-sm" style="background-color: #0f172a; color: #fff; font-weight: 600; font-size: 0.7rem; border: 1px solid #334155;">2024</span>
+                                            <img src="assets/images/car-suv.webp" class="img-fluid w-100 object-fit-cover border-bottom" style="height: 180px;" alt="SUV" onerror="this.src='assets/images/car-luxury.webp'">
+                                        </div>
+                                        <div class="p-3">
+                                            <div class="d-flex flex-wrap gap-3 small fw-medium text-muted mb-2" style="font-size: 0.75rem;">
+                                                <span><i class="bi bi-people-fill text-primary me-1"></i>5 seats</span>
+                                                <span><i class="bi bi-door-closed-fill text-primary me-1"></i>4 doors</span>
+                                                <span><i class="bi bi-gear-fill text-primary me-1"></i>Automatic</span>
+                                                <span><i class="bi bi-fuel-pump-fill text-primary me-1"></i>Petrol</span>
+                                            </div>
+                                            <p class="text-muted small mb-3 fw-medium" style="font-size: 0.75rem;"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Cairo International Airport</p>
+                                            
+                                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>GPS</span>
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>Insurance</span>
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>Child Seat</span>
+                                            </div>
+                                            
+                                            <hr class="border-secondary border-opacity-25 my-3">
+                                            
+                                            <div class="d-flex justify-content-between align-items-end">
+                                                <div>
+                                                    <div class="text-muted fw-bold" style="font-size: 0.7rem;">$</div>
+                                                    <h3 class="fw-bold text-primary mb-0 lh-1">65</h3>
+                                                    <p class="text-muted mb-0 fw-medium" style="font-size: 0.7rem;">$455 total · 7 days</p>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <a href="#" class="text-primary text-decoration-none fw-medium" style="font-size: 0.8rem;">Details</a>
+                                                    <button class="btn btn-primary rounded-2 px-3 fw-bold shadow-sm py-1" style="font-size: 0.85rem;">Select</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Car Card 4 -->
+                                <div class="col-md-6">
+                                    <div class="result-card h-100 bg-white border border-light" data-aos="fade-left">
+                                        <div class="position-relative">
+                                            <span class="badge position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill shadow-sm" style="background-color: #fff; color: #f59e0b; font-weight: 700; font-size: 0.7rem; border: 1px solid #fcd34d;">LUXURY</span>
+                                            <span class="badge position-absolute top-0 end-0 m-3 px-2 py-1 rounded-2 shadow-sm" style="background-color: #0f172a; color: #fff; font-weight: 600; font-size: 0.7rem; border: 1px solid #334155;">2024</span>
+                                            <img src="assets/images/car-luxury.webp" class="img-fluid w-100 object-fit-cover border-bottom" style="height: 180px;" alt="Luxury Car">
+                                        </div>
+                                        <div class="p-3">
+                                            <div class="d-flex flex-wrap gap-3 small fw-medium text-muted mb-2" style="font-size: 0.75rem;">
+                                                <span><i class="bi bi-people-fill text-primary me-1"></i>5 seats</span>
+                                                <span><i class="bi bi-door-closed-fill text-primary me-1"></i>4 doors</span>
+                                                <span><i class="bi bi-gear-fill text-primary me-1"></i>Automatic</span>
+                                                <span><i class="bi bi-fuel-pump-fill text-primary me-1"></i>Petrol</span>
+                                            </div>
+                                            <p class="text-muted small mb-3 fw-medium" style="font-size: 0.75rem;"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Cairo International Airport</p>
+                                            
+                                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>GPS</span>
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>Insurance</span>
+                                            </div>
+                                            
+                                            <hr class="border-secondary border-opacity-25 my-3">
+                                            
+                                            <div class="d-flex justify-content-between align-items-end">
+                                                <div>
+                                                    <div class="text-muted fw-bold" style="font-size: 0.7rem;">$</div>
+                                                    <h3 class="fw-bold text-primary mb-0 lh-1">95</h3>
+                                                    <p class="text-muted mb-0 fw-medium" style="font-size: 0.7rem;">$665 total · 7 days</p>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <a href="#" class="text-primary text-decoration-none fw-medium" style="font-size: 0.8rem;">Details</a>
+                                                    <button class="btn btn-primary rounded-2 px-3 fw-bold shadow-sm py-1" style="font-size: 0.85rem;">Select</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Car Card 5 -->
+                                <div class="col-md-6">
+                                    <div class="result-card h-100 bg-white border border-light" data-aos="fade-right">
+                                        <div class="position-relative">
+                                            <span class="badge position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill shadow-sm" style="background-color: #fff; color: #f59e0b; font-weight: 700; font-size: 0.7rem; border: 1px solid #fcd34d;">SUV</span>
+                                            <span class="badge position-absolute top-0 end-0 m-3 px-2 py-1 rounded-2 shadow-sm" style="background-color: #0f172a; color: #fff; font-weight: 600; font-size: 0.7rem; border: 1px solid #334155;">2024</span>
+                                            <img src="assets/images/car-convertible.webp" class="img-fluid w-100 object-fit-cover border-bottom" style="height: 180px;" alt="SUV" onerror="this.src='assets/images/car-luxury.webp'">
+                                        </div>
+                                        <div class="p-3">
+                                            <div class="d-flex flex-wrap gap-3 small fw-medium text-muted mb-2" style="font-size: 0.75rem;">
+                                                <span><i class="bi bi-people-fill text-primary me-1"></i>7 seats</span>
+                                                <span><i class="bi bi-door-closed-fill text-primary me-1"></i>4 doors</span>
+                                                <span><i class="bi bi-gear-fill text-primary me-1"></i>Automatic</span>
+                                                <span><i class="bi bi-fuel-pump-fill text-primary me-1"></i>Petrol</span>
+                                            </div>
+                                            <p class="text-muted small mb-3 fw-medium" style="font-size: 0.75rem;"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Cairo International Airport</p>
+                                            
+                                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>GPS</span>
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>Insurance</span>
+                                            </div>
+                                            
+                                            <hr class="border-secondary border-opacity-25 my-3">
+                                            
+                                            <div class="d-flex justify-content-between align-items-end">
+                                                <div>
+                                                    <div class="text-muted fw-bold" style="font-size: 0.7rem;">$</div>
+                                                    <h3 class="fw-bold text-primary mb-0 lh-1">120</h3>
+                                                    <p class="text-muted mb-0 fw-medium" style="font-size: 0.7rem;">$840 total · 7 days</p>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <a href="#" class="text-primary text-decoration-none fw-medium" style="font-size: 0.8rem;">Details</a>
+                                                    <button class="btn btn-primary rounded-2 px-3 fw-bold shadow-sm py-1" style="font-size: 0.85rem;">Select</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Car Card 6 -->
+                                <div class="col-md-6">
+                                    <div class="result-card h-100 bg-white border border-light" data-aos="fade-left">
+                                        <div class="position-relative">
+                                            <span class="badge position-absolute top-0 start-0 m-3 px-3 py-1 rounded-pill shadow-sm" style="background-color: #fff; color: #f59e0b; font-weight: 700; font-size: 0.7rem; border: 1px solid #fcd34d;">LUXURY</span>
+                                            <span class="badge position-absolute top-0 end-0 m-3 px-2 py-1 rounded-2 shadow-sm" style="background-color: #0f172a; color: #fff; font-weight: 600; font-size: 0.7rem; border: 1px solid #334155;">2024</span>
+                                            <img src="assets/images/car-sports.webp" class="img-fluid w-100 object-fit-cover border-bottom" style="height: 180px;" alt="Luxury Car" onerror="this.src='assets/images/car-luxury.webp'">
+                                        </div>
+                                        <div class="p-3">
+                                            <div class="d-flex flex-wrap gap-3 small fw-medium text-muted mb-2" style="font-size: 0.75rem;">
+                                                <span><i class="bi bi-people-fill text-primary me-1"></i>5 seats</span>
+                                                <span><i class="bi bi-door-closed-fill text-primary me-1"></i>4 doors</span>
+                                                <span><i class="bi bi-gear-fill text-primary me-1"></i>Automatic</span>
+                                                <span><i class="bi bi-fuel-pump-fill text-primary me-1"></i>Petrol</span>
+                                            </div>
+                                            <p class="text-muted small mb-3 fw-medium" style="font-size: 0.75rem;"><i class="bi bi-geo-alt-fill text-primary me-1"></i>Cairo International Airport</p>
+                                            
+                                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>GPS</span>
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>Insurance</span>
+                                                <span class="badge bg-white text-primary border border-primary border-opacity-50 rounded-pill px-2 py-1 fw-medium" style="font-size: 0.7rem;"><i class="bi bi-check2 text-primary me-1"></i>Driver Avail.</span>
+                                            </div>
+                                            
+                                            <hr class="border-secondary border-opacity-25 my-3">
+                                            
+                                            <div class="d-flex justify-content-between align-items-end">
+                                                <div>
+                                                    <div class="text-muted fw-bold" style="font-size: 0.7rem;">$</div>
+                                                    <h3 class="fw-bold text-primary mb-0 lh-1">110</h3>
+                                                    <p class="text-muted mb-0 fw-medium" style="font-size: 0.7rem;">$770 total · 7 days</p>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <a href="#" class="text-primary text-decoration-none fw-medium" style="font-size: 0.8rem;">Details</a>
+                                                    <button class="btn btn-primary rounded-2 px-3 fw-bold shadow-sm py-1" style="font-size: 0.85rem;">Select</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Pagination -->
+                            <div class="d-flex justify-content-center mt-5">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination pagination-sm gap-2 mb-0">
+                                        <li class="page-item active"><a class="page-link rounded-2 border-0 fw-bold shadow-sm px-3 bg-primary text-white" href="#">1</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">2</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">3</a></li>
+                                        <li class="page-item"><span class="page-link border-0 bg-transparent text-muted px-2">...</span></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#">6</a></li>
+                                        <li class="page-item"><a class="page-link rounded-2 text-dark bg-white border border-secondary border-opacity-25 shadow-sm px-3" href="#"><i class="bi bi-chevron-right small"></i></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer position-relative z-index-2" data-aos="zoom-out-up">
+        <div class="container">
+            <div class="row mb-5 pb-4 border-bottom border-secondary">
+                <div class="col-lg-4 mb-4 mb-lg-0 pe-lg-5" data-aos="fade-up" data-aos-delay="0">
+                    <a href="index.html" class="navbar-brand text-white d-inline-block mb-4 fs-3 fw-bold">
+                        <img src="assets/images/logo.webp" alt="Stackly Logo"
+                            style="height:44px; width:auto; object-fit:contain;">
+                    </a>
+                    <p class="mb-4 text-white-50 lh-lg">Your premium gateway to the world. Discover, compare, and book
+                        the best flights and luxury hotels with absolute ease.</p>
+                    <div class="d-flex mt-4">
+                        <a href="404.html" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0 mt-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <h5>Explore</h5>
+                    <a href="404.html" class="footer-link">Flights</a>
+                    <a href="404.html" class="footer-link">Hotels</a>
+                    <a href="services.html#cars" class="footer-link">Cars</a>
+                    <a href="404.html" class="footer-link">Deals</a>
+                    <a href="404.html" class="footer-link"><i class="bi bi-exclamation-triangle-fill me-1"
+                            style="color:#f59e0b;"></i>404 Page</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0 mt-lg-2" data-aos="fade-up" data-aos-delay="200">
+                    <h5>Company</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-4 col-md-4 mt-lg-2" data-aos="fade-up" data-aos-delay="300">
+                    <h5>Newsletter</h5>
+                    <p class="text-white-50 mb-4">Subscribe to receive exclusive travel deals and premium insights.</p>
+                    <form>
+                        <div class="input-group p-1 bg-white bg-opacity-10 rounded-pill">
+                            <input type="email" class="form-control bg-transparent border-0 text-white px-4"
+                                placeholder="Email Address" required>
+                            <button class="btn btn-premium rounded-pill px-4" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="newsletter-msg text-success mt-2 mb-0" style="display: none; font-size: 0.9rem;">Thank You For Subscription</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="mb-0 text-white-50 fw-medium small">&copy; 2026 Stackly. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/loader.js"></script>
+</body>
+</html>
+

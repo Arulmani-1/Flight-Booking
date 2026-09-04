@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Stackly Flight Booking</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-ring-wrap">
+            <div class="loader-ripple"></div>
+            <div class="loader-ripple"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring-inner"></div>
+            <img class="loader-logo" src="assets/images/logo.webp" alt="Stackly">
+        </div>
+        <div class="loader-brand">STACKLY</div>
+        <div class="loader-progress-track">
+            <div class="loader-progress-bar"></div>
+        </div>
+    </div>
+    <!-- ===== END LOADER ===== -->
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.webp" alt="Stackly Logo" style="height:38px; width:auto; object-fit:contain;">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+                    <a href="login.html" class="btn btn-premium btn-sm px-4">Login</a>
+                    <a href="signup.html" class="btn btn-premium btn-sm px-4">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="hero" style="background-image: url('assets/images/blog-bg.webp'); min-height: 60vh;">
+        <div class="container text-center pt-5">
+            <h1 class="hero-title">Travel Journal</h1>
+            <p class="hero-subtitle mx-auto">Inspiring stories, exclusive guides, and premium tips from around the globe.</p>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="row g-5">
+                
+                <!-- Main Content (Left Column) -->
+                <div class="col-lg-8">
+                    <!-- Post 1 -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden bg-white hover-lift" data-aos="fade-right">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4">
+                                <img src="assets/images/blog-dubai.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Dubai" style="min-height: 220px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4 d-flex flex-column h-100" data-aos="fade-left">
+                                    <span class="fw-bold small mb-2 d-inline-block text-primary"><i class="bi bi-globe-americas me-1"></i> DESTINATIONS</span>
+                                    <h5 class="fw-bold mb-3 text-dark">48 Hours in Dubai: A First-Timer's Perfect Weekend</h5>
+                                    <p class="text-muted small mb-4 flex-grow-1">From sunrise at the Burj Khalifa to a desert safari at dusk — here's how to squeeze the very best of Dubai into one unforgettable weekend without burning your budget.</p>
+                                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                                        <div class="d-flex align-items-center">
+                                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px; font-size: 0.8rem;">SJ</div>
+                                            <div class="lh-sm">
+                                                <div class="fw-bold text-dark small" style="font-size: 0.8rem;">Sarah Johnson</div>
+                                                <div class="text-muted" style="font-size: 0.75rem;">Jun 9, 2026 · 8 min read</div>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="fw-bold text-primary text-decoration-none small">Read Article <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden bg-white hover-lift" data-aos="fade-right">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4">
+                                <img src="assets/images/blog-istanbul.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Istanbul" style="min-height: 220px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4 d-flex flex-column h-100" data-aos="fade-left">
+                                    <span class="fw-bold small mb-2 d-inline-block text-danger"><i class="bi bi-palette me-1"></i> CULTURE</span>
+                                    <h5 class="fw-bold mb-3 text-dark">Istanbul Beyond the Bazaar: 9 Neighborhoods Locals Love</h5>
+                                    <p class="text-muted small mb-4 flex-grow-1">Skip the crowds of Sultanahmet for a day and discover Balat's painted houses, Kadikoy's food markets, and the rooftop tea gardens only Istanbullus know about.</p>
+                                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                                        <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px; font-size: 0.8rem;">MN</div>
+                                        <div class="lh-sm me-auto">
+                                            <div class="fw-bold text-dark small" style="font-size: 0.8rem;">Mona Nasser</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;">Jun 6, 2026 · 11 min read</div>
+                                        </div>
+                                        <a href="#" class="fw-bold text-primary text-decoration-none small">Read Article <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden bg-white hover-lift" data-aos="fade-right">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4">
+                                <img src="assets/images/blog-maldives.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Maldives" style="min-height: 220px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4 d-flex flex-column h-100" data-aos="fade-left">
+                                    <span class="fw-bold small mb-2 d-inline-block text-success"><i class="bi bi-building me-1"></i> HOTELS</span>
+                                    <h5 class="fw-bold mb-3 text-dark">Overwater Villa vs. Beach Bungalow: What's Worth It in the Maldives?</h5>
+                                    <p class="text-muted small mb-4 flex-grow-1">We stayed in both for a week to settle the debate. Here's the honest breakdown of price, privacy, snorkeling access, and those famous sunrise views.</p>
+                                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                                        <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px; font-size: 0.8rem;">HF</div>
+                                        <div class="lh-sm me-auto">
+                                            <div class="fw-bold text-dark small" style="font-size: 0.8rem;">Hana Fahmy</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;">Jun 2, 2026 · 7 min read</div>
+                                        </div>
+                                        <a href="#" class="fw-bold text-primary text-decoration-none small">Read Article <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 4 -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden bg-white hover-lift" data-aos="fade-right">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4">
+                                <img src="assets/images/blog-cairo.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Cairo" style="min-height: 220px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4 d-flex flex-column h-100" data-aos="fade-left">
+                                    <span class="fw-bold small mb-2 d-inline-block text-warning"><i class="bi bi-lightbulb me-1"></i> TIPS & TRICKS</span>
+                                    <h5 class="fw-bold mb-3 text-dark">Cairo Like a Local: How to Skip Lines, Haggle, and Eat Well</h5>
+                                    <p class="text-muted small mb-4 flex-grow-1">A Cairene's playbook for visiting the pyramids before the tour buses arrive, paying fair prices at Khan el-Khalili, and finding the best koshary in town.</p>
+                                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                                        <div class="bg-warning text-white rounded-circle d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px; font-size: 0.8rem;">AK</div>
+                                        <div class="lh-sm me-auto">
+                                            <div class="fw-bold text-dark small" style="font-size: 0.8rem;">Ahmed Karim</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;">May 29, 2026 · 9 min read</div>
+                                        </div>
+                                        <a href="#" class="fw-bold text-primary text-decoration-none small">Read Article <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 5 -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden bg-white hover-lift" data-aos="fade-right">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4">
+                                <img src="assets/images/blog-paris.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Paris" style="min-height: 220px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4 d-flex flex-column h-100" data-aos="fade-left">
+                                    <span class="fw-bold small mb-2 d-inline-block text-info"><i class="bi bi-airplane me-1"></i> FLIGHTS</span>
+                                    <h5 class="fw-bold mb-3 text-dark">Paris on Points: Flying Business Class for the Price of Economy</h5>
+                                    <p class="text-muted small mb-4 flex-grow-1">Award seats to Paris are easier to find than you think. We map out the airline alliances, sweet-spot redemptions, and booking windows that actually work in 2026.</p>
+                                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                                        <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px; font-size: 0.8rem;">TK</div>
+                                        <div class="lh-sm me-auto">
+                                            <div class="fw-bold text-dark small" style="font-size: 0.8rem;">Tarek Khalil</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;">May 24, 2026 · 6 min read</div>
+                                        </div>
+                                        <a href="#" class="fw-bold text-primary text-decoration-none small">Read Article <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Post 6 -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 overflow-hidden bg-white hover-lift" data-aos="fade-right">
+                        <div class="row g-0 h-100">
+                            <div class="col-md-4">
+                                <img src="assets/images/blog-japan.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Japan" style="min-height: 220px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body p-4 d-flex flex-column h-100" data-aos="fade-left">
+                                    <span class="fw-bold small mb-2 d-inline-block text-secondary"><i class="bi bi-file-earmark-text me-1"></i> VISA INFO</span>
+                                    <h5 class="fw-bold mb-3 text-dark">Japan Visa Guide 2026: Requirements, Costs & Processing Times</h5>
+                                    <p class="text-muted small mb-4 flex-grow-1">Everything Egyptian and GCC travelers need to know before applying for a Japan tourist visa — documents checklist, fees, e-visa eligibility, and common rejection reasons.</p>
+                                    <div class="d-flex align-items-center justify-content-between mt-auto">
+                                        <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-2 fw-bold" style="width: 32px; height: 32px; font-size: 0.8rem;">SJ</div>
+                                        <div class="lh-sm me-auto">
+                                            <div class="fw-bold text-dark small" style="font-size: 0.8rem;">Sarah Johnson</div>
+                                            <div class="text-muted" style="font-size: 0.75rem;">May 19, 2026 · 10 min read</div>
+                                        </div>
+                                        <a href="#" class="fw-bold text-primary text-decoration-none small">Read Article <i class="bi bi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav class="mt-5 pt-4" aria-label="Page navigation">
+                        <ul class="pagination justify-content-center gap-2 mb-0">
+                            <li class="page-item"><a class="page-link rounded-circle bg-white text-dark border-0 shadow-sm fw-bold hover-lift d-flex align-items-center justify-content-center" href="#" style="width:40px; height:40px;"><i class="bi bi-chevron-left small"></i></a></li>
+                            <li class="page-item active"><a class="page-link rounded-circle border-0 fw-bold shadow-sm bg-primary text-white d-flex align-items-center justify-content-center" href="#" style="width:40px; height:40px;">1</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle text-dark bg-white border-0 shadow-sm fw-bold hover-lift d-flex align-items-center justify-content-center" href="#" style="width:40px; height:40px;">2</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle text-dark bg-white border-0 shadow-sm fw-bold hover-lift d-flex align-items-center justify-content-center" href="#" style="width:40px; height:40px;">3</a></li>
+                            <li class="page-item"><span class="page-link border-0 bg-transparent text-muted px-2 d-flex align-items-center justify-content-center" style="height:40px;">...</span></li>
+                            <li class="page-item"><a class="page-link rounded-circle text-dark bg-white border-0 shadow-sm fw-bold hover-lift d-flex align-items-center justify-content-center" href="#" style="width:40px; height:40px;">8</a></li>
+                            <li class="page-item"><a class="page-link rounded-circle bg-white text-dark border-0 shadow-sm fw-bold hover-lift d-flex align-items-center justify-content-center" href="#" style="width:40px; height:40px;"><i class="bi bi-chevron-right small"></i></a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+                <!-- Sidebar (Right Column) -->
+                <div class="col-lg-4">
+                    
+                    <!-- Search Widget -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 bg-white" data-aos="fade-right">
+                        <div class="card-body p-4" data-aos="fade-left">
+                            <h6 class="fw-bold mb-3 text-dark"><i class="bi bi-search me-2 text-primary"></i> Search the Blog</h6>
+                            <div class="input-group bg-light rounded-pill p-1">
+                                <input type="text" class="form-control border-0 bg-transparent" placeholder="Search articles...">
+                                <button class="btn btn-primary rounded-pill px-3" type="button"><i class="bi bi-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 bg-white" data-aos="fade-right">
+                        <div class="card-body p-4" data-aos="fade-left">
+                            <h6 class="fw-bold mb-4 text-dark"><i class="bi bi-folder2-open me-2 text-primary"></i> Categories</h6>
+                            <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <a href="#" class="text-dark fw-medium text-decoration-none hover-primary"><i class="bi bi-airplane text-primary me-2"></i> Flights</a>
+                                    <span class="badge bg-light text-muted rounded-pill">12</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <a href="#" class="text-dark fw-medium text-decoration-none hover-primary"><i class="bi bi-building text-primary me-2"></i> Hotels</a>
+                                    <span class="badge bg-light text-muted rounded-pill">9</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <a href="#" class="text-dark fw-medium text-decoration-none hover-primary"><i class="bi bi-globe-americas text-primary me-2"></i> Destinations</a>
+                                    <span class="badge bg-light text-muted rounded-pill">15</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <a href="#" class="text-dark fw-medium text-decoration-none hover-primary"><i class="bi bi-lightbulb text-primary me-2"></i> Tips & Tricks</a>
+                                    <span class="badge bg-light text-muted rounded-pill">8</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <a href="#" class="text-dark fw-medium text-decoration-none hover-primary"><i class="bi bi-file-earmark-text text-primary me-2"></i> Visa Info</a>
+                                    <span class="badge bg-light text-muted rounded-pill">5</span>
+                                </li>
+                                <li class="d-flex justify-content-between align-items-center">
+                                    <a href="#" class="text-dark fw-medium text-decoration-none hover-primary"><i class="bi bi-palette text-primary me-2"></i> Culture</a>
+                                    <span class="badge bg-light text-muted rounded-pill">4</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Recent Posts Widget -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 bg-white" data-aos="fade-right">
+                        <div class="card-body p-4" data-aos="fade-left">
+                            <h6 class="fw-bold mb-4 text-dark"><i class="bi bi-clock-history me-2 text-primary"></i> Recent Posts</h6>
+                            
+                            <div class="d-flex gap-3 mb-3 pb-3 border-bottom border-light">
+                                <img src="assets/images/blog-dubai.webp" class="rounded-3 object-fit-cover" width="70" height="70" alt="Dubai">
+                                <div>
+                                    <a href="#" class="fw-bold text-dark text-decoration-none hover-primary d-block mb-1" style="font-size: 0.85rem; line-height: 1.3;">48 Hours in Dubai: A First-Timer's Perfect Weekend</a>
+                                    <small class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-calendar3 me-1"></i> Jun 9, 2026</small>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-3 mb-3 pb-3 border-bottom border-light">
+                                <img src="assets/images/blog-istanbul.webp" class="rounded-3 object-fit-cover" width="70" height="70" alt="Istanbul">
+                                <div>
+                                    <a href="#" class="fw-bold text-dark text-decoration-none hover-primary d-block mb-1" style="font-size: 0.85rem; line-height: 1.3;">Istanbul Beyond the Bazaar: 9 Neighborhoods Locals Love</a>
+                                    <small class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-calendar3 me-1"></i> Jun 6, 2026</small>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex gap-3">
+                                <img src="assets/images/blog-maldives.webp" class="rounded-3 object-fit-cover" width="70" height="70" alt="Maldives">
+                                <div>
+                                    <a href="#" class="fw-bold text-dark text-decoration-none hover-primary d-block mb-1" style="font-size: 0.85rem; line-height: 1.3;">Overwater Villa vs. Beach Bungalow in the Maldives</a>
+                                    <small class="text-muted" style="font-size: 0.75rem;"><i class="bi bi-calendar3 me-1"></i> Jun 2, 2026</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Tags Widget -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4 bg-white" data-aos="fade-right">
+                        <div class="card-body p-4" data-aos="fade-left">
+                            <h6 class="fw-bold mb-4 text-dark"><i class="bi bi-tags me-2 text-primary"></i> Popular Tags</h6>
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Dubai</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Budget Travel</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Istanbul</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Maldives</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Flight Deals</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Cairo</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Visa</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Paris</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Tokyo</a>
+                                <a href="#" class="badge bg-light text-muted border fw-medium px-3 py-2 text-decoration-none hover-primary">Solo Travel</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Widget -->
+                    <div class="card border-0 shadow-sm rounded-4 bg-primary text-white text-center position-relative overflow-hidden" data-aos="fade-right">
+                        <!-- Background glow effect -->
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-white" style="opacity: 0.05; background: radial-gradient(circle at top right, white, transparent);"></div>
+                        <div class="card-body p-5 position-relative z-1" data-aos="fade-left">
+                            <div class="bg-white bg-opacity-25 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
+                                <i class="bi bi-send-fill fs-4"></i>
+                            </div>
+                            <h5 class="fw-bold mb-3">Never Miss a Story</h5>
+                            <p class="small text-white-50 mb-4 lh-lg">Weekly travel stories and exclusive deals, straight to your inbox.</p>
+                            <form>
+                                <input type="email" class="form-control bg-white bg-opacity-10 border-0 text-white placeholder-white-50 px-4 py-3 mb-3 rounded-3" placeholder="Your email address" required>
+                                <button type="submit" class="btn btn-light w-100 fw-bold py-3 rounded-3 text-primary">Subscribe Free</button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Pick CTA Banner -->
+    <section class="pb-5 bg-light">
+        <div class="container" data-aos="fade-right">
+            <div class="card border-0 rounded-4 overflow-hidden" style="background-color: #0d2a80; box-shadow: 0 10px 40px rgba(13, 42, 128, 0.2);" data-aos="fade-left">
+                <div class="row g-0">
+                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5 p-xl-6 text-white position-relative">
+                        <!-- Subtle background decoration on the blue side -->
+                        <div class="position-absolute rounded-circle bg-white" style="width: 300px; height: 300px; opacity: 0.05; top: -100px; left: -50px;"></div>
+                        
+                        <div class="position-relative z-1">
+                            <div class="mb-4">
+                                <span class="badge border border-white border-opacity-50 text-white rounded-pill px-3 py-2 fw-bold" style="background: rgba(255,255,255,0.08); font-size: 0.75rem; letter-spacing: 1px;"><i class="bi bi-gem me-2"></i> TOP PICK</span>
+                            </div>
+                            <h2 class="fw-bold mb-3">Plan Your Next Escape</h2>
+                            <p class="mb-5 lh-lg pe-lg-4" style="opacity: 0.85; font-size: 0.95rem;">Compare fares from 450+ airlines, lock in member-only hotel rates, and build your dream itinerary in minutes — all in one place. Your next adventure is one search away.</p>
+                            <div>
+                                <a href="#" class="btn bg-white fw-bold px-4 py-3 rounded-2 text-dark shadow-sm d-inline-flex align-items-center hover-lift transition-fast" style="color: #0f172a;">
+                                    Search Flights <i class="bi bi-arrow-right ms-2 fw-bold"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="assets/images/beach-cta.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Beautiful Beach" style="min-height: 350px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="pb-5 bg-light">
+        <div class="container" data-aos="fade-right">
+            <div class="card border-0 rounded-4 overflow-hidden position-relative" style="background-color: #2a61e8; box-shadow: 0 10px 40px rgba(42, 97, 232, 0.2);" data-aos="fade-left">
+                <!-- Decorative background elements -->
+                <div class="position-absolute rounded-circle bg-white" style="width: 400px; height: 400px; opacity: 0.06; top: -150px; left: 15%;"></div>
+                <div class="position-absolute rounded-circle bg-white" style="width: 600px; height: 600px; opacity: 0.04; bottom: -300px; right: -100px;"></div>
+                
+                <div class="card-body p-5 p-xl-6 position-relative z-1 d-flex flex-column flex-lg-row align-items-center justify-content-between" data-aos="fade-right">
+                    <div class="text-start mb-4 mb-lg-0 pe-lg-4" style="max-width: 650px;">
+                        <h3 class="fw-bold mb-3" style="color: #0f172a;">Want to shape the future of travel?</h3>
+                        <p class="mb-0 fw-medium" style="color: #1e293b; opacity: 0.85; font-size: 1rem; line-height: 1.7;">We're always looking for curious engineers, designers, and travel lovers to join our team in Mansoura and remotely across MENA.<br>Come build something millions of travelers rely on.</p>
+                    </div>
+                    <div class="ms-lg-auto">
+                        <a href="#" class="btn bg-white fw-bold px-4 py-3 rounded-2 shadow-sm d-inline-flex align-items-center hover-lift transition-fast" style="color: #0f172a;">
+                            View Open Roles <i class="bi bi-arrow-right ms-2 text-secondary"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer position-relative z-index-2" data-aos="zoom-out-up">
+        <div class="container">
+            <div class="row mb-5 pb-4 border-bottom border-secondary">
+                <div class="col-lg-4 mb-4 mb-lg-0 pe-lg-5" data-aos="fade-up" data-aos-delay="0">
+                    <a href="index.html" class="navbar-brand text-white d-inline-block mb-4 fs-3 fw-bold">
+                        <img src="assets/images/logo.webp" alt="Stackly Logo" style="height:44px; width:auto; object-fit:contain;">
+                    </a>
+                    <p class="mb-4 text-white-50 lh-lg">Your premium gateway to the world. Discover, compare, and book the best flights and luxury hotels with absolute ease.</p>
+                    <div class="d-flex mt-4">
+                        <a href="404.html" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0 mt-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <h5>Explore</h5>
+                    <a href="404.html" class="footer-link">Flights</a>
+                    <a href="404.html" class="footer-link">Hotels</a>
+                    <a href="services.html#cars" class="footer-link">Cars</a>
+                    <a href="404.html" class="footer-link">Deals</a>
+                    <a href="404.html" class="footer-link"><i class="bi bi-exclamation-triangle-fill me-1" style="color:#f59e0b;"></i>404 Page</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0 mt-lg-2" data-aos="fade-up" data-aos-delay="200">
+                    <h5>Company</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-4 col-md-4 mt-lg-2" data-aos="fade-up" data-aos-delay="300">
+                    <h5>Newsletter</h5>
+                    <p class="text-white-50 mb-4">Subscribe to receive exclusive travel deals and premium insights.</p>
+                    <form>
+                        <div class="input-group p-1 bg-white bg-opacity-10 rounded-pill">
+                            <input type="email" class="form-control bg-transparent border-0 text-white px-4" placeholder="Email Address" required>
+                            <button class="btn btn-premium rounded-pill px-4" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="newsletter-msg text-success mt-2 mb-0" style="display: none; font-size: 0.9rem;">Thank You For Subscription</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="mb-0 text-white-50 fw-medium small">&copy; 2026 Stackly. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/blog-filter.js"></script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Stackly</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar" id="sidebar">
+            <div class="dashboard-sidebar-header d-flex justify-content-between align-items-center">
+                <a href="index.html">
+                    <img src="assets/images/logo.webp" alt="Stackly Logo" style="height:32px; width:auto; object-fit:contain;">
+                </a>
+                <button class="btn btn-sm d-lg-none border-0 text-muted" id="closeSidebar">
+                    <i class="bi bi-x-lg fs-4"></i>
+                </button>
+            </div>
+            
+            <div class="dashboard-sidebar-nav">
+                <a href="#" class="dashboard-nav-item active" data-target="overview">
+                    <i class="bi bi-speedometer2"></i> Dashboard
+                </a>
+                <a href="#" class="dashboard-nav-item" data-target="flights">
+                    <i class="bi bi-airplane"></i> Manage Flights
+                </a>
+                <a href="#" class="dashboard-nav-item" data-target="users">
+                    <i class="bi bi-people"></i> Users
+                </a>
+                <a href="#" class="dashboard-nav-item" data-target="revenue">
+                    <i class="bi bi-cash-stack"></i> Revenue
+                </a>
+                <a href="#" class="dashboard-nav-item" data-target="support">
+                    <i class="bi bi-envelope-paper"></i> Support Tickets
+                </a>
+                
+                <hr class="my-4 text-muted opacity-25">
+                
+                <a href="#" class="dashboard-nav-item" data-target="settings">
+                    <i class="bi bi-gear"></i> System Settings
+                </a>
+                <a href="login.html" class="dashboard-nav-item text-danger mt-4">
+                    <i class="bi bi-box-arrow-right"></i> Log Out
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Navbar -->
+            <header class="dashboard-navbar">
+                <div class="d-flex align-items-center">
+                    <button class="btn border-0 text-muted d-lg-none me-2 p-0" id="openSidebar">
+                        <i class="bi bi-list fs-3"></i>
+                    </button>
+                    <h4 class="mb-0 fw-bold d-none d-md-block text-dark">Admin Overview</h4>
+                </div>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn btn-light rounded-circle p-2 border-0 shadow-sm position-relative">
+                        <i class="bi bi-bell text-muted fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                    </button>
+                    
+                    <div class="d-flex align-items-center bg-light rounded-pill p-1 pe-3 shadow-sm border border-light" style="cursor:pointer;">
+                        <div class="rounded-circle me-2 bg-primary text-white d-flex align-items-center justify-content-center" style="width: 35px; height: 35px;">
+                            <i class="bi bi-shield-lock-fill"></i>
+                        </div>
+                        <span class="text-dark fw-medium small">admin@stackly.com</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content Area -->
+            <div class="dashboard-content">
+
+                <!-- SECTION: OVERVIEW -->
+                <div id="overview" class="dashboard-section active-section">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h6 class="text-muted fw-bold mb-0">Total Revenue</h6>
+                                    <div class="bg-success bg-opacity-10 text-success rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-currency-dollar"></i>
+                                    </div>
+                                </div>
+                                <h3 class="fw-bold mb-0">$124.5K</h3>
+                                <small class="text-success mt-2 d-block"><i class="bi bi-arrow-up-short"></i> +12% this month</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h6 class="text-muted fw-bold mb-0">Total Bookings</h6>
+                                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-ticket"></i>
+                                    </div>
+                                </div>
+                                <h3 class="fw-bold mb-0">8,432</h3>
+                                <small class="text-success mt-2 d-block"><i class="bi bi-arrow-up-short"></i> +5% this month</small>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h6 class="text-muted fw-bold mb-0">Active Flights</h6>
+                                    <div class="bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-airplane"></i>
+                                    </div>
+                                </div>
+                                <h3 class="fw-bold mb-0">142</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6">
+                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <h6 class="text-muted fw-bold mb-0">New Users</h6>
+                                    <div class="bg-danger bg-opacity-10 text-danger rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <i class="bi bi-person-plus"></i>
+                                    </div>
+                                </div>
+                                <h3 class="fw-bold mb-0">1.2K</h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0">System Activity Logs</h5>
+                            <button class="btn btn-sm btn-light rounded-pill">View All</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Action</th>
+                                        <th>Time</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">john.doe@example.com</span></td>
+                                        <td>Booked Flight #EK405</td>
+                                        <td>2 mins ago</td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success px-2 py-1 rounded-pill">Success</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">admin@stackly.com</span></td>
+                                        <td>Updated pricing for #QR210</td>
+                                        <td>1 hour ago</td>
+                                        <td><span class="badge bg-primary bg-opacity-10 text-primary px-2 py-1 rounded-pill">System</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">sarah.j@example.com</span></td>
+                                        <td>Payment Failed - Card declined</td>
+                                        <td>3 hours ago</td>
+                                        <td><span class="badge bg-danger bg-opacity-10 text-danger px-2 py-1 rounded-pill">Failed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">system@stackly.com</span></td>
+                                        <td>Automated DB Backup Completed</td>
+                                        <td>5 hours ago</td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success px-2 py-1 rounded-pill">System</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">mike.t@example.com</span></td>
+                                        <td>Requested refund for #BA105</td>
+                                        <td>1 day ago</td>
+                                        <td><span class="badge bg-warning bg-opacity-10 text-warning px-2 py-1 rounded-pill">Pending</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: MANAGE FLIGHTS -->
+                <div id="flights" class="dashboard-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h4 class="fw-bold mb-0">Manage Flights</h4>
+                        <button class="btn btn-primary rounded-pill px-4"><i class="bi bi-plus-lg me-2"></i>Add Flight</button>
+                    </div>
+                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Flight ID</th>
+                                        <th>Route</th>
+                                        <th>Date</th>
+                                        <th>Seats</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="fw-bold text-dark">#EK405</span></td>
+                                        <td>Dubai - Paris</td>
+                                        <td>Oct 15, 2026</td>
+                                        <td>240 / 300</td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2">On Time</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-light text-primary me-2"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-light text-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-bold text-dark">#QR210</span></td>
+                                        <td>London - Tokyo</td>
+                                        <td>Nov 22, 2026</td>
+                                        <td>180 / 250</td>
+                                        <td><span class="badge bg-warning bg-opacity-10 text-warning rounded-pill px-2">Delayed</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-light text-primary me-2"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-light text-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-bold text-dark">#AI101</span></td>
+                                        <td>Mumbai - New York</td>
+                                        <td>Dec 05, 2026</td>
+                                        <td>295 / 300</td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2">On Time</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-light text-primary me-2"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-light text-danger"><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-bold text-dark">#BA105</span></td>
+                                        <td>London - Dubai</td>
+                                        <td>Aug 10, 2025</td>
+                                        <td>280 / 280</td>
+                                        <td><span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-2">Completed</span></td>
+                                        <td>
+                                            <button class="btn btn-sm btn-light text-primary me-2"><i class="bi bi-pencil"></i></button>
+                                            <button class="btn btn-sm btn-light text-danger" disabled><i class="bi bi-trash"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: USERS -->
+                <div id="users" class="dashboard-section">
+                    <h4 class="fw-bold mb-4">Users Directory</h4>
+                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <input type="text" class="form-control mb-4 rounded-pill px-4 bg-light border-0" placeholder="Search users by email...">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Joined Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">client@stackly.com</span></td>
+                                        <td>Client</td>
+                                        <td>Jan 12, 2026</td>
+                                        <td><button class="btn btn-sm btn-outline-danger rounded-pill px-3">Suspend</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">admin@stackly.com</span></td>
+                                        <td>Admin</td>
+                                        <td>Jan 01, 2026</td>
+                                        <td><button class="btn btn-sm btn-outline-secondary rounded-pill px-3" disabled>Suspend</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">john.doe@example.com</span></td>
+                                        <td>Client</td>
+                                        <td>Feb 15, 2026</td>
+                                        <td><button class="btn btn-sm btn-outline-danger rounded-pill px-3">Suspend</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">sarah.j@example.com</span></td>
+                                        <td>Client</td>
+                                        <td>Mar 22, 2026</td>
+                                        <td><button class="btn btn-sm btn-outline-danger rounded-pill px-3">Suspend</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-medium text-dark">mike.t@example.com</span></td>
+                                        <td>Client</td>
+                                        <td>Apr 05, 2026</td>
+                                        <td><button class="btn btn-sm btn-outline-danger rounded-pill px-3">Suspend</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: REVENUE -->
+                <div id="revenue" class="dashboard-section">
+                    <h4 class="fw-bold mb-4">Financial Overview</h4>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm rounded-4 p-4 text-center">
+                                <h6 class="text-muted fw-bold">Q3 Revenue (Estimated)</h6>
+                                <h1 class="text-success fw-bold mt-2 mb-0">$840,000</h1>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card border-0 shadow-sm rounded-4 p-4 text-center">
+                                <h6 class="text-muted fw-bold">Pending Refunds</h6>
+                                <h1 class="text-danger fw-bold mt-2 mb-0">$12,500</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: SUPPORT TICKETS -->
+                <div id="support" class="dashboard-section">
+                    <h4 class="fw-bold mb-4">Support Tickets</h4>
+                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <div class="list-group list-group-flush">
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start py-3 border-bottom">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Refund request for cancelled flight #EK405</div>
+                                    <small class="text-muted">From: user1@example.com - 2 days ago</small>
+                                </div>
+                                <span class="badge bg-danger rounded-pill">Open</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start py-3">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold text-muted">Baggage limit inquiry</div>
+                                    <small class="text-muted">From: user2@example.com - 5 days ago</small>
+                                </div>
+                                <span class="badge bg-success rounded-pill">Resolved</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: SYSTEM SETTINGS -->
+                <div id="settings" class="dashboard-section">
+                    <h4 class="fw-bold mb-4">System Settings</h4>
+                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="maintenanceMode">
+                            <label class="form-check-label fw-medium" for="maintenanceMode">Enable Maintenance Mode</label>
+                        </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="registration" checked>
+                            <label class="form-check-label fw-medium" for="registration">Allow New User Registrations</label>
+                        </div>
+                        <hr class="text-muted">
+                        <button class="btn btn-primary rounded-pill px-4 mt-2">Save Configuration</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Sidebar Toggle Logic for Mobile
+            const sidebar = document.getElementById('sidebar');
+            const openBtn = document.getElementById('openSidebar');
+            const closeBtn = document.getElementById('closeSidebar');
+
+            openBtn.addEventListener('click', () => {
+                sidebar.classList.add('show');
+            });
+
+            closeBtn.addEventListener('click', () => {
+                sidebar.classList.remove('show');
+            });
+
+            // Dynamic Section Navigation
+            const navItems = document.querySelectorAll('.dashboard-nav-item[data-target]');
+            const sections = document.querySelectorAll('.dashboard-section');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = item.getAttribute('data-target');
+
+                    // Remove active from all links and sections
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    sections.forEach(sec => sec.classList.remove('active-section'));
+
+                    // Add active to clicked link and target section
+                    item.classList.add('active');
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active-section');
+                    }
+
+                    // On mobile, close sidebar after clicking a link
+                    if(window.innerWidth < 992) {
+                        sidebar.classList.remove('show');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

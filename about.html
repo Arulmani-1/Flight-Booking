@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Stackly - Premium Flight Booking</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ===== PAGE LOADER ===== -->
+    <div id="page-loader">
+        <div class="loader-ring-wrap">
+            <div class="loader-ripple"></div>
+            <div class="loader-ripple"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring-inner"></div>
+            <img class="loader-logo" src="assets/images/logo.webp" alt="Stackly">
+        </div>
+        <div class="loader-brand">STACKLY</div>
+        <div class="loader-progress-track">
+            <div class="loader-progress-bar"></div>
+        </div>
+    </div>
+    <!-- ===== END LOADER ===== -->
+
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.webp" alt="Stackly Logo" style="height:38px; width:auto; object-fit:contain;">
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+                    <a href="login.html" class="btn btn-premium btn-sm px-4">Login</a>
+                    <a href="signup.html" class="btn btn-premium btn-sm px-4">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="hero" style="background-image: url('assets/images/airplane.webp'); min-height: 70vh;">
+        <div class="container text-center pt-5">
+            <h1 class="hero-title">About Stackly</h1>
+            <p class="hero-subtitle mx-auto">Elevating the travel experience with seamless bookings, exclusive deals, and 24/7 premium support.</p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="position-relative pe-4 pb-4">
+                        <!-- Main Image -->
+                        <img src="assets/images/about-main.webp" class="img-fluid rounded-4 shadow-sm w-100" style="object-fit: cover; height: 400px;" alt="Travel Van">
+                        
+                        <!-- Floating Small Image -->
+                        <div class="position-absolute bottom-0 end-0 rounded-4 shadow-lg overflow-hidden border border-3 border-white" style="width: 50%; max-width: 250px; z-index: 2; transform: translate(-10%, 10%);">
+                            <img src="assets/images/about-sub.webp" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 4/3;" alt="Hiker">
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="position-absolute top-0 start-0 bg-white rounded-4 shadow-sm p-3 d-flex align-items-center gap-3" style="z-index: 3; transform: translate(-15%, 15%); min-width: 200px;">
+                            <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center shadow-sm" style="width: 40px; height: 40px;">
+                                <i class="bi bi-award-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-bold" style="color: #0b1c3d; font-size: 0.95rem;">8+ Years</h6>
+                                <small class="text-muted d-block" style="font-size: 0.75rem;">of Excellence</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+                    <div class="d-flex align-items-center gap-2 mb-3">
+                        <span style="width: 30px; border-top: 2px solid var(--bs-primary);"></span>
+                        <h6 class="text-primary fw-bold text-uppercase letter-spacing-1 mb-0" style="font-size: 0.85rem;">Our Story</h6>
+                    </div>
+                    <h2 class="display-5 fw-bold mb-4 letter-spacing-n1" style="color: #0b1c3d; line-height: 1.15;">Making Travel Effortless, One Booking at a Time</h2>
+                    <p class="text-muted mb-4 fs-6" style="line-height: 1.7;">Stackly was founded in 2018 by a small team of engineers and travel enthusiasts who were tired of clunky booking sites, hidden fees, and support lines that never picked up. What started as a simple flight-comparison tool quickly grew into a full travel platform covering flights, hotels, and car rentals.</p>
+                    <p class="text-muted mb-4 fs-6" style="line-height: 1.7;">Today our mission remains the same: to make travel effortless for everyone. We negotiate directly with airlines and hotels to secure honest prices, build technology that works seamlessly, and keep real humans on the other end of every support conversation — because your journey deserves nothing less.</p>
+                    
+                    <ul class="list-unstyled d-flex flex-column gap-3 mt-4 mb-0">
+                        <li class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center flex-shrink-0" style="width: 28px; height: 28px;">
+                                <i class="bi bi-check" style="stroke-width: 2px;"></i>
+                            </div>
+                            <span class="fw-bold" style="color: #0b1c3d;">Best price guarantee</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center flex-shrink-0" style="width: 28px; height: 28px;">
+                                <i class="bi bi-check" style="stroke-width: 2px;"></i>
+                            </div>
+                            <span class="fw-bold" style="color: #0b1c3d;">24/7 human support</span>
+                        </li>
+                        <li class="d-flex align-items-center gap-3">
+                            <div class="rounded-circle bg-success bg-opacity-10 text-success d-flex align-items-center justify-content-center flex-shrink-0" style="width: 28px; height: 28px;">
+                                <i class="bi bi-check" style="stroke-width: 2px;"></i>
+                            </div>
+                            <span class="fw-bold" style="color: #0b1c3d;">Trusted by 2M+ travelers</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="p-4 rounded-4 shadow-sm bg-white border border-light-subtle hover-lift" data-aos="fade-right">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-4 mb-3" style="width: 50px; height: 50px; background-color: #eff6ff; color: #3b82f6;">
+                            <i class="bi bi-emoji-smile-fill fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold text-dark mb-1">2M+</h3>
+                        <p class="text-muted text-uppercase fw-bold mb-0" style="font-size: 0.75rem; letter-spacing: 1px;">Happy Travelers</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-4 rounded-4 shadow-sm bg-white border border-light-subtle hover-lift" data-aos="fade-left">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-4 mb-3" style="width: 50px; height: 50px; background-color: #eff6ff; color: #3b82f6;">
+                            <i class="bi bi-globe-americas fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold text-dark mb-1">120+</h3>
+                        <p class="text-muted text-uppercase fw-bold mb-0" style="font-size: 0.75rem; letter-spacing: 1px;">Destinations</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-4 rounded-4 shadow-sm bg-white border border-light-subtle hover-lift" data-aos="fade-right">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-4 mb-3" style="width: 50px; height: 50px; background-color: #eff6ff; color: #3b82f6;">
+                            <i class="bi bi-airplane-fill fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold text-dark mb-1">450+</h3>
+                        <p class="text-muted text-uppercase fw-bold mb-0" style="font-size: 0.75rem; letter-spacing: 1px;">Airline Partners</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="p-4 rounded-4 shadow-sm bg-white border border-light-subtle hover-lift" data-aos="fade-left">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-4 mb-3" style="width: 50px; height: 50px; background-color: #eff6ff; color: #3b82f6;">
+                            <i class="bi bi-star-fill fs-4"></i>
+                        </div>
+                        <h3 class="fw-bold text-dark mb-1">4.9<i class="bi bi-star-fill ms-1" style="font-size: 1.2rem; color: #f59e0b;"></i></h3>
+                        <p class="text-muted text-uppercase fw-bold mb-0" style="font-size: 0.75rem; letter-spacing: 1px;">Average Rating</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center gap-2 mb-2">
+                    <span style="width: 30px; border-top: 2px solid #3b82f6;"></span>
+                    <h6 class="fw-bold text-uppercase letter-spacing-1 mb-0" style="font-size: 0.85rem; color: #3b82f6;">What We Stand For</h6>
+                    <span style="width: 30px; border-top: 2px solid #3b82f6;"></span>
+                </div>
+                <h2 class="display-5 fw-bold mb-3 text-dark">Our Values</h2>
+                <p class="text-muted fs-6 mx-auto" style="max-width: 600px;">Four principles guide every decision we make — from the prices we show to the people we hire.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="bg-light rounded-4 p-4 h-100 shadow-sm border-0 hover-lift" data-aos="fade-right">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-4" style="width: 48px; height: 48px; background-color: #eff6ff; color: #3b82f6;">
+                            <i class="bi bi-currency-dollar fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3" style="color: #0b1c3d; font-size: 1.1rem;">Transparent Pricing</h5>
+                        <p class="text-muted mb-0 small" style="line-height: 1.7;">The price you see is the price you pay. No hidden fees, no surprise charges at checkout — ever.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-light rounded-4 p-4 h-100 shadow-sm border-0 hover-lift" data-aos="fade-left">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-4" style="width: 48px; height: 48px; background-color: #eff6ff; color: #3b82f6;">
+                            <i class="bi bi-heart-fill fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3" style="color: #0b1c3d; font-size: 1.1rem;">Customer First</h5>
+                        <p class="text-muted mb-0 small" style="line-height: 1.7;">Real humans, around the clock. Every traveler gets the support we would want for our own families.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-light rounded-4 p-4 h-100 shadow-sm border-0 hover-lift" data-aos="fade-right">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-4" style="width: 48px; height: 48px; background-color: #eff6ff; color: #3b82f6;">
+                            <i class="bi bi-shield-shaded fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3" style="color: #0b1c3d; font-size: 1.1rem;">Secure Payments</h5>
+                        <p class="text-muted mb-0 small" style="line-height: 1.7;">Bank-grade encryption protects every transaction, with PCI-DSS compliance across all payment methods.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="bg-light rounded-4 p-4 h-100 shadow-sm border-0 hover-lift" data-aos="fade-left">
+                        <div class="d-inline-flex align-items-center justify-content-center rounded-3 mb-4" style="width: 48px; height: 48px; background-color: #eff6ff; color: #3b82f6;">
+                            <i class="bi bi-geo-alt-fill fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3" style="color: #0b1c3d; font-size: 1.1rem;">Local Expertise</h5>
+                        <p class="text-muted mb-0 small" style="line-height: 1.7;">Born in Egypt, built for MENA. We know the routes, the seasons, and the deals locals actually need.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section-padding bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="d-inline-flex align-items-center gap-2 mb-2">
+                    <span style="width: 30px; border-top: 2px solid var(--bs-primary);"></span>
+                    <h6 class="text-primary fw-bold text-uppercase letter-spacing-1 mb-0" style="font-size: 0.85rem;">The People</h6>
+                    <span style="width: 30px; border-top: 2px solid var(--bs-primary);"></span>
+                </div>
+                <h2 class="display-5 fw-bold mb-3" style="color: #0b1c3d;">Meet the Team</h2>
+                <p class="text-muted fs-6 mx-auto" style="max-width: 600px;">A small, passionate crew obsessed with making your next trip the easiest one yet.</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card border border-light-subtle rounded-4 h-100 text-center p-4 shadow-sm hover-lift" data-aos="fade-right">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 text-white fw-bold fs-3 shadow-sm" style="width: 80px; height: 80px; background-color: #2563eb;">
+                            ME
+                        </div>
+                        <h5 class="fw-bold mb-1" style="color: #0b1c3d; font-size: 1.1rem;">Mostafa Elbayyar</h5>
+                        <p class="text-muted small mb-4">Founder & CEO</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-linkedin" style="font-size: 0.85rem;"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-twitter-x" style="font-size: 0.85rem;"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-envelope-fill" style="font-size: 0.85rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border border-light-subtle rounded-4 h-100 text-center p-4 shadow-sm hover-lift" data-aos="fade-left">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 text-white fw-bold fs-3 shadow-sm" style="width: 80px; height: 80px; background-color: #d97706;">
+                            SJ
+                        </div>
+                        <h5 class="fw-bold mb-1" style="color: #0b1c3d; font-size: 1.1rem;">Sarah Johnson</h5>
+                        <p class="text-muted small mb-4">Head of Product</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-linkedin" style="font-size: 0.85rem;"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-twitter-x" style="font-size: 0.85rem;"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-envelope-fill" style="font-size: 0.85rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border border-light-subtle rounded-4 h-100 text-center p-4 shadow-sm hover-lift" data-aos="fade-right">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 text-white fw-bold fs-3 shadow-sm" style="width: 80px; height: 80px; background-color: #10b981;">
+                            AK
+                        </div>
+                        <h5 class="fw-bold mb-1" style="color: #0b1c3d; font-size: 1.1rem;">Ahmed Karim</h5>
+                        <p class="text-muted small mb-4">Engineering Lead</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-linkedin" style="font-size: 0.85rem;"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-github" style="font-size: 0.85rem;"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-envelope-fill" style="font-size: 0.85rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border border-light-subtle rounded-4 h-100 text-center p-4 shadow-sm hover-lift" data-aos="fade-left">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4 text-white fw-bold fs-3 shadow-sm" style="width: 80px; height: 80px; background-color: #fb7185;">
+                            MN
+                        </div>
+                        <h5 class="fw-bold mb-1" style="color: #0b1c3d; font-size: 1.1rem;">Mona Nasser</h5>
+                        <p class="text-muted small mb-4">Customer Success Lead</p>
+                        <div class="d-flex justify-content-center gap-2">
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-linkedin" style="font-size: 0.85rem;"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-twitter-x" style="font-size: 0.85rem;"></i></a>
+                            <a href="#" class="btn btn-light rounded-circle p-2 d-flex align-items-center justify-content-center text-muted" style="width: 32px; height: 32px;"><i class="bi bi-envelope-fill" style="font-size: 0.85rem;"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <!-- Partners Section -->
+    <style>
+        .marquee-wrapper {
+            overflow: hidden;
+            display: flex;
+            width: 100%;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        .marquee-content {
+            display: flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: space-around;
+            min-width: 100%;
+            gap: 4rem;
+            padding-right: 4rem; /* Match gap */
+            animation: scroll 25s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+    <section class="py-5 bg-white border-top border-light-subtle">
+        <div class="container text-center">
+            <h6 class="text-muted fw-bold text-uppercase letter-spacing-2 mb-4" style="font-size: 0.75rem;">Trusted by leading airlines & hotels</h6>
+        </div>
+        <div class="marquee-wrapper opacity-75 mt-2 mb-2">
+            <!-- First Set -->
+            <div class="marquee-content">
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-airplane-fill fs-4"></i> EgyptAir</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-airplane-engines-fill fs-4"></i> Emirates</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-globe-americas fs-4"></i> Qatar Airways</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-building-fill fs-4"></i> Hilton</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-building fs-4"></i> Marriott</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-briefcase-fill fs-4"></i> Booking</div>
+            </div>
+            <!-- Second Set (Duplicate) -->
+            <div class="marquee-content" aria-hidden="true">
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-airplane-fill fs-4"></i> EgyptAir</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-airplane-engines-fill fs-4"></i> Emirates</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-globe-americas fs-4"></i> Qatar Airways</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-building-fill fs-4"></i> Hilton</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-building fs-4"></i> Marriott</div>
+                <div class="d-flex align-items-center gap-2 text-secondary fw-bold fs-5"><i class="bi bi-briefcase-fill fs-4"></i> Booking</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-white border-top border-light-subtle">
+        <div class="container">
+            <div class="rounded-4 p-5 position-relative overflow-hidden shadow-lg" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+                <!-- decorative circles -->
+                <div class="position-absolute rounded-circle" style="width: 300px; height: 300px; background: rgba(255,255,255,0.05); top: -100px; right: -100px;"></div>
+                <div class="position-absolute rounded-circle" style="width: 200px; height: 200px; background: rgba(255,255,255,0.05); bottom: -50px; left: 30%;"></div>
+                
+                <div class="row align-items-center position-relative z-index-1">
+                    <div class="col-md-8 mb-4 mb-md-0">
+                        <h3 class="fw-bold mb-3" style="color: #0b1c3d;">Want to shape the future of travel?</h3>
+                        <p class="mb-0" style="color: #334155; max-width: 500px; font-size: 0.95rem; line-height: 1.6;">We're always looking for curious engineers, designers, and travel lovers to join our team in Mansoura and remotely across MENA. Come build something millions of travelers rely on.</p>
+                    </div>
+                    <div class="col-md-4 text-md-end">
+                        <a href="#" class="btn bg-white text-primary fw-bold px-4 py-2 rounded-3 shadow-sm hover-lift d-inline-flex align-items-center gap-2">
+                            View Open Roles <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer position-relative z-index-2" data-aos="zoom-out-up">
+        <div class="container">
+            <div class="row mb-5 pb-4 border-bottom border-secondary">
+                <div class="col-lg-4 mb-4 mb-lg-0 pe-lg-5" data-aos="fade-up" data-aos-delay="0">
+                    <a href="index.html" class="navbar-brand text-white d-inline-block mb-4 fs-3 fw-bold">
+                        <img src="assets/images/logo.webp" alt="Stackly Logo" style="height:44px; width:auto; object-fit:contain;">
+                    </a>
+                    <p class="mb-4 text-white-50 lh-lg">Your premium gateway to the world. Discover, compare, and book the best flights and luxury hotels with absolute ease.</p>
+                    <div class="d-flex mt-4">
+                        <a href="404.html" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="404.html" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0 mt-lg-2" data-aos="fade-up" data-aos-delay="100">
+                    <h5>Explore</h5>
+                    <a href="404.html" class="footer-link">Flights</a>
+                    <a href="404.html" class="footer-link">Hotels</a>
+                    <a href="services.html#cars" class="footer-link">Cars</a>
+                    <a href="404.html" class="footer-link">Deals</a>
+                    <a href="404.html" class="footer-link"><i class="bi bi-exclamation-triangle-fill me-1" style="color:#f59e0b;"></i>404 Page</a>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0 mt-lg-2" data-aos="fade-up" data-aos-delay="200">
+                    <h5>Company</h5>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="about.html" class="footer-link">About</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="blog.html" class="footer-link">Blog</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                </div>
+                <div class="col-lg-4 col-md-4 mt-lg-2" data-aos="fade-up" data-aos-delay="300">
+                    <h5>Newsletter</h5>
+                    <p class="text-white-50 mb-4">Subscribe to receive exclusive travel deals and premium insights.</p>
+                    <form>
+                        <div class="input-group p-1 bg-white bg-opacity-10 rounded-pill">
+                            <input type="email" class="form-control bg-transparent border-0 text-white px-4" placeholder="Email Address" required>
+                            <button class="btn btn-premium rounded-pill px-4" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="newsletter-msg text-success mt-2 mb-0" style="display: none; font-size: 0.9rem;">Thank You For Subscription</p>
+                </div>
+            </div>
+            <div class="text-center">
+                <p class="mb-0 text-white-50 fw-medium small">&copy; 2026 Stackly. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/loader.js"></script>
+</body>
+</html>

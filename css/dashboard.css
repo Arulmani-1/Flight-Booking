@@ -1,0 +1,313 @@
+/* 
+=================================================
+Stackly - Premium Dashboard Theme (Search Results)
+=================================================
+*/
+
+.dashboard-theme {
+    background-color: #0b1120;
+    color: #e2e8f0;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    padding-top: 90px;
+}
+
+.dashboard-theme .bg-panel {
+    background-color: #111827;
+}
+
+.dashboard-theme .border-white-5 {
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+.dashboard-header {
+    background-color: #0f172a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    overflow: visible;
+}
+
+/* Dashboard header summary — allow items to wrap */
+#dashboard-search-summary {
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    overflow: visible;
+    white-space: normal;
+}
+
+.dashboard-theme .btn-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.dashboard-theme .btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.dashboard-theme .text-blue {
+    color: #3b82f6 !important;
+}
+
+.hover-text-blue:hover {
+    color: #3b82f6 !important;
+}
+
+/* Typography Overrides for Dashboard */
+.dashboard-theme h1, .dashboard-theme h2, .dashboard-theme h3, .dashboard-theme h4, .dashboard-theme h5, .dashboard-theme h6 {
+    color: #ffffff;
+}
+
+/* Custom Checkbox */
+.dashboard-check .form-check-input {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.dashboard-check .form-check-input:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Sidebar Accordions */
+.filter-accordion .accordion-item {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.filter-accordion .accordion-button {
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    padding: 1rem 0;
+    box-shadow: none !important;
+}
+.filter-accordion .accordion-button::after {
+    filter: invert(1);
+}
+.filter-accordion .accordion-body {
+    padding: 0 0 1rem 0;
+    color: #94a3b8;
+}
+
+/* Range Slider */
+.dashboard-range {
+    width: 100%;
+    accent-color: #2563eb;
+}
+
+/* Sort Tabs */
+.sort-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+.sort-btn:first-child { border-radius: 20px 0 0 20px; }
+.sort-btn:last-child { border-radius: 0 20px 20px 0; }
+.sort-btn.active {
+    background: #0f172a;
+    color: #ffffff;
+    border-color: #0f172a;
+}
+
+/* Flight Card */
+.flight-card {
+    background-color: #111827;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: visible; /* allow badge and text to show fully */
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.flight-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+.flight-timeline {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flight-timeline-line {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+.flight-timeline-dot {
+    width: 24px;
+    height: 24px;
+    background: #1e293b;
+    border: 2px solid #2563eb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    color: #2563eb;
+    font-size: 10px;
+}
+
+.flight-badge {
+    position: absolute;
+    top: 0; right: 0;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-bottom-left-radius: 12px;
+    white-space: nowrap;
+    z-index: 5;
+}
+.bg-cheapest { background-color: #10b981; color: white; }
+.bg-best { background-color: #f59e0b; color: white; }
+
+.airline-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+}
+
+/* Hotel Card */
+.hotel-card {
+    background-color: #111827;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    overflow: visible;
+    display: flex;
+    flex-direction: row;
+    min-height: 240px;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+@media(max-width: 768px){ .hotel-card { flex-direction: column; height: auto; } }
+.hotel-img-wrapper {
+    width: 300px;
+    position: relative;
+}
+@media(max-width: 768px){ .hotel-img-wrapper { width: 100%; height: 200px; } }
+.hotel-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hotel-badge {
+    position: absolute;
+    top: 10px; left: 10px;
+    background: #f59e0b;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.rating-badge {
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+.hotel-feature {
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: #cbd5e1;
+}
+
+/* Car Card */
+.car-card {
+    background-color: #111827;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 16px;
+    overflow: visible;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.car-img-wrapper {
+    height: 180px;
+    position: relative;
+    background-color: #1e293b;
+}
+.car-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.car-type-badge {
+    position: absolute;
+    top: 10px; left: 10px;
+    background: white;
+    color: #0f172a;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+.car-specs span {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Pagination */
+.dashboard-pagination .page-link {
+    background-color: #1e293b;
+    border: 1px solid rgba(255,255,255,0.05);
+    color: #f8fafc;
+    border-radius: 8px !important;
+    margin: 0 4px;
+}
+.dashboard-pagination .page-item.active .page-link {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* General text display fixes */
+.dashboard-theme small,
+.dashboard-theme .text-muted,
+.dashboard-theme label {
+    white-space: normal;
+    word-break: break-word;
+    overflow: visible;
+}
+
+.dashboard-theme .d-flex.flex-column span {
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* Sidebar content never clips */
+.dashboard-sidebar {
+    overflow: visible !important;
+}
+
+#dashboard-filters-content {
+    overflow: visible;
+    word-break: break-word;
+}
+
+/* Right sidebar tips - ensure full text shows */
+#dashboard-right-sidebar small {
+    white-space: normal !important;
+    overflow: visible;
+    text-overflow: clip;
+    display: block;
+    line-height: 1.5;
+}
