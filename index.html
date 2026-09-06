@@ -118,17 +118,20 @@
             <!-- Tabs -->
             <ul class="nav nav-pills mb-4 border-bottom pb-3 gap-3" id="bookingTabs" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active fw-bold px-4 rounded-pill d-flex align-items-center gap-2" id="flights-tab" data-bs-toggle="pill" data-bs-target="#flights" type="button" role="tab">
+                    <button class="nav-link active fw-bold px-4 rounded-pill d-flex align-items-center gap-2"
+                        id="flights-tab" data-bs-toggle="pill" data-bs-target="#flights" type="button" role="tab">
                         <i class="bi bi-airplane-fill"></i> Flights
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link fw-bold px-4 rounded-pill d-flex align-items-center gap-2 text-muted" id="hotels-tab" data-bs-toggle="pill" data-bs-target="#hotels" type="button" role="tab">
+                    <button class="nav-link fw-bold px-4 rounded-pill d-flex align-items-center gap-2 text-muted"
+                        id="hotels-tab" data-bs-toggle="pill" data-bs-target="#hotels" type="button" role="tab">
                         <i class="bi bi-building"></i> Hotels
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link fw-bold px-4 rounded-pill d-flex align-items-center gap-2 text-muted" id="cars-tab" data-bs-toggle="pill" data-bs-target="#cars" type="button" role="tab">
+                    <button class="nav-link fw-bold px-4 rounded-pill d-flex align-items-center gap-2 text-muted"
+                        id="cars-tab" data-bs-toggle="pill" data-bs-target="#cars" type="button" role="tab">
                         <i class="bi bi-car-front-fill"></i> Cars
                     </button>
                 </li>
@@ -140,42 +143,70 @@
                 <div class="tab-pane fade show active" id="flights" role="tabpanel">
                     <form class="row g-3 align-items-end">
                         <div class="col-md-2">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">From</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">From</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-airplane-engines"></i></span>
-                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="City or Airport">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-airplane-engines"></i></span>
+                                <input type="text"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="City or Airport">
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">To</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">To</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-airplane-engines-fill"></i></span>
-                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="City or Airport">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-airplane-engines-fill"></i></span>
+                                <input type="text"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="City or Airport">
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Departure</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Departure</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
-                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')"
+                                    onblur="(this.value==''?this.type='text':this.type='date')"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="Select date">
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Return</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Return</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
-                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')"
+                                    onblur="(this.value==''?this.type='text':this.type='date')"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="Select date">
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Passengers</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Passengers</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-people-fill"></i></span>
-                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="1 Adult">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-people-fill"></i></span>
+                                <input type="text"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="1 Adult">
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <button type="submit" class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
+                            <button type="submit"
+                                class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
                                 <i class="bi bi-search"></i> Search
                             </button>
                         </div>
@@ -185,37 +216,61 @@
                 <div class="tab-pane fade" id="hotels" role="tabpanel">
                     <form class="row g-3 align-items-end">
                         <div class="col-md-3">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Destination</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Destination</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-geo-alt-fill"></i></span>
-                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="City, region or hotel">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-geo-alt-fill"></i></span>
+                                <input type="text"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="City, region or hotel">
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Check-in</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Check-in</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
-                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')"
+                                    onblur="(this.value==''?this.type='text':this.type='date')"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="Select date">
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Check-out</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Check-out</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
-                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')"
+                                    onblur="(this.value==''?this.type='text':this.type='date')"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="Select date">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="row g-2">
                                 <div class="col-8">
-                                    <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Rooms & Guests</label>
+                                    <label
+                                        class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Rooms
+                                        & Guests</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-moon-stars-fill"></i></span>
-                                        <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="1 Room, 2 Guests">
+                                        <span
+                                            class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                                class="bi bi-moon-stars-fill"></i></span>
+                                        <input type="text"
+                                            class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                            placeholder="1 Room, 2 Guests">
                                     </div>
                                 </div>
                                 <div class="col-4 d-flex align-items-end">
-                                    <button type="submit" class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
+                                    <button type="submit"
+                                        class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
                                         <i class="bi bi-search"></i> <span class="d-none d-lg-inline">Search</span>
                                     </button>
                                 </div>
@@ -226,33 +281,58 @@
                 <div class="tab-pane fade" id="cars" role="tabpanel">
                     <form class="row g-3 align-items-end">
                         <div class="col-md-3">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Pickup Location</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Pickup
+                                Location</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-geo-alt-fill"></i></span>
-                                <input type="text" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="City or airport">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-geo-alt-fill"></i></span>
+                                <input type="text"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="City or airport">
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Pickup Date</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Pickup
+                                Date</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
-                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')"
+                                    onblur="(this.value==''?this.type='text':this.type='date')"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="Select date">
                             </div>
                         </div>
                         <div class="col-md-3">
-                            <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Return Date</label>
+                            <label
+                                class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Return
+                                Date</label>
                             <div class="input-group">
-                                <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-calendar-event"></i></span>
-                                <input type="text" onfocus="(this.type='date')" onblur="(this.value==''?this.type='text':this.type='date')" class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted" placeholder="Select date">
+                                <span
+                                    class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                        class="bi bi-calendar-event"></i></span>
+                                <input type="text" onfocus="(this.type='date')"
+                                    onblur="(this.value==''?this.type='text':this.type='date')"
+                                    class="form-control bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted"
+                                    placeholder="Select date">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="row g-2">
                                 <div class="col-8">
-                                    <label class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Car Type</label>
+                                    <label
+                                        class="form-label text-muted fw-bold text-uppercase small letter-spacing-1 mb-1">Car
+                                        Type</label>
                                     <div class="input-group">
-                                        <span class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i class="bi bi-car-front-fill"></i></span>
-                                        <select class="form-select bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted">
+                                        <span
+                                            class="input-group-text bg-light border-end-0 border-light-subtle rounded-start-3 text-primary"><i
+                                                class="bi bi-car-front-fill"></i></span>
+                                        <select
+                                            class="form-select bg-light border-start-0 border-light-subtle rounded-end-3 px-2 text-muted">
                                             <option selected>Any Type</option>
                                             <option value="1">Economy</option>
                                             <option value="2">SUV</option>
@@ -261,7 +341,8 @@
                                     </div>
                                 </div>
                                 <div class="col-4 d-flex align-items-end">
-                                    <button type="submit" class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
+                                    <button type="submit"
+                                        class="btn btn-primary w-100 fw-bold py-2 rounded-3 d-flex justify-content-center align-items-center gap-2">
                                         <i class="bi bi-search"></i> <span class="d-none d-lg-inline">Search</span>
                                     </button>
                                 </div>
@@ -298,6 +379,28 @@
     </section>
 
     <!-- Popular Destinations -->
+    <style>
+        @keyframes destBtnPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.8);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(13, 110, 253, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+            }
+        }
+        .destination-card .btn-light {
+            transition: all 0.3s ease;
+        }
+        .destination-card:hover .btn-light {
+            animation: destBtnPulse 1.5s infinite;
+            background-color: #0d6efd !important;
+            color: #ffffff !important;
+            border-color: #0d6efd !important;
+        }
+    </style>
     <section id="destinations" class="section-padding position-relative z-index-2">
         <div class="container">
             <div class="section-header text-center" data-aos="fade-right">
@@ -369,7 +472,8 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-delay="0">
-                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift"
+                        data-aos="fade-left">
                         <span
                             class="badge bg-danger position-absolute top-0 start-0 m-3 z-3 px-3 py-2 rounded-pill fw-bold">-30%</span>
                         <img src="assets/images/taj-mahal.webp" class="card-img-top" alt="Taj Mahal"
@@ -392,7 +496,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-delay="100">
-                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift" data-aos="fade-right">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift"
+                        data-aos="fade-right">
                         <span
                             class="badge bg-danger position-absolute top-0 start-0 m-3 z-3 px-3 py-2 rounded-pill fw-bold">-25%</span>
                         <img src="assets/images/bali.webp" class="card-img-top" alt="Bali"
@@ -415,7 +520,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-right" data-aos-delay="200">
-                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift" data-aos="fade-left">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift"
+                        data-aos="fade-left">
                         <span
                             class="badge bg-danger position-absolute top-0 start-0 m-3 z-3 px-3 py-2 rounded-pill fw-bold">-15%</span>
                         <img src="assets/images/london.webp" class="card-img-top" alt="London"
@@ -438,7 +544,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-left" data-aos-delay="300">
-                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift" data-aos="fade-right">
+                    <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden position-relative hover-lift"
+                        data-aos="fade-right">
                         <span
                             class="badge bg-danger position-absolute top-0 start-0 m-3 z-3 px-3 py-2 rounded-pill fw-bold">-40%</span>
                         <img src="assets/images/singapore.webp" class="card-img-top" alt="Singapore"
@@ -519,14 +626,15 @@
                 <p class="lead">Stay in absolute luxury with our top-rated global partners.</p>
             </div>
             <div class="row g-5">
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="0">
-                    <div class="card border-0 shadow-md rounded-4 overflow-hidden flex-md-row h-100 hover-lift" data-aos="fade-right">
-                        <img src="assets/images/hotel-ritz.webp" class="card-img-left" alt="Hotel"
-                            style="width: 100%; max-width: 320px; object-fit: cover;">
-                        <div class="card-body p-4 p-lg-5 d-flex flex-column justify-content-center" data-aos="fade-left">
-                            <div class="d-flex justify-content-between align-items-start mb-2">
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="0">
+                    <div class="card border-0 shadow-md rounded-4 overflow-hidden h-100 hover-lift"
+                        data-aos="fade-right">
+                        <img src="assets/images/hotel-ritz.webp" class="card-img-top w-100" alt="Hotel"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-4 d-flex flex-column h-100" data-aos="fade-left">
+                            <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
                                 <h4 class="card-title fw-bold mb-0">The Ritz-Carlton</h4>
-                                <span class="badge bg-primary rounded-pill px-3 py-2"><i
+                                <span class="badge bg-primary rounded-pill px-2 py-2 text-nowrap"><i
                                         class="bi bi-shield-check me-1"></i>Verified</span>
                             </div>
                             <p class="text-muted fw-medium mb-4"><i
@@ -536,21 +644,26 @@
                                 <span><i class="bi bi-cup-hot fs-6 text-primary me-1"></i> Breakfast</span>
                                 <span><i class="bi bi-water fs-6 text-primary me-1"></i> Pool</span>
                             </div>
-                            <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-3 border-top pt-4">
-                                <h3 class="text-primary fw-bold mb-0">$350<span class="fs-6 text-muted fw-medium">/night</span></h3>
-                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold text-nowrap">View Details</a>
+                            <div
+                                class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-3 border-top pt-4">
+                                <h3 class="text-primary fw-bold mb-0">$350<span
+                                        class="fs-6 text-muted fw-medium">/night</span></h3>
+                                <a href="#"
+                                    class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold text-nowrap">View
+                                    Details</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-                    <div class="card border-0 shadow-md rounded-4 overflow-hidden flex-md-row h-100 hover-lift" data-aos="fade-left">
-                        <img src="assets/images/hotel-shangrila.webp" class="card-img-left" alt="Hotel"
-                            style="width: 100%; max-width: 320px; object-fit: cover;">
-                        <div class="card-body p-4 p-lg-5 d-flex flex-column justify-content-center" data-aos="fade-right">
-                            <div class="d-flex justify-content-between align-items-start mb-2">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="card border-0 shadow-md rounded-4 overflow-hidden h-100 hover-lift"
+                        data-aos="fade-left">
+                        <img src="assets/images/hotel-shangrila.webp" class="card-img-top w-100" alt="Hotel"
+                            style="height: 250px; object-fit: cover;">
+                        <div class="card-body p-4 d-flex flex-column h-100" data-aos="fade-right">
+                            <div class="d-flex justify-content-between align-items-start mb-2 gap-2">
                                 <h4 class="card-title fw-bold mb-0">Shangri-La Hotel</h4>
-                                <span class="badge bg-primary rounded-pill px-3 py-2"><i
+                                <span class="badge bg-primary rounded-pill px-2 py-2 text-nowrap"><i
                                         class="bi bi-shield-check me-1"></i>Verified</span>
                             </div>
                             <p class="text-muted fw-medium mb-4"><i
@@ -560,9 +673,13 @@
                                 <span><i class="bi bi-person-workspace fs-6 text-primary me-1"></i> Spa</span>
                                 <span><i class="bi bi-car-front fs-6 text-primary me-1"></i> Parking</span>
                             </div>
-                            <div class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-3 border-top pt-4">
-                                <h3 class="text-primary fw-bold mb-0">$420<span class="fs-6 text-muted fw-medium">/night</span></h3>
-                                <a href="#" class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold text-nowrap">View Details</a>
+                            <div
+                                class="mt-auto d-flex flex-wrap justify-content-between align-items-center gap-3 border-top pt-4">
+                                <h3 class="text-primary fw-bold mb-0">$420<span
+                                        class="fs-6 text-muted fw-medium">/night</span></h3>
+                                <a href="#"
+                                    class="btn btn-outline-primary btn-sm rounded-pill px-4 fw-bold text-nowrap">View
+                                    Details</a>
                             </div>
                         </div>
                     </div>
@@ -579,23 +696,33 @@
             <div class="marquee-container">
                 <div class="marquee-track d-flex align-items-center gap-5">
                     <!-- Partner Text Pills (Using clean typography instead of logos for premium feel) -->
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">EMIRATES</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">QATAR AIRWAYS</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">ETIHAD</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">SINGAPORE AIRLINES</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">LUFTHANSA</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">BRITISH AIRWAYS</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">AIR FRANCE</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">TURKISH AIRLINES</span>
+                    <style>
+                        .airline-brand {
+                            transition: color 0.3s ease, opacity 0.3s ease;
+                            cursor: default;
+                        }
+                        .airline-brand:hover {
+                            color: #0d6efd !important;
+                            opacity: 1 !important;
+                        }
+                    </style>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">EMIRATES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">QATAR AIRWAYS</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">ETIHAD</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">SINGAPORE AIRLINES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">LUFTHANSA</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">BRITISH AIRWAYS</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">AIR FRANCE</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">TURKISH AIRLINES</span>
                     <!-- Duplicate for infinite scroll -->
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">EMIRATES</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">QATAR AIRWAYS</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">ETIHAD</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">SINGAPORE AIRLINES</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">LUFTHANSA</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">BRITISH AIRWAYS</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">AIR FRANCE</span>
-                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4">TURKISH AIRLINES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">EMIRATES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">QATAR AIRWAYS</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">ETIHAD</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">SINGAPORE AIRLINES</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">LUFTHANSA</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">BRITISH AIRWAYS</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">AIR FRANCE</span>
+                    <span class="h3 text-secondary opacity-50 mb-0 fw-bold px-4 airline-brand">TURKISH AIRLINES</span>
                 </div>
             </div>
         </div>
@@ -610,7 +737,8 @@
             </div>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-delay="0">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift" data-aos="fade-down-right">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift"
+                        data-aos="fade-down-right">
                         <div class="d-flex text-gold mb-4 fs-5">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -629,7 +757,8 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-right" data-aos-delay="100">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift" data-aos="fade-up-left">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift"
+                        data-aos="fade-up-left">
                         <div class="d-flex text-gold mb-4 fs-5">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -648,7 +777,8 @@
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12" data-aos="fade-right" data-aos-delay="200">
-                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift" data-aos="fade-down-right">
+                    <div class="card border-0 shadow-sm rounded-4 h-100 p-5 bg-light hover-lift"
+                        data-aos="fade-down-right">
                         <div class="d-flex text-gold mb-4 fs-5">
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
                                 class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
@@ -673,27 +803,38 @@
     <!-- Top Pick CTA Banner -->
     <section class="pb-5 bg-light">
         <div class="container" data-aos="fade-right">
-            <div class="card border-0 rounded-4 overflow-hidden" style="background-color: #0d2a80; box-shadow: 0 10px 40px rgba(13, 42, 128, 0.2);" data-aos="fade-left">
+            <div class="card border-0 rounded-4 overflow-hidden"
+                style="background-color: #0d2a80; box-shadow: 0 10px 40px rgba(13, 42, 128, 0.2);" data-aos="fade-left">
                 <div class="row g-0">
-                    <div class="col-lg-6 d-flex flex-column justify-content-center p-5 p-xl-6 text-white position-relative">
+                    <div
+                        class="col-lg-6 d-flex flex-column justify-content-center p-5 p-xl-6 text-white position-relative">
                         <!-- Subtle background decoration on the blue side -->
-                        <div class="position-absolute rounded-circle bg-white" style="width: 300px; height: 300px; opacity: 0.05; top: -100px; left: -50px;"></div>
-                        
+                        <div class="position-absolute rounded-circle bg-white"
+                            style="width: 300px; height: 300px; opacity: 0.05; top: -100px; left: -50px;"></div>
+
                         <div class="position-relative z-1">
                             <div class="mb-4">
-                                <span class="badge border border-white border-opacity-50 text-white rounded-pill px-3 py-2 fw-bold" style="background: rgba(255,255,255,0.08); font-size: 0.75rem; letter-spacing: 1px;"><i class="bi bi-gem me-2"></i> TOP PICK</span>
+                                <span
+                                    class="badge border border-white border-opacity-50 text-white rounded-pill px-3 py-2 fw-bold"
+                                    style="background: rgba(255,255,255,0.08); font-size: 0.75rem; letter-spacing: 1px;"><i
+                                        class="bi bi-gem me-2"></i> TOP PICK</span>
                             </div>
                             <h2 class="fw-bold mb-3">Plan Your Next Escape</h2>
-                            <p class="mb-5 lh-lg pe-lg-4" style="opacity: 0.85; font-size: 0.95rem;">Compare fares from 450+ airlines, lock in member-only hotel rates, and build your dream itinerary in minutes — all in one place. Your next adventure is one search away.</p>
+                            <p class="mb-5 lh-lg pe-lg-4" style="opacity: 0.85; font-size: 0.95rem;">Compare fares from
+                                450+ airlines, lock in member-only hotel rates, and build your dream itinerary in
+                                minutes — all in one place. Your next adventure is one search away.</p>
                             <div>
-                                <a href="#" class="btn bg-white fw-bold px-4 py-3 rounded-2 text-dark shadow-sm d-inline-flex align-items-center hover-lift transition-fast" style="color: #0f172a;">
+                                <a href="#"
+                                    class="btn bg-white fw-bold px-4 py-3 rounded-2 text-dark shadow-sm d-inline-flex align-items-center hover-lift transition-fast"
+                                    style="color: #0f172a;">
                                     Search Flights <i class="bi bi-arrow-right ms-2 fw-bold"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6" data-aos="zoom-in-down">
-                        <img src="assets/images/beach-cta.webp" class="img-fluid h-100 object-fit-cover w-100" alt="Beautiful Beach" style="min-height: 350px;">
+                        <img src="assets/images/beach-cta.webp" class="img-fluid h-100 object-fit-cover w-100"
+                            alt="Beautiful Beach" style="min-height: 350px;">
                     </div>
                 </div>
             </div>
@@ -793,7 +934,8 @@
                             <button class="btn btn-premium rounded-pill px-4" type="submit">Subscribe</button>
                         </div>
                     </form>
-                    <p class="newsletter-msg text-success mt-2 mb-0" style="display: none; font-size: 0.9rem;">Thank You For Subscription</p>
+                    <p class="newsletter-msg text-success mt-2 mb-0" style="display: none; font-size: 0.9rem;">Thank You
+                        For Subscription</p>
                 </div>
             </div>
             <div class="text-center">
