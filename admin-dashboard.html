@@ -73,7 +73,7 @@
                     <button class="btn border-0 d-lg-none me-2 p-0" id="openSidebar" style="color: #E5C374;">
                         <i class="bi bi-list fs-3"></i>
                     </button>
-                    <h4 class="mb-0 fw-bold d-none d-md-block text-dark" id="welcomeMessage">Welcome Back Admin</h4>
+                    <h4 class="mb-0 fw-bold d-none d-md-block text-dark" id="welcomeMessage">Welcome back, Admin</h4>
                 </div>
                 
                 <div class="d-flex align-items-center gap-3">
@@ -684,10 +684,12 @@
             
             // Display logged-in user name
             const savedName = localStorage.getItem('userName');
-            if (savedName) {
-                const welcomeMessage = document.getElementById('welcomeMessage');
-                if (welcomeMessage) {
-                    welcomeMessage.textContent = 'Welcome back, ' + savedName;
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            if (welcomeMessage) {
+                if (savedName && savedName.trim() !== '') {
+                    welcomeMessage.textContent = 'Welcome back, ' + savedName.trim();
+                } else {
+                    welcomeMessage.textContent = 'Welcome back, Admin';
                 }
             }
 

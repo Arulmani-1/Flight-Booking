@@ -328,7 +328,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label class="form-label text-muted small fw-bold">Email Address</label>
-                                    <input type="email" class="form-control" value="client@stackly.com" readonly>
+                                    <input type="email" class="form-control" id="profileEmailInput" value="client@stackly.com" readonly>
                                 </div>
                             </div>
                             <button type="button" class="btn btn-primary mt-4 rounded-pill px-4">Save Changes</button>
@@ -412,14 +412,20 @@
                 if (emailDisplay) {
                     emailDisplay.textContent = savedEmail;
                 }
+                const profileEmail = document.getElementById('profileEmailInput');
+                if (profileEmail) {
+                    profileEmail.value = savedEmail;
+                }
             }
             
             // Display logged-in user name
             const savedName = localStorage.getItem('userName');
-            if (savedName) {
-                const welcomeMessage = document.getElementById('welcomeMessage');
-                if (welcomeMessage) {
-                    welcomeMessage.textContent = 'Welcome back, ' + savedName;
+            const welcomeMessage = document.getElementById('welcomeMessage');
+            if (welcomeMessage) {
+                if (savedName && savedName.trim() !== '') {
+                    welcomeMessage.textContent = 'Welcome back, ' + savedName.trim();
+                } else {
+                    welcomeMessage.textContent = 'Welcome back, Client';
                 }
             }
         });
