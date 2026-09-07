@@ -249,10 +249,19 @@
                     <div class="card border-0 shadow-sm rounded-4 mb-4 bg-white" data-aos="fade-right">
                         <div class="card-body p-4" data-aos="fade-left">
                             <h6 class="fw-bold mb-3 text-dark"><i class="bi bi-search me-2 text-primary"></i> Search the Blog</h6>
-                            <div class="input-group bg-light rounded-pill p-1">
-                                <input type="text" class="form-control border-0 bg-transparent" placeholder="Search articles...">
-                                <button class="btn btn-primary rounded-pill px-3" type="button"><i class="bi bi-search"></i></button>
-                            </div>
+                            <form id="blog-search-form" action="404.html">
+                                <div class="input-group bg-light rounded-pill p-1">
+                                    <input type="text" class="form-control border-0 bg-transparent" placeholder="Search articles..." required>
+                                    <button class="btn btn-primary rounded-pill px-3" type="submit"><i class="bi bi-search"></i></button>
+                                </div>
+                            </form>
+                            <script>
+                                document.getElementById('blog-search-form').addEventListener('submit', function(e) {
+                                    e.preventDefault();
+                                    this.reset();
+                                    window.location.href = '404.html';
+                                });
+                            </script>
                         </div>
                     </div>
 
@@ -347,12 +356,24 @@
                             <div class="bg-white bg-opacity-25 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 50px; height: 50px;">
                                 <i class="bi bi-send-fill fs-4"></i>
                             </div>
-                            <h5 class="fw-bold mb-3">Never Miss a Story</h5>
+                            <h5 class="fw-bold mb-3 text-white">Never Miss a Story</h5>
                             <p class="small text-white-50 mb-4 lh-lg">Weekly travel stories and exclusive deals, straight to your inbox.</p>
-                            <form>
+                            <form id="newsletter-form-sidebar">
                                 <input type="email" class="form-control bg-white bg-opacity-10 border-0 text-white placeholder-white-50 px-4 py-3 mb-3 rounded-3" placeholder="Your email address" required>
                                 <button type="submit" class="btn btn-light w-100 fw-bold py-3 rounded-3 text-primary">Subscribe Free</button>
+                                <p id="newsletter-msg-sidebar" class="text-white mt-3 mb-0" style="display: none; font-size: 0.9rem;">Thank You For Subscribtion</p>
                             </form>
+                            <script>
+                                document.getElementById('newsletter-form-sidebar').addEventListener('submit', function(e) {
+                                    e.preventDefault();
+                                    document.getElementById('newsletter-msg-sidebar').style.display = 'block';
+                                    setTimeout(function() {
+                                        document.getElementById('newsletter-form-sidebar').reset();
+                                        document.getElementById('newsletter-msg-sidebar').style.display = 'none';
+                                        window.location.href = '404.html';
+                                    }, 1500);
+                                });
+                            </script>
                         </div>
                     </div>
 

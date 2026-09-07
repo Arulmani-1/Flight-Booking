@@ -241,6 +241,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     msg.style.display = 'block';
                 }
                 setTimeout(() => {
+                    form.reset();
+                    if (msg) msg.style.display = 'none';
                     window.location.href = '404.html';
                 }, 1500); // Wait 1.5 seconds before redirecting
             }
