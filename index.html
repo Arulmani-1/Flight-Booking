@@ -800,8 +800,97 @@
         </div>
     </section>
 
+    <!-- Testimonial Carousel Section -->
+    <section class="testimonial-section py-5 position-relative overflow-hidden bg-white">
+        <div class="container py-5 text-center text-dark position-relative z-1">
+            <!-- Huge Quote Icon -->
+            <div class="mb-4">
+                <i class="bi bi-quote testimonial-quote-icon"></i>
+            </div>
+            
+            <div id="customTestimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
+                
+                <!-- Avatar Indicators -->
+                <div class="avatar-group d-flex justify-content-center align-items-center gap-3 mb-4">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" class="testimonial-avatar active" data-bs-target="#customTestimonialCarousel" data-bs-slide-to="0" alt="Reviewer 1">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" class="testimonial-avatar" data-bs-target="#customTestimonialCarousel" data-bs-slide-to="1" alt="Reviewer 2">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" class="testimonial-avatar" data-bs-target="#customTestimonialCarousel" data-bs-slide-to="2" alt="Reviewer 3">
+                </div>
+
+                <div class="carousel-inner">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <h4 class="fw-bold mb-0 text-dark" style="color: #000000 !important;">Jamie L. Jorgensen</h4>
+                        <p class="small mb-2 text-dark" style="color: #000000 !important;">CEO, Logistra Agency</p>
+                        <div class="text-warning mb-4 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="lead fst-italic mx-auto text-dark" style="max-width: 800px; font-size: 1.1rem; line-height: 1.8; color: #000000 !important;">
+                            "Morem ipsum dolor sit amet, consectetur adipisc Service Follwing Arrea Fowlwo Awing Elita Florai Sum Dolor Sit Amet, Consectetur Area Raweaeaw Ecall EdBorem Ipsum Dolor Sit Amet, Consectetur."
+                        </p>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <h4 class="fw-bold mb-0 text-dark" style="color: #000000 !important;">David R. Bowman</h4>
+                        <p class="small mb-2 text-dark" style="color: #000000 !important;">CTO, TechFlow Inc</p>
+                        <div class="text-warning mb-4 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="lead fst-italic mx-auto text-dark" style="max-width: 800px; font-size: 1.1rem; line-height: 1.8; color: #000000 !important;">
+                            "An incredible experience from start to finish. The booking process was seamless and the customer service is unmatched. Highly recommend this platform for anyone traveling."
+                        </p>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <h4 class="fw-bold mb-0 text-dark" style="color: #000000 !important;">Sarah M. Jenkins</h4>
+                        <p class="small mb-2 text-dark" style="color: #000000 !important;">Freelance Designer</p>
+                        <div class="text-warning mb-4 fs-5">
+                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="lead fst-italic mx-auto text-dark" style="max-width: 800px; font-size: 1.1rem; line-height: 1.8; color: #000000 !important;">
+                            "I've used many booking sites before, but none offer the same level of detail and ease of use. This is now my go-to for all business and leisure travel."
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Custom Navigation Arrows -->
+                <button class="btn btn-light rounded-circle position-absolute top-50 start-0 translate-middle-y shadow custom-carousel-nav d-none d-md-flex align-items-center justify-content-center" type="button" data-bs-target="#customTestimonialCarousel" data-bs-slide="prev" style="width: 45px; height: 45px; margin-left: 5%;">
+                    <i class="bi bi-arrow-left" style="color: #5a32fa; font-weight: bold;"></i>
+                </button>
+                <button class="btn btn-light rounded-circle position-absolute top-50 end-0 translate-middle-y shadow custom-carousel-nav d-none d-md-flex align-items-center justify-content-center" type="button" data-bs-target="#customTestimonialCarousel" data-bs-slide="next" style="width: 45px; height: 45px; margin-right: 5%;">
+                    <i class="bi bi-arrow-right" style="color: #5a32fa; font-weight: bold;"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Carousel Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialCarousel = document.getElementById('customTestimonialCarousel');
+            if (testimonialCarousel) {
+                // Initialize Bootstrap carousel with explicit options to guarantee auto-play
+                const carouselInstance = new bootstrap.Carousel(testimonialCarousel, {
+                    interval: 3000,
+                    ride: 'carousel',
+                    pause: 'hover'
+                });
+                // Fix for forcing it to start immediately
+                carouselInstance.cycle();
+
+                testimonialCarousel.addEventListener('slide.bs.carousel', function (e) {
+                    const avatars = testimonialCarousel.querySelectorAll('.testimonial-avatar');
+                    avatars.forEach(avatar => avatar.classList.remove('active'));
+                    if(avatars[e.to]) {
+                        avatars[e.to].classList.add('active');
+                    }
+                });
+            }
+        });
+    </script>
+
     <!-- Top Pick CTA Banner -->
-    <section class="pb-5 bg-light">
+    <section class="py-5 bg-light">
         <div class="container" data-aos="fade-right">
             <div class="card border-0 rounded-4 overflow-hidden"
                 style="background-color: #0d2a80; box-shadow: 0 10px 40px rgba(13, 42, 128, 0.2);" data-aos="fade-left">

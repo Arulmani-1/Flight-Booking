@@ -1451,3 +1451,58 @@ a:hover {
 .flight-stats-box {
     border-left: 1px solid #dee2e6;
 }
+
+/* Testimonial Section Custom CSS */
+.testimonial-section {
+    background-color: #ffffff;
+}
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    opacity: 0.6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+.testimonial-avatar.active {
+    width: 75px;
+    height: 75px;
+    opacity: 1;
+    border-color: #E5C374;
+    transform: scale(1.1);
+}
+.custom-carousel-nav {
+    transition: transform 0.2s ease;
+    z-index: 10;
+}
+.custom-carousel-nav:hover {
+    transform: translateY(-50%) scale(1.1) !important;
+}
+.testimonial-quote-icon {
+    font-size: 5rem;
+    line-height: 1;
+    opacity: 0.1;
+    transform: scaleX(-1);
+    display: inline-block;
+    color: #000000;
+}
+.testimonial-section h4,
+.testimonial-section p,
+.testimonial-section .text-dark {
+    color: #000000 !important;
+}
+.testimonial-section .carousel-inner {
+    min-height: 250px;
+}
+@media (max-width: 991.98px) {
+    .testimonial-section .carousel-inner {
+        min-height: 320px;
+    }
+}
+@media (max-width: 767.98px) {
+    .testimonial-section .carousel-inner {
+        min-height: 380px;
+    }
+}
