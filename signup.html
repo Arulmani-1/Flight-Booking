@@ -96,6 +96,11 @@
             width: 0%;
             transition: width 0.4s ease, background-color 0.4s ease;
         }
+        
+        .was-validated .form-check-input:invalid ~ .form-check-label,
+        .was-validated .form-check-input:invalid ~ .form-check-label a {
+            color: #dc3545 !important;
+        }
     </style>
 </head>
 <body>
@@ -173,6 +178,7 @@
                         <input type="password" class="form-control premium-input pe-5" id="confirmPassword" placeholder="Confirm your password" minlength="8" required>
                         <i class="bi bi-eye-slash text-muted position-absolute top-50 end-0 translate-middle-y me-3 d-none" style="cursor: pointer;" id="toggleConfirmPassword"></i>
                     </div>
+                    <small class="text-muted fw-medium mt-1 d-block">Use at least 8 characters</small>
                 </div>
                 
                 <div class="form-check mb-4 mt-4">
