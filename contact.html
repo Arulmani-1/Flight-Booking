@@ -121,7 +121,7 @@
                 <div class="col-lg-8" data-aos="fade-left">
                     <div class="card border-0 shadow-lg rounded-4 p-4 p-md-5 p-xl-6 bg-white position-relative" data-aos="fade-right">
                         <h3 class="fw-bold mb-4">Send us a Message</h3>
-                        <form class="needs-validation" novalidate>
+                        <form action="404.html" class="needs-validation">
                             <div class="row g-4">
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold text-muted small text-uppercase letter-spacing-1">Full Name</label>
@@ -133,7 +133,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold text-muted small text-uppercase letter-spacing-1">Phone Number</label>
-                                    <input type="tel" class="form-control form-control-lg bg-light border-0">
+                                    <input type="tel" class="form-control form-control-lg bg-light border-0" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold text-muted small text-uppercase letter-spacing-1">Subject</label>
@@ -163,7 +163,13 @@
     <!-- Map Section -->
     <section class="py-5 bg-light">
         <div class="container" data-aos="fade-left">
-            <div class="rounded-4 overflow-hidden shadow-lg border border-light-subtle" style="height: 500px;">
+            <div class="rounded-4 overflow-hidden shadow-lg border border-light-subtle position-relative" style="height: 500px;">
+                <!-- Overlay for mobile to open map in new page -->
+                <a href="https://maps.google.com/maps?q=MMR%20Complex,%20Periyakollappatty,%20Chinna%20Thirupathi,%20Salem,%20Tamil%20Nadu%20636008,%20India" 
+                   target="_blank" 
+                   class="position-absolute top-0 start-0 w-100 h-100 d-md-none" 
+                   style="z-index: 10;"></a>
+                   
                 <!-- Google Maps iframe -->
                 <iframe src="https://maps.google.com/maps?q=MMR%20Complex,%20Periyakollappatty,%20Chinna%20Thirupathi,%20Salem,%20Tamil%20Nadu%20636008,%20India&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
