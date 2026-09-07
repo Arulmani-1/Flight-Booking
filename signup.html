@@ -133,11 +133,11 @@
                 <div class="row g-3">
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bold text-muted small text-uppercase letter-spacing-1">First Name</label>
-                        <input type="text" class="form-control premium-input" placeholder="John" required>
+                        <input type="text" id="firstName" class="form-control premium-input" placeholder="John" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label class="form-label fw-bold text-muted small text-uppercase letter-spacing-1">Last Name</label>
-                        <input type="text" class="form-control premium-input" placeholder="Doe" required>
+                        <input type="text" id="lastName" class="form-control premium-input" placeholder="Doe" required>
                     </div>
                 </div>
                 
@@ -159,7 +159,7 @@
                     <label class="form-label fw-bold text-muted small text-uppercase letter-spacing-1">Password</label>
                     <div class="position-relative">
                         <input type="password" class="form-control premium-input pe-5" id="password" placeholder="Create a strong password" minlength="8" required>
-                        <i class="bi bi-eye-slash text-muted position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;" id="togglePassword"></i>
+                        <i class="bi bi-eye-slash text-muted position-absolute top-50 end-0 translate-middle-y me-3 d-none" style="cursor: pointer;" id="togglePassword"></i>
                     </div>
                     <div class="password-strength">
                         <div class="password-strength-bar" id="strengthBar"></div>
@@ -171,7 +171,7 @@
                     <label class="form-label fw-bold text-muted small text-uppercase letter-spacing-1">Confirm Password</label>
                     <div class="position-relative">
                         <input type="password" class="form-control premium-input pe-5" id="confirmPassword" placeholder="Confirm your password" minlength="8" required>
-                        <i class="bi bi-eye-slash text-muted position-absolute top-50 end-0 translate-middle-y me-3" style="cursor: pointer;" id="toggleConfirmPassword"></i>
+                        <i class="bi bi-eye-slash text-muted position-absolute top-50 end-0 translate-middle-y me-3 d-none" style="cursor: pointer;" id="toggleConfirmPassword"></i>
                     </div>
                 </div>
                 
@@ -237,6 +237,29 @@
             const confirmPassword = document.getElementById('confirmPassword');
             const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
             
+            // Handle visibility of icons based on input
+            password.addEventListener('input', () => {
+                if (password.value.length > 0) {
+                    togglePassword.classList.remove('d-none');
+                } else {
+                    togglePassword.classList.add('d-none');
+                    password.setAttribute('type', 'password');
+                    togglePassword.classList.remove('bi-eye');
+                    togglePassword.classList.add('bi-eye-slash');
+                }
+            });
+
+            confirmPassword.addEventListener('input', () => {
+                if (confirmPassword.value.length > 0) {
+                    toggleConfirmPassword.classList.remove('d-none');
+                } else {
+                    toggleConfirmPassword.classList.add('d-none');
+                    confirmPassword.setAttribute('type', 'password');
+                    toggleConfirmPassword.classList.remove('bi-eye');
+                    toggleConfirmPassword.classList.add('bi-eye-slash');
+                }
+            });
+
             togglePassword.addEventListener('click', function() {
                 const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
                 password.setAttribute('type', type);
@@ -289,6 +312,8 @@
             // Form Validation
             const form = document.querySelector('.needs-validation');
             form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Always prevent default form submission first
+                
                 // Custom validation for confirm password
                 if (password.value !== confirmPassword.value) {
                     confirmPassword.setCustomValidity("Passwords do not match");
@@ -297,10 +322,17 @@
                 }
                 
                 if (!form.checkValidity()) {
-                    e.preventDefault();
                     e.stopPropagation();
+                    form.classList.add('was-validated');
+                } else {
+                    // Save name to localStorage
+                    const firstName = document.getElementById('firstName').value;
+                    const lastName = document.getElementById('lastName').value;
+                    localStorage.setItem('userName', firstName + ' ' + lastName);
+                    
+                    // Redirect to login page
+                    window.location.href = 'login.html';
                 }
-                form.classList.add('was-validated');
             });
         });
     </script>

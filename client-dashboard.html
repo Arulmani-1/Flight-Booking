@@ -25,8 +25,9 @@
         <!-- Sidebar -->
         <aside class="dashboard-sidebar" id="sidebar">
             <div class="dashboard-sidebar-header d-flex justify-content-between align-items-center">
-                <a href="index.html">
+                <a href="client-dashboard.html" class="d-flex flex-column text-decoration-none">
                     <img src="assets/images/logo.webp" alt="Stackly Logo" style="height:32px; width:auto; object-fit:contain;">
+                    <span class="text-danger fw-bold small mt-1" style="font-size: 0.75rem; letter-spacing: 0.5px;">Client Portal</span>
                 </a>
                 <button class="btn btn-sm d-lg-none border-0 text-muted" id="closeSidebar">
                     <i class="bi bi-x-lg fs-4"></i>
@@ -69,18 +70,14 @@
                     <button class="btn border-0 text-muted d-lg-none me-2 p-0" id="openSidebar">
                         <i class="bi bi-list fs-3"></i>
                     </button>
-                    <h4 class="mb-0 fw-bold d-none d-md-block text-dark">Welcome back, Client</h4>
+                    <h4 class="mb-0 fw-bold d-none d-md-block text-dark" id="welcomeMessage">Welcome back, Client</h4>
                 </div>
                 
                 <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-light rounded-circle p-2 border-0 shadow-sm position-relative">
-                        <i class="bi bi-bell text-muted fs-5"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
-                    </button>
+
                     
-                    <div class="d-flex align-items-center bg-light rounded-pill p-1 pe-3 shadow-sm border border-light" style="cursor:pointer;">
-                        <img src="assets/images/about-travelers.webp" class="rounded-circle me-2 object-fit-cover" width="35" height="35" alt="Avatar">
-                        <span class="text-dark fw-medium small">client@stackly.com</span>
+                    <div class="d-flex align-items-center bg-light rounded-pill px-3 py-2 shadow-sm border border-light" style="cursor:pointer;">
+                        <span class="text-dark fw-medium small" id="userEmailDisplay">client@stackly.com</span>
                     </div>
                 </div>
             </header>
@@ -95,7 +92,7 @@
                             <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
                                 <div class="d-flex justify-content-between mb-3">
                                     <h6 class="text-muted fw-bold mb-0">Total Bookings</h6>
-                                    <div class="bg-primary bg-opacity-10 text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                                         <i class="bi bi-ticket-perforated"></i>
                                     </div>
                                 </div>
@@ -106,7 +103,7 @@
                             <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
                                 <div class="d-flex justify-content-between mb-3">
                                     <h6 class="text-muted fw-bold mb-0">Upcoming Flights</h6>
-                                    <div class="bg-warning bg-opacity-10 text-warning rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <div class="bg-warning text-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                                         <i class="bi bi-airplane"></i>
                                     </div>
                                 </div>
@@ -114,14 +111,14 @@
                             </div>
                         </div>
                         <div class="col-md-4">
-                            <div class="card border-0 shadow-sm rounded-4 h-100 p-4 bg-primary text-white">
+                            <div class="card bg-white border-0 shadow-sm rounded-4 h-100 p-4">
                                 <div class="d-flex justify-content-between mb-3">
-                                    <h6 class="text-white-50 fw-bold mb-0">Reward Points</h6>
-                                    <div class="bg-white bg-opacity-25 text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                    <h6 class="text-muted fw-bold mb-0">Reward Points</h6>
+                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                                         <i class="bi bi-star-fill"></i>
                                     </div>
                                 </div>
-                                <h2 class="fw-bold mb-0">4,500</h2>
+                                <h2 class="text-dark fw-bold mb-0">4,500</h2>
                             </div>
                         </div>
                     </div>
@@ -203,6 +200,13 @@
                             </div>
                             <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 rounded-pill">Completed</span>
                         </div>
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1 text-dark">New York (JFK) <i class="bi bi-arrow-right text-muted mx-2"></i> London (LHR)</h5>
+                                <p class="text-muted mb-0 small"><i class="bi bi-calendar3"></i> Jul 12, 2025 &nbsp;&bull;&nbsp; Delta DL402</p>
+                            </div>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary px-3 py-2 rounded-pill">Completed</span>
+                        </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class="fw-bold mb-1 text-dark">Chennai (MAA) <i class="bi bi-arrow-right text-muted mx-2"></i> Singapore (SIN)</h5>
@@ -279,7 +283,32 @@
                     </div>
                     <div class="card border-0 shadow-sm rounded-4 p-4">
                         <h6 class="fw-bold mb-3">Transaction History</h6>
-                        <p class="text-muted mb-0">No recent transactions found.</p>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-muted small">Oct 01, 2026</td>
+                                        <td>Flight to Paris (CDG)</td>
+                                        <td class="fw-bold text-dark">$450.00</td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-muted small">Sep 15, 2026</td>
+                                        <td>Flight to Tokyo (HND)</td>
+                                        <td class="fw-bold text-dark">$820.00</td>
+                                        <td><span class="badge bg-success bg-opacity-10 text-success rounded-pill px-2">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
@@ -320,7 +349,7 @@
                             <label class="form-check-label fw-medium" for="smsNotif">SMS Flight Updates</label>
                         </div>
                         <hr class="text-muted">
-                        <button type="button" class="btn btn-outline-danger mt-2 rounded-pill px-4">Deactivate Account</button>
+                        <button type="button" class="btn btn-outline-danger mt-2 rounded-pill" style="padding: 6px 16px !important; font-size: 13px !important; width: fit-content; max-width: 200px;">Deactivate Account</button>
                     </div>
                 </div>
 
@@ -371,6 +400,24 @@
                     }
                 });
             });
+
+            // Display logged-in user email
+            const savedEmail = localStorage.getItem('userEmail');
+            if (savedEmail) {
+                const emailDisplay = document.getElementById('userEmailDisplay');
+                if (emailDisplay) {
+                    emailDisplay.textContent = savedEmail;
+                }
+            }
+            
+            // Display logged-in user name
+            const savedName = localStorage.getItem('userName');
+            if (savedName) {
+                const welcomeMessage = document.getElementById('welcomeMessage');
+                if (welcomeMessage) {
+                    welcomeMessage.textContent = 'Welcome back, ' + savedName;
+                }
+            }
         });
     </script>
 </body>
