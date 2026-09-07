@@ -114,7 +114,7 @@
     <div class="split-layout">
         <!-- Left Image -->
         <div class="split-image">
-            <div class="position-absolute bottom-0 start-0 p-5 z-3 text-white">
+            <div class="position-absolute bottom-0 start-0 p-5 z-3 text-white" data-aos="zoom-in-down" data-aos-duration="1000">
                 <span class="badge bg-white text-dark rounded-pill px-3 py-2 fw-bold mb-4 shadow-sm">Stackly Member</span>
                 <h2 class="display-5 fw-bold mb-3 letter-spacing-n1">Your Next Adventure Awaits</h2>
                 <p class="lead text-white-75 mb-4" style="max-width: 450px;">Log in to manage your bookings, check flight status, and access exclusive member-only luxury deals.</p>
@@ -122,7 +122,7 @@
         </div>
         
         <!-- Right Form -->
-        <div class="split-form">
+        <div class="split-form" data-aos="fade-up" data-aos-duration="1000">
             <!-- Back button overlay for UX -->
 
             
@@ -167,7 +167,7 @@
                         <input class="form-check-input" type="checkbox" id="remember">
                         <label class="form-check-label text-muted fw-medium" for="remember">Remember for 30 days</label>
                     </div>
-                    <a href="#" class="text-primary fw-bold text-decoration-none hover-border-primary pb-1 border-bottom border-2 border-transparent transition-fast">Forgot password?</a>
+                    <a href="404.html" class="text-primary fw-bold text-decoration-none hover-border-primary pb-1 border-bottom border-2 border-transparent transition-fast">Forgot password?</a>
                 </div>
                 
                 <button type="submit" class="btn btn-premium w-100 py-3 mb-4 justify-content-center fs-6">Sign In <i class="bi bi-arrow-right ms-2"></i></button>
@@ -178,12 +178,12 @@
                 </div>
                 
                 <div class="d-flex gap-3 mb-5">
-                    <button type="button" class="btn btn-outline-secondary w-50 py-2 d-flex align-items-center justify-content-center gap-2 fw-bold text-dark border-light shadow-sm hover-lift">
+                    <a href="404.html" class="btn btn-outline-secondary w-50 py-2 d-flex align-items-center justify-content-center gap-2 fw-bold text-dark border-light shadow-sm hover-lift text-decoration-none">
                         <i class="bi bi-google text-danger fs-5"></i> Google
-                    </button>
-                    <button type="button" class="btn btn-outline-secondary w-50 py-2 d-flex align-items-center justify-content-center gap-2 fw-bold text-dark border-light shadow-sm hover-lift">
+                    </a>
+                    <a href="404.html" class="btn btn-outline-secondary w-50 py-2 d-flex align-items-center justify-content-center gap-2 fw-bold text-dark border-light shadow-sm hover-lift text-decoration-none">
                         <i class="bi bi-apple text-dark fs-5"></i> Apple
-                    </button>
+                    </a>
                 </div>
                 
                 <p class="text-center text-muted fw-medium mb-4">
@@ -202,12 +202,12 @@
     <script src="js/script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const tl = gsap.timeline();
-            tl.from('.auth-brand', { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out' })
-              .from('.auth-title', { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4')
-              .from('.auth-subtitle', { y: 20, opacity: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4')
-              .from('.auth-form', { y: 20, opacity: 0, duration: 0.8, ease: 'power3.out' }, '-=0.4');
-              
+            // Refresh AOS after the page loader finishes (2000ms) to ensure animations trigger on non-scrolling page
+            setTimeout(() => {
+                if (typeof AOS !== 'undefined') {
+                    AOS.refresh();
+                }
+            }, 2100);
             // Toggle Password
             const togglePasswordBtn = document.getElementById('togglePassword');
             const passwordInput = document.getElementById('passwordInput');
