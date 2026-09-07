@@ -67,7 +67,7 @@
             <!-- Navbar -->
             <header class="dashboard-navbar">
                 <div class="d-flex align-items-center">
-                    <button class="btn border-0 text-muted d-lg-none me-2 p-0" id="openSidebar">
+                    <button class="btn border-0 d-lg-none me-2 p-0" id="openSidebar" style="color: #E5C374;">
                         <i class="bi bi-list fs-3"></i>
                     </button>
                     <h4 class="mb-0 fw-bold d-none d-md-block text-dark" id="welcomeMessage">Welcome back, Client</h4>
@@ -365,13 +365,16 @@
             const sidebar = document.getElementById('sidebar');
             const openBtn = document.getElementById('openSidebar');
             const closeBtn = document.getElementById('closeSidebar');
+            const dashboardContent = document.querySelector('.dashboard-content');
 
             openBtn.addEventListener('click', () => {
                 sidebar.classList.add('show');
+                if (dashboardContent) dashboardContent.style.overflow = 'hidden';
             });
 
             closeBtn.addEventListener('click', () => {
                 sidebar.classList.remove('show');
+                if (dashboardContent) dashboardContent.style.overflow = '';
             });
 
             // Dynamic Section Navigation
@@ -397,6 +400,7 @@
                     // On mobile, close sidebar after clicking a link
                     if(window.innerWidth < 992) {
                         sidebar.classList.remove('show');
+                        if (dashboardContent) dashboardContent.style.overflow = '';
                     }
                 });
             });

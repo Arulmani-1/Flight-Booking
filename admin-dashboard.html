@@ -50,6 +50,9 @@
                 <a href="#" class="dashboard-nav-item" data-target="support">
                     <i class="bi bi-envelope-paper"></i> Support Tickets
                 </a>
+                <a href="#" class="dashboard-nav-item" data-target="flight-tracking">
+                    <i class="bi bi-geo-alt"></i> Flight Tracking
+                </a>
                 
                 <hr class="my-4 text-muted opacity-25">
                 
@@ -67,7 +70,7 @@
             <!-- Navbar -->
             <header class="dashboard-navbar">
                 <div class="d-flex align-items-center">
-                    <button class="btn border-0 text-muted d-lg-none me-2 p-0" id="openSidebar">
+                    <button class="btn border-0 d-lg-none me-2 p-0" id="openSidebar" style="color: #E5C374;">
                         <i class="bi bi-list fs-3"></i>
                     </button>
                     <h4 class="mb-0 fw-bold d-none d-md-block text-dark" id="welcomeMessage">Welcome Back Admin</h4>
@@ -193,6 +196,15 @@
                         <button class="btn btn-primary rounded-pill px-4"><i class="bi bi-plus-lg me-2"></i>Add Flight</button>
                     </div>
                     <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <div class="d-flex justify-content-between mb-4">
+                            <input type="text" id="flightSearch" class="form-control rounded-pill px-4 bg-light border-0 w-50" placeholder="Search flights by ID or Route...">
+                            <select id="flightStatusFilter" class="form-select w-auto border-0 bg-light rounded-pill px-4">
+                                <option value="all">All Status</option>
+                                <option value="on time">On Time</option>
+                                <option value="delayed">Delayed</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-hover align-middle">
                                 <thead class="table-light">
@@ -205,7 +217,7 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="flightsTableBody">
                                     <tr>
                                         <td><span class="fw-bold text-dark">#EK405</span></td>
                                         <td>Dubai - Paris</td>
@@ -260,7 +272,7 @@
                 <div id="users" class="dashboard-section">
                     <h4 class="fw-bold mb-4">Users Directory</h4>
                     <div class="card border-0 shadow-sm rounded-4 p-4">
-                        <input type="text" class="form-control mb-4 rounded-pill px-4 bg-light border-0" placeholder="Search users by email...">
+                        <input type="text" id="userEmailSearch" class="form-control mb-4 rounded-pill px-4 bg-light border-0 w-50" placeholder="Search users by email...">
                         <div class="table-responsive">
                             <table class="table table-hover align-middle">
                                 <thead class="table-light">
@@ -271,7 +283,7 @@
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="usersTableBody">
                                     <tr>
                                         <td><span class="fw-medium text-dark">client@stackly.com</span></td>
                                         <td>Client</td>
@@ -311,18 +323,229 @@
                 <!-- SECTION: REVENUE -->
                 <div id="revenue" class="dashboard-section">
                     <h4 class="fw-bold mb-4">Financial Overview</h4>
-                    <div class="row g-4">
-                        <div class="col-md-6">
+                    <div class="row g-4 mb-4">
+                        <div class="col-md-4">
                             <div class="card border-0 shadow-sm rounded-4 p-4 text-center">
-                                <h6 class="text-muted fw-bold">Q3 Revenue (Estimated)</h6>
-                                <h1 class="text-success fw-bold mt-2 mb-0">$840,000</h1>
+                                <h6 class="text-muted fw-bold">Total Revenue</h6>
+                                <h2 class="text-success fw-bold mt-2 mb-0">$1,250,000</h2>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
+                            <div class="card border-0 shadow-sm rounded-4 p-4 text-center">
+                                <h6 class="text-muted fw-bold">Q3 Revenue (Estimated)</h6>
+                                <h2 class="text-primary fw-bold mt-2 mb-0">$840,000</h2>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
                             <div class="card border-0 shadow-sm rounded-4 p-4 text-center">
                                 <h6 class="text-muted fw-bold">Pending Refunds</h6>
-                                <h1 class="text-danger fw-bold mt-2 mb-0">$12,500</h1>
+                                <h2 class="text-danger fw-bold mt-2 mb-0">$12,500</h2>
                             </div>
+                        </div>
+                    </div>
+                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                        <h6 class="fw-bold mb-3">Recent Transactions</h6>
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Transaction ID</th>
+                                        <th>User</th>
+                                        <th>Amount</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><span class="fw-bold">#TXN-8932</span></td>
+                                        <td>john.doe@example.com</td>
+                                        <td>$1,200</td>
+                                        <td>Oct 12, 2026</td>
+                                        <td><span class="badge bg-success rounded-pill px-2">Completed</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-bold">#TXN-8933</span></td>
+                                        <td>sarah.j@example.com</td>
+                                        <td>$450</td>
+                                        <td>Oct 12, 2026</td>
+                                        <td><span class="badge bg-danger rounded-pill px-2">Refunded</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="fw-bold">#TXN-8934</span></td>
+                                        <td>mike.t@example.com</td>
+                                        <td>$890</td>
+                                        <td>Oct 11, 2026</td>
+                                        <td><span class="badge bg-success rounded-pill px-2">Completed</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION: FLIGHT TRACKING -->
+                <div id="flight-tracking" class="dashboard-section p-0 flight-tracking-wrapper">
+                    
+                    <div class="flight-tracking-map">
+                        <!-- Curved Flight Path SVG overlay -->
+                        <svg viewBox="0 0 1200 800" style="position: absolute; top:0; left:0; width:100%; height:100%; pointer-events:none;">
+                            <path d="M 350 450 Q 550 250 750 350" fill="transparent" stroke="#112046" stroke-width="4" stroke-dasharray="8,8"/>
+                            <circle cx="350" cy="450" r="8" fill="#E5C374" stroke="#112046" stroke-width="4"/>
+                            <circle cx="750" cy="350" r="8" fill="#E5C374" stroke="#112046" stroke-width="4"/>
+                            <text x="310" y="485" font-weight="bold" fill="#112046" font-size="18">New York (JFK)</text>
+                            <text x="720" y="390" font-weight="bold" fill="#112046" font-size="18">London (LHR)</text>
+                            <text x="540" y="315" font-size="40" fill="#112046" transform="rotate(35, 540, 315)">✈️</text>
+                        </svg>
+                    </div>
+
+                    <!-- Bottom Left Panel -->
+                    <div class="flight-tracking-panel bg-white rounded-4 shadow-lg p-3 p-md-4 d-flex flex-column flex-md-row gap-4 align-items-stretch align-items-md-center">
+                        <!-- Airline & Timeline -->
+                        <div class="flex-grow-1">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="bg-danger bg-opacity-10 text-danger rounded-circle d-flex align-items-center justify-content-center me-3" style="width:40px; height:40px;">
+                                    <i class="bi bi-airplane-fill" style="transform: rotate(45deg);"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">FlyFast Airways</h6>
+                                    <small class="text-muted">FF567B <span class="badge bg-secondary ms-1">Delayed</span></small>
+                                </div>
+                                <div class="ms-auto border-start ps-3 ms-3 text-end d-none d-sm-block">
+                                    <small class="text-muted fw-bold d-block">Date: July 1, 2028</small>
+                                </div>
+                            </div>
+                            <!-- Timeline -->
+                            <div class="bg-light rounded-4 p-3 d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h5 class="fw-bold mb-0">8:00 AM</h5>
+                                    <small class="text-muted">London (LHR)</small>
+                                </div>
+                                <div class="flex-grow-1 px-3 text-center position-relative">
+                                    <div style="border-top: 2px dashed #adb5bd; position:absolute; top:50%; left:10%; right:10%; z-index:1;"></div>
+                                    <span class="badge bg-white text-muted position-relative shadow-sm border px-2 py-1" style="z-index:2;">Delayed</span>
+                                </div>
+                                <div class="text-end">
+                                    <h5 class="fw-bold mb-0">11:00 AM</h5>
+                                    <small class="text-muted">New York (JFK)</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Divider for mobile -->
+                        <hr class="d-md-none text-muted my-0">
+
+                        <!-- Stats Box -->
+                        <div class="d-flex flex-row flex-md-column gap-3 justify-content-around justify-content-md-start flight-stats-box" id="flightTrackingStats">
+                            <div>
+                                <small class="text-muted fw-bold d-block text-uppercase" style="font-size: 10px;">Speed</small>
+                                <span class="fw-bold text-warning fs-5">0 <small class="text-muted fs-6">km/h</small></span>
+                            </div>
+                            <div>
+                                <small class="text-muted fw-bold d-block text-uppercase" style="font-size: 10px;">Altitude</small>
+                                <span class="fw-bold text-warning fs-5">0 <small class="text-muted fs-6">feet</small></span>
+                            </div>
+                        </div>
+
+                        <!-- Divider for mobile -->
+                        <hr class="d-md-none text-muted my-0">
+
+                        <!-- Aircraft Details Box -->
+                        <div class="bg-light rounded-4 p-3 flex-shrink-0">
+                            <div class="d-flex justify-content-between mb-2">
+                                <h6 class="fw-bold mb-0">Aircraft Details</h6>
+                                <i class="bi bi-three-dots"></i>
+                            </div>
+                            <small class="text-muted d-block mt-2" style="font-size: 11px;">Type</small>
+                            <span class="fw-bold d-block text-dark">Airbus A380</span>
+                            <small class="text-muted d-block mt-2" style="font-size: 11px;">Registration</small>
+                            <span class="fw-bold d-block text-dark">G-FF567</span>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar -->
+                    <div class="flight-tracking-sidebar bg-white rounded-4 shadow-lg d-flex flex-column">
+                        <div class="p-4 border-bottom">
+                            <div class="input-group bg-light rounded-pill px-3 py-1">
+                                <span class="input-group-text border-0 bg-transparent"><i class="bi bi-search text-muted"></i></span>
+                                <input type="text" id="flightTrackingSearch" class="form-control border-0 bg-transparent shadow-none" placeholder="Search flight">
+                                <span class="input-group-text border-0 bg-transparent"><i class="bi bi-sliders text-muted"></i></span>
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 overflow-auto p-0">
+                            <div class="list-group list-group-flush">
+                                <!-- Flight Item -->
+                                <a href="#" class="list-group-item list-group-item-action border-bottom p-4 border-start border-4 border-warning flight-tracking-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="fw-bold mb-0 airline-name">FlyFast Airways</h6>
+                                        <span class="badge bg-secondary bg-opacity-10 text-secondary">Delayed</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <small class="text-muted d-block" style="font-size: 10px;">Departure</small>
+                                            <span class="fw-bold text-dark d-block" style="font-size: 12px;">London - 8:00 AM</span>
+                                        </div>
+                                        <div class="text-end">
+                                            <small class="text-muted d-block" style="font-size: 10px;">Arrival</small>
+                                            <span class="fw-bold text-dark d-block" style="font-size: 12px;">New York - 11:00 AM</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- Flight Item 2 -->
+                                <a href="#" class="list-group-item list-group-item-action border-bottom p-4 border-start border-4 border-success flight-tracking-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="fw-bold mb-0 airline-name">AeroJet</h6>
+                                        <span class="badge bg-success bg-opacity-25 text-success">In Air</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <small class="text-muted d-block" style="font-size: 10px;">Departure</small>
+                                            <span class="fw-bold text-dark d-block" style="font-size: 12px;">Tokyo - 2:00 PM</span>
+                                        </div>
+                                        <div class="text-end">
+                                            <small class="text-muted d-block" style="font-size: 10px;">Arrival</small>
+                                            <span class="fw-bold text-dark d-block" style="font-size: 12px;">San Francisco - 8:00 AM</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- Flight Item 3 -->
+                                <a href="#" class="list-group-item list-group-item-action border-bottom p-4 border-start border-4 border-warning flight-tracking-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="fw-bold mb-0 airline-name">Nimbus Airlines</h6>
+                                        <span class="badge bg-warning bg-opacity-25 text-warning">Scheduled</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <small class="text-muted d-block" style="font-size: 10px;">Departure</small>
+                                            <span class="fw-bold text-dark d-block" style="font-size: 12px;">Sydney - 6:00 PM</span>
+                                        </div>
+                                        <div class="text-end">
+                                            <small class="text-muted d-block" style="font-size: 10px;">Arrival</small>
+                                            <span class="fw-bold text-dark d-block" style="font-size: 12px;">Singapore - 12:00 AM</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- Flight Item 4 -->
+                                <a href="#" class="list-group-item list-group-item-action border-bottom p-4 border-start border-4 border-dark flight-tracking-item">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="fw-bold mb-0 airline-name">CloudNine Airlines</h6>
+                                        <span class="badge bg-dark text-white">Cancelled</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <small class="text-muted d-block" style="font-size: 10px;">Departure</small>
+                                            <span class="fw-bold text-dark d-block" style="font-size: 12px;">Paris - 9:00 AM</span>
+                                        </div>
+                                        <div class="text-end">
+                                            <small class="text-muted d-block" style="font-size: 10px;">Arrival</small>
+                                            <span class="fw-bold text-dark d-block" style="font-size: 12px;">New York - 12:00 PM</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-4 border-top">
+                            <button class="btn w-100 rounded-pill fw-bold text-dark" style="background-color: #E5C374;"><i class="bi bi-plus-lg me-2"></i> Add Flight</button>
                         </div>
                     </div>
                 </div>
@@ -331,20 +554,32 @@
                 <div id="support" class="dashboard-section">
                     <h4 class="fw-bold mb-4">Support Tickets</h4>
                     <div class="card border-0 shadow-sm rounded-4 p-4">
-                        <div class="list-group list-group-flush">
-                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start py-3 border-bottom">
+                        <div class="d-flex gap-2 mb-4" id="ticketFilters">
+                            <button class="btn btn-dark btn-sm rounded-pill px-3 ticket-filter-btn" data-filter="all">All Tickets</button>
+                            <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 ticket-filter-btn" data-filter="open">Open</button>
+                            <button class="btn btn-outline-secondary btn-sm rounded-pill px-3 ticket-filter-btn" data-filter="resolved">Resolved</button>
+                        </div>
+                        <div class="list-group list-group-flush" id="ticketList">
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start py-3 border-bottom px-0 ticket-item" data-status="open">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold">Refund request for cancelled flight #EK405</div>
                                     <small class="text-muted">From: user1@example.com - 2 days ago</small>
                                 </div>
                                 <span class="badge bg-danger rounded-pill">Open</span>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start py-3">
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start py-3 border-bottom px-0 ticket-item" data-status="resolved">
                                 <div class="ms-2 me-auto">
                                     <div class="fw-bold text-muted">Baggage limit inquiry</div>
                                     <small class="text-muted">From: user2@example.com - 5 days ago</small>
                                 </div>
                                 <span class="badge bg-success rounded-pill">Resolved</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start py-3 px-0 ticket-item" data-status="open">
+                                <div class="ms-2 me-auto">
+                                    <div class="fw-bold">Unable to download e-ticket</div>
+                                    <small class="text-muted">From: mike.t@example.com - 6 hours ago</small>
+                                </div>
+                                <span class="badge bg-warning text-dark rounded-pill">Pending</span>
                             </a>
                         </div>
                     </div>
@@ -353,7 +588,8 @@
                 <!-- SECTION: SYSTEM SETTINGS -->
                 <div id="settings" class="dashboard-section">
                     <h4 class="fw-bold mb-4">System Settings</h4>
-                    <div class="card border-0 shadow-sm rounded-4 p-4">
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                        <h6 class="fw-bold mb-3">General Settings</h6>
                         <div class="form-check form-switch mb-3">
                             <input class="form-check-input" type="checkbox" id="maintenanceMode">
                             <label class="form-check-label fw-medium" for="maintenanceMode">Enable Maintenance Mode</label>
@@ -362,8 +598,26 @@
                             <input class="form-check-input" type="checkbox" id="registration" checked>
                             <label class="form-check-label fw-medium" for="registration">Allow New User Registrations</label>
                         </div>
+                        <div class="form-check form-switch mb-3">
+                            <input class="form-check-input" type="checkbox" id="twoFactor" checked>
+                            <label class="form-check-label fw-medium" for="twoFactor">Force 2FA for Admins</label>
+                        </div>
+                    </div>
+                    
+                    <div class="card border-0 shadow-sm rounded-4 p-4 mb-4">
+                        <h6 class="fw-bold mb-3">Email Configuration</h6>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">SMTP Server</label>
+                            <input type="text" class="form-control bg-light border-0" value="smtp.stackly.com">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label text-muted small fw-bold">Support Email Address</label>
+                            <input type="email" class="form-control bg-light border-0" value="support@stackly.com">
+                        </div>
                         <hr class="text-muted">
-                        <button class="btn btn-primary rounded-pill px-4 mt-2">Save Configuration</button>
+                        <div class="d-flex justify-content-end">
+                            <button class="btn btn-primary btn-sm rounded-pill px-4 mt-2">Save Configuration</button>
+                        </div>
                     </div>
                 </div>
 
@@ -379,13 +633,16 @@
             const sidebar = document.getElementById('sidebar');
             const openBtn = document.getElementById('openSidebar');
             const closeBtn = document.getElementById('closeSidebar');
+            const dashboardContent = document.querySelector('.dashboard-content');
 
             openBtn.addEventListener('click', () => {
                 sidebar.classList.add('show');
+                if (dashboardContent) dashboardContent.style.overflow = 'hidden';
             });
 
             closeBtn.addEventListener('click', () => {
                 sidebar.classList.remove('show');
+                if (dashboardContent) dashboardContent.style.overflow = '';
             });
 
             // Dynamic Section Navigation
@@ -411,6 +668,7 @@
                     // On mobile, close sidebar after clicking a link
                     if(window.innerWidth < 992) {
                         sidebar.classList.remove('show');
+                        if (dashboardContent) dashboardContent.style.overflow = '';
                     }
                 });
             });
@@ -431,6 +689,98 @@
                 if (welcomeMessage) {
                     welcomeMessage.textContent = 'Welcome back, ' + savedName;
                 }
+            }
+
+            // --- Users Directory Filtering ---
+            const userSearch = document.getElementById('userEmailSearch');
+            const usersTableBody = document.getElementById('usersTableBody');
+            if(userSearch && usersTableBody) {
+                userSearch.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase();
+                    const rows = usersTableBody.querySelectorAll('tr');
+                    rows.forEach(row => {
+                        const emailCell = row.querySelector('td:first-child').textContent.toLowerCase();
+                        if(emailCell.includes(term)) {
+                            row.style.display = '';
+                        } else {
+                            row.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            // --- Manage Flights Filtering ---
+            const flightSearch = document.getElementById('flightSearch');
+            const flightStatusFilter = document.getElementById('flightStatusFilter');
+            const flightsTableBody = document.getElementById('flightsTableBody');
+            
+            function filterFlights() {
+                if(!flightsTableBody) return;
+                const term = flightSearch ? flightSearch.value.toLowerCase() : '';
+                const status = flightStatusFilter ? flightStatusFilter.value.toLowerCase() : 'all';
+                
+                const rows = flightsTableBody.querySelectorAll('tr');
+                rows.forEach(row => {
+                    const idRouteCell = row.textContent.toLowerCase();
+                    const statusCell = row.querySelector('td:nth-child(5)').textContent.toLowerCase();
+                    
+                    const matchesSearch = idRouteCell.includes(term);
+                    const matchesStatus = status === 'all' || statusCell.includes(status);
+                    
+                    if(matchesSearch && matchesStatus) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+            if(flightSearch) flightSearch.addEventListener('input', filterFlights);
+            if(flightStatusFilter) flightStatusFilter.addEventListener('change', filterFlights);
+
+            // --- Support Tickets Filtering ---
+            const ticketFilterBtns = document.querySelectorAll('.ticket-filter-btn');
+            const ticketItems = document.querySelectorAll('.ticket-item');
+            
+            ticketFilterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    // Update active button styling
+                    ticketFilterBtns.forEach(b => {
+                        b.classList.remove('btn-dark');
+                        b.classList.add('btn-outline-secondary');
+                    });
+                    e.target.classList.remove('btn-outline-secondary');
+                    e.target.classList.add('btn-dark');
+                    
+                    // Filter items
+                    const filter = e.target.getAttribute('data-filter');
+                    ticketItems.forEach(item => {
+                        if(filter === 'all' || item.getAttribute('data-status') === filter) {
+                            item.classList.remove('d-none');
+                            item.classList.add('d-flex');
+                        } else {
+                            item.classList.remove('d-flex');
+                            item.classList.add('d-none');
+                        }
+                    });
+                });
+            });
+            // --- Flight Tracking Filtering ---
+            const flightTrackingSearch = document.getElementById('flightTrackingSearch');
+            const flightTrackingItems = document.querySelectorAll('.flight-tracking-item');
+            
+            if(flightTrackingSearch) {
+                flightTrackingSearch.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase();
+                    flightTrackingItems.forEach(item => {
+                        // Filter mostly by airline name or cities
+                        const text = item.textContent.toLowerCase();
+                        if(text.includes(term)) {
+                            item.classList.remove('d-none');
+                        } else {
+                            item.classList.add('d-none');
+                        }
+                    });
+                });
             }
         });
     </script>

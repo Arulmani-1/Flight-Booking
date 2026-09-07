@@ -13,6 +13,8 @@ CSS Architecture & Design System (Refined)
     --blue: #1769FF;
     --blue-glow: rgba(23, 105, 255, 0.4);
     --gold: #F2C94C;
+    --gold-light: #FDF9EC;
+    --beige-bg: #F9F6F0;
     --light: #F8FAFC;
     --white: #FFFFFF;
     --text-dark: #0F172A;
@@ -223,7 +225,7 @@ CSS Architecture & Design System (Refined)
 body {
     font-family: 'Inter', -apple-system, sans-serif;
     color: var(--text-dark);
-    background-color: var(--light);
+    background-color: var(--beige-bg);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -1168,13 +1170,14 @@ a:hover {
     height: 100vh;
     display: flex;
     overflow: hidden;
-    background-color: var(--light);
+    background-color: var(--beige-bg);
 }
 
 .dashboard-sidebar {
     width: 280px;
-    background-color: var(--white);
-    border-right: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #112046;
+    border-right: none;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     transition: transform var(--transition-fast);
@@ -1182,13 +1185,13 @@ a:hover {
 }
 
 .dashboard-sidebar-header {
-    padding: 1.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 2rem 1.5rem 1rem 2rem;
+    border-bottom: none;
 }
 
 .dashboard-sidebar-nav {
     flex-grow: 1;
-    padding: 1.5rem 1rem;
+    padding: 1rem 1.5rem;
     overflow-y: auto;
 }
 
@@ -1196,7 +1199,7 @@ a:hover {
     display: flex;
     align-items: center;
     padding: 0.875rem 1.25rem;
-    color: var(--text-muted);
+    color: #cbd5e1;
     text-decoration: none;
     border-radius: var(--radius-sm);
     margin-bottom: 0.5rem;
@@ -1204,10 +1207,14 @@ a:hover {
     font-weight: 500;
 }
 
-.dashboard-nav-item:hover,
-.dashboard-nav-item.active {
-    background-color: var(--primary);
+.dashboard-nav-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
     color: var(--white);
+}
+
+.dashboard-nav-item.active {
+    background-color: var(--gold);
+    color: #112046;
 }
 
 .dashboard-nav-item i {
@@ -1223,18 +1230,24 @@ a:hover {
 }
 
 .dashboard-navbar {
-    background-color: var(--white);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: #112046;
+    border-bottom: none;
     padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: var(--white);
+}
+
+#welcomeMessage {
+    color: var(--gold) !important;
 }
 
 .dashboard-content {
     flex-grow: 1;
     padding: 2rem;
     overflow-y: auto;
+    position: relative;
 }
 
 @media (max-width: 991.98px) {
@@ -1352,4 +1365,282 @@ a:hover {
     100% {
         box-shadow: 0 0 15px var(--blue), 0 0 30px var(--blue), inset 0 0 10px var(--blue-glow);
     }
+}
+
+/* Flight Tracking Responsive Layout */
+.flight-tracking-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #cbd5e1 url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.flight-tracking-map {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.flight-tracking-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 1.5rem;
+    width: auto;
+    max-width: 800px;
+    z-index: 10;
+}
+
+.flight-tracking-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 1.5rem;
+    width: 350px;
+    z-index: 10;
+}
+
+@media (max-width: 991.98px) {
+    .flight-tracking-wrapper {
+        position: relative;
+        height: auto !important;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        background: #f8f9fa;
+    }
+    
+    .flight-tracking-map {
+        position: relative;
+        height: 350px;
+        flex-shrink: 0;
+        background: #cbd5e1 url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center;
+        background-size: cover;
+    }
+    
+    .flight-tracking-panel {
+        position: relative;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+}
+
+#welcomeMessage {
+    color: var(--gold) !important;
+}
+
+.dashboard-content {
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    position: relative;
+}
+
+@media (max-width: 991.98px) {
+    .dashboard-sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(-100%);
+    }
+
+    .dashboard-sidebar.show {
+        transform: translateX(0);
+        box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-navbar {
+        padding: 1rem;
+    }
+
+    .dashboard-content {
+        padding: 1.5rem 1rem;
+    }
+}
+
+.dashboard-section {
+    display: none;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.dashboard-section.active-section {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer Newsletter Placeholder Visibility Fix */
+.footer input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.6) !important;
+    opacity: 1;
+}
+
+/* =========================================
+   Advanced CSS Effects
+   ========================================= */
+
+/* 1. Corner Draw Effect for Cards */
+.card {
+    position: relative;
+    /* Ensure the pseudo-elements don't overflow rounded corners */
+    border-radius: inherit;
+}
+.card::before, .card::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 10;
+    border-radius: inherit;
+    transition: width 0.3s ease-out, height 0.3s ease-out;
+}
+.card::before {
+    top: 0;
+    left: 0;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+}
+.card::after {
+    bottom: 0;
+    right: 0;
+    border-bottom: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
+.card:hover::before {
+    width: 100%;
+    height: 100%;
+    border-top-color: var(--blue);
+    border-left-color: var(--blue);
+    transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+}
+.card:hover::after {
+    width: 100%;
+    height: 100%;
+    border-bottom-color: var(--blue);
+    border-right-color: var(--blue);
+    transition: width 0.3s ease-out, height 0.3s ease-out 0.3s;
+}
+
+/* 2. Electric Border Pulse for Buttons Inside Cards */
+.card .btn {
+    position: relative;
+    transition: box-shadow 0.3s ease;
+}
+.card:hover .btn,
+.card .btn:hover {
+    animation: electric-pulse 1.5s infinite alternate;
+}
+
+@keyframes electric-pulse {
+    0% {
+        box-shadow: 0 0 5px var(--blue-glow), 0 0 10px var(--blue-glow), inset 0 0 5px var(--blue-glow);
+    }
+    100% {
+        box-shadow: 0 0 15px var(--blue), 0 0 30px var(--blue), inset 0 0 10px var(--blue-glow);
+    }
+}
+
+/* Flight Tracking Responsive Layout */
+.flight-tracking-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #cbd5e1 url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.flight-tracking-map {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.flight-tracking-panel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 1.5rem;
+    width: auto;
+    max-width: 800px;
+    z-index: 10;
+}
+
+.flight-tracking-sidebar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 1.5rem;
+    width: 350px;
+    z-index: 10;
+}
+
+@media (max-width: 991.98px) {
+    .flight-tracking-wrapper {
+        position: relative;
+        height: auto !important;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        background: #f8f9fa;
+    }
+    
+    .flight-tracking-map {
+        position: relative;
+        height: 350px;
+        flex-shrink: 0;
+        background: #cbd5e1 url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg') no-repeat center center;
+        background-size: cover;
+    }
+    
+    .flight-tracking-panel {
+        position: relative;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        border-bottom: 1px solid #dee2e6;
+    }
+    
+    .flight-tracking-sidebar {
+        position: relative;
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+    
+    .flight-stats-box {
+        border-left: none !important;
+    }
+}
+
+.flight-stats-box {
+    border-left: 1px solid #dee2e6;
 }
