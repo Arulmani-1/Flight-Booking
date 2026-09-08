@@ -260,11 +260,13 @@
                     const email = document.querySelector('input[type="email"]').value;
                     localStorage.setItem('userEmail', email);
                     
+                    const storedName = localStorage.getItem('user_' + email.toLowerCase());
+                    
                     if (role === 'admin') {
-                        localStorage.setItem('userName', 'Admin');
+                        localStorage.setItem('userName', storedName ? storedName : 'Admin');
                         window.location.href = 'admin-dashboard.html';
                     } else if (role === 'client') {
-                        localStorage.setItem('userName', 'Client');
+                        localStorage.setItem('userName', storedName ? storedName : 'Client');
                         window.location.href = 'client-dashboard.html';
                     }
                 }
