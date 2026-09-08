@@ -70,7 +70,7 @@
                     <button class="btn border-0 d-lg-none me-2 p-0" id="openSidebar" style="color: #E5C374;">
                         <i class="bi bi-list fs-3"></i>
                     </button>
-                    <h4 class="mb-0 fw-bold d-none d-md-block text-dark" id="welcomeMessage">Welcome back, Client</h4>
+                    <h4 class="mb-0 fw-bold d-none d-md-block welcome-message" style="color: #E5C374;">Welcome back, Client</h4>
                 </div>
                 
                 <div class="d-flex align-items-center gap-3">
@@ -87,6 +87,7 @@
                 
                 <!-- SECTION: OVERVIEW -->
                 <div id="overview" class="dashboard-section active-section">
+                    <h3 class="fw-bold mb-4 d-md-none welcome-message" style="color: #E5C374;">Welcome back, Client</h3>
                     <div class="row g-4 mb-4">
                         <div class="col-md-4">
                             <div class="card border-0 shadow-sm rounded-4 h-100 p-4">
@@ -459,14 +460,14 @@
             
             // Display logged-in user name
             const savedName = localStorage.getItem('userName');
-            const welcomeMessage = document.getElementById('welcomeMessage');
-            if (welcomeMessage) {
+            const welcomeMessages = document.querySelectorAll('.welcome-message');
+            welcomeMessages.forEach(msg => {
                 if (savedName && savedName.trim() !== '') {
-                    welcomeMessage.textContent = 'Welcome back, ' + savedName.trim();
+                    msg.textContent = 'Welcome back, ' + savedName.trim();
                 } else {
-                    welcomeMessage.textContent = 'Welcome back, Client';
+                    msg.textContent = 'Welcome back, Client';
                 }
-            }
+            });
         });
     </script>
 </body>
