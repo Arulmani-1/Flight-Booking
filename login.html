@@ -261,8 +261,10 @@
                     localStorage.setItem('userEmail', email);
                     
                     if (role === 'admin') {
+                        localStorage.setItem('userName', 'Admin');
                         window.location.href = 'admin-dashboard.html';
                     } else if (role === 'client') {
+                        localStorage.setItem('userName', 'Client');
                         window.location.href = 'client-dashboard.html';
                     }
                 }
